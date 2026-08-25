@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { CartProvider } from "@/lib/cart-context";
 import { buildOrganizationJsonLd } from "@/lib/seo";
-import Header from "@/components/Header";
-import CartDrawer from "@/components/CartDrawer";
+
+// Layout raíz — compartido por la tienda (app/(storefront)) y el
+// panel /admin, que tienen cada uno su propio chrome (ver
+// app/(storefront)/layout.tsx y app/admin/(panel)/layout.tsx).
 
 export const metadata: Metadata = {
   title: { default: "Meyer SkinBeauty", template: "%s" },
@@ -25,16 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
-        <CartProvider>
-          <div className="app">
-            <Header />
-            {children}
-            <footer className="site-footer">
-              © {new Date().getFullYear()} Meyer SkinBeauty
-            </footer>
-          </div>
-          <CartDrawer />
-        </CartProvider>
+        {children}
       </body>
     </html>
   );

@@ -35,7 +35,7 @@ export default async function CheckoutSuccessPage({
         <div className="order-box">
           <div className="row">
             <span>N° de pedido</span>
-            <b>{formatOrderNumber(order.id)}</b>
+            <b>{order.order_number ?? formatOrderNumber(order.id)}</b>
           </div>
           <div className="row">
             <span>Método de pago</span>

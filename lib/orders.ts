@@ -115,7 +115,7 @@ export async function createPendingOrder(
   const skus = input.items.map((it) => it.product_id);
   const { data: products, error: productsError } = await supabase
     .from("products")
-    .select("id, sku, name, price, sale_price, stock, is_active")
+    .select("id, sku, name, price, sale_price, stock, active")
     .in("sku", skus);
 
   if (productsError) throw productsError;
@@ -129,7 +129,7 @@ export async function createPendingOrder(
       throw new OrderError(`Cantidad inválida para ${line.product_id}`);
     }
     const product = bySku.get(line.product_id);
-    if (!product || !product.is_active) {
+    if (!product || !product.active) {
       throw new OrderError(`Producto no disponible: ${line.product_id}`);
     }
     const price = product.sale_price ?? product.price;
@@ -154,7 +154,7 @@ export async function createPendingOrder(
   const subtotal = orderItems.reduce((sum, it) => sum + it.subtotal, 0);
 
   let discount = 0;
-  let couponCode: string | null = null;
+  let couponId: string | null = null;
   if (input.couponCode) {
     const { data: coupon } = await supabase
       .from("coupons")
@@ -162,15 +162,25 @@ export async function createPendingOrder(
       .eq("code", input.couponCode.trim().toUpperCase())
       .eq("active", true)
       .maybeSingle();
-    if (coupon && (!coupon.expires_at || new Date(coupon.expires_at) > new Date())) {
-      couponCode = coupon.code;
+    const now = new Date();
+    const withinWindow =
+      coupon &&
+      (!coupon.valid_from || new Date(coupon.valid_from) <= now) &&
+      (!coupon.valid_until || new Date(coupon.valid_until) > now);
+    const withinLimit =
+      coupon && (coupon.usage_limit === null || coupon.times_used < coupon.usage_limit);
+    if (coupon && withinWindow && withinLimit) {
+      couponId = coupon.id;
       discount =
         coupon.discount_type === "percentage"
           ? Math.round((subtotal * Number(coupon.discount_value)) / 100)
           : Number(coupon.discount_value);
       discount = Math.min(discount, subtotal);
     }
-    // Un código inválido/expirado se ignora silenciosamente: no bloqueamos el checkout por eso.
+    // Un código inválido/vencido/agotado se ignora silenciosamente: no
+    // bloqueamos el checkout por eso. times_used recién se incrementa
+    // cuando el pago se aprueba de verdad (ver applyPaymentResult) para
+    // no "gastar" el cupón en carritos que nunca se pagan.
   }
 
   const shippingCost =
@@ -188,7 +198,7 @@ export async function createPendingOrder(
       total,
       shipping_method: input.shippingMethod,
       shipping_address_id: shippingAddressId,
-      coupon_code: couponCode,
+      coupon_id: couponId,
     })
     .select("id")
     .single();
@@ -200,10 +210,10 @@ export async function createPendingOrder(
       order_id: order.id,
       product_id: it.productId,
       product_sku: it.product_id,
-      name: it.name,
+      product_name: it.name,
       unit_price: it.unit_price,
       quantity: it.quantity,
-      subtotal: it.subtotal,
+      line_total: it.subtotal,
     }))
   );
 
@@ -305,13 +315,14 @@ export async function applyPaymentResult(params: {
 
   const { data: order, error: orderError } = await supabase
     .from("orders")
-    .select("id, status")
+    .select("id, status, coupon_id")
     .eq("id", params.orderId)
     .single();
   if (orderError) throw orderError;
 
-  // Idempotencia adicional: si el pedido ya está aprobado, no
-  // volvemos a descontar stock aunque llegue una notificación repetida.
+  // Idempotencia adicional: si el pedido ya está aprobado, no volvemos
+  // a descontar stock ni a "gastar" el cupón aunque llegue una
+  // notificación repetida.
   if (order.status !== "approved" && status === "approved") {
     const { data: items, error: itemsError } = await supabase
       .from("order_items")
@@ -328,6 +339,13 @@ export async function applyPaymentResult(params: {
       // Si el RPC no existe todavía (falta correrlo en Supabase), no
       // rompemos la confirmación del pago por eso — se loguea.
       if (stockError) console.error("No se pudo descontar stock:", stockError);
+    }
+
+    if (order.coupon_id) {
+      const { error: couponError } = await supabase.rpc("increment_coupon_usage", {
+        p_coupon_id: order.coupon_id,
+      });
+      if (couponError) console.error("No se pudo actualizar el uso del cupón:", couponError);
     }
   }
 
@@ -365,7 +383,7 @@ export async function getOrderById(orderId: string) {
   const supabase = getSupabaseAdminClient();
   const { data, error } = await supabase
     .from("orders")
-    .select("id, status, subtotal, shipping_cost, discount, total, created_at")
+    .select("id, order_number, status, subtotal, shipping_cost, discount, total, created_at")
     .eq("id", orderId)
     .maybeSingle();
   if (error) throw error;

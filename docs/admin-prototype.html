@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meyer SkinBeauty — Admin</title>
+<style>
+:root{
+  --black:#0B0B0B; --champagne:#B08D57; --champagne-l:#D8BE94;
+  --ivory:#F3EDE3; --cream:#EDE4D3; --beige:#E3D5BE; --white:#fff;
+  --muted:#8A8478; --green:#5C8A63; --amber:#C08A3E; --red:#B65B4E;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:"Helvetica Neue",Arial,sans-serif; background:var(--ivory); color:var(--black); -webkit-font-smoothing:antialiased;}
+.serif{font-family:"Georgia","Times New Roman",serif;}
+a{color:inherit; text-decoration:none;}
+button{font-family:inherit; cursor:pointer; border:none;}
+input,select,textarea{font-family:inherit;}
+
+.layout{display:flex; min-height:100vh;}
+
+/* SIDEBAR */
+.sidebar{
+  width:220px; background:var(--black); color:var(--ivory); flex:none;
+  display:flex; flex-direction:column; position:sticky; top:0; height:100vh;
+}
+.sidebar .brand{display:flex; align-items:center; gap:10px; padding:22px 20px; border-bottom:1px solid #26221C;}
+.sidebar .brand img{width:30px; height:30px; border-radius:50%;}
+.sidebar .brand span{font-size:14px; letter-spacing:.12em;}
+.sidebar nav{flex:1; padding:14px 0;}
+.sidebar nav button{
+  width:100%; text-align:left; background:none; color:#C9C2B3; padding:11px 20px;
+  font-size:12.5px; letter-spacing:.03em; display:flex; align-items:center; gap:10px;
+}
+.sidebar nav button .ic{font-size:14px; width:16px;}
+.sidebar nav button.active{color:var(--champagne-l); background:#161410; border-left:2px solid var(--champagne);}
+.sidebar .foot{padding:16px 20px; font-size:10.5px; color:#6E6A5E; border-top:1px solid #26221C;}
+
+/* MAIN */
+main{flex:1; min-width:0;}
+.topbar{
+  background:var(--white); border-bottom:1px solid #E1D6C0; padding:18px 28px;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.topbar h1{font-size:18px; font-weight:400; text-transform:uppercase; letter-spacing:.05em;}
+.topbar .actions{display:flex; gap:10px;}
+.btn{padding:9px 16px; font-size:12px; letter-spacing:.04em;}
+.btn-dark{background:var(--black); color:#fff;}
+.btn-outline{background:none; border:1px solid #DCD2BC; color:var(--black);}
+.page{padding:26px 28px;}
+.panel{display:none;}
+.panel.active{display:block;}
+
+/* KPI CARDS */
+.kpis{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:26px;}
+.kpi{background:var(--white); border:1px solid #E1D6C0; padding:18px 20px;}
+.kpi .label{font-size:10.5px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin-bottom:8px;}
+.kpi .value{font-size:24px;}
+.kpi .sub{font-size:11px; color:var(--green); margin-top:4px;}
+
+/* CARD/TABLE */
+.card{background:var(--white); border:1px solid #E1D6C0;}
+.card-head{padding:16px 20px; border-bottom:1px solid #E1D6C0; display:flex; justify-content:space-between; align-items:center;}
+.card-head h3{font-size:13px; text-transform:uppercase; letter-spacing:.08em; font-weight:600;}
+table{width:100%; border-collapse:collapse; font-size:13px;}
+th{text-align:left; font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); padding:10px 20px; border-bottom:1px solid #E1D6C0;}
+td{padding:12px 20px; border-bottom:1px solid #EEE6D6; vertical-align:middle;}
+tr:last-child td{border-bottom:none;}
+.pill{font-size:10px; text-transform:uppercase; letter-spacing:.04em; padding:4px 9px; border-radius:2px; display:inline-block;}
+.pill.stock-ok{background:#EAF1EA; color:var(--green);}
+.pill.stock-low{background:#FBF0E2; color:var(--amber);}
+.pill.stock-out{background:#F7E9E6; color:var(--red);}
+.pill.status-pending{background:#FBF0E2; color:var(--amber);}
+.pill.status-paid{background:#EAF1EA; color:var(--green);}
+.pill.status-cancelled{background:#F7E9E6; color:var(--red);}
+.row-actions{display:flex; gap:12px; font-size:11.5px;}
+.row-actions button{background:none; color:var(--muted); text-decoration:underline;}
+.prod-name{display:flex; align-items:center; gap:10px;}
+.prod-thumb{width:34px; height:34px; background:var(--cream); display:flex; align-items:center; justify-content:center; font-size:16px; flex:none;}
+.prod-name .n{font-size:12.5px;}
+.prod-name .b{font-size:10.5px; color:var(--muted);}
+
+/* SEARCH BAR */
+.searchbar{padding:14px 20px; border-bottom:1px solid #E1D6C0;}
+.searchbar input{width:280px; max-width:100%; padding:9px 12px; border:1px solid #DCD2BC; font-size:12.5px;}
+
+/* FORM MODAL */
+.modal-overlay{position:fixed; inset:0; background:rgba(0,0,0,.45); display:none; align-items:flex-start; justify-content:center; z-index:60; overflow-y:auto; padding:40px 20px;}
+.modal-overlay.show{display:flex;}
+.modal{background:var(--white); width:560px; max-width:100%; border:1px solid #E1D6C0;}
+.modal-head{padding:18px 22px; border-bottom:1px solid #E1D6C0; display:flex; justify-content:space-between; align-items:center;}
+.modal-head h3{font-size:14px; text-transform:uppercase; letter-spacing:.06em;}
+.modal-close{font-size:18px; background:none; color:var(--muted);}
+.modal-body{padding:22px; max-height:70vh; overflow-y:auto;}
+.field{margin-bottom:14px;}
+.field label{font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); display:block; margin-bottom:5px;}
+.field input, .field select, .field textarea{width:100%; padding:10px 12px; border:1px solid #DCD2BC; font-size:13px; background:var(--white);}
+.field textarea{resize:vertical; min-height:70px;}
+.field-row{display:flex; gap:12px;}
+.field-row .field{flex:1;}
+.modal-foot{padding:16px 22px; border-top:1px solid #E1D6C0; display:flex; justify-content:flex-end; gap:10px;}
+.toggle-row{display:flex; gap:18px; margin-bottom:14px; font-size:12.5px;}
+.toggle-row label{display:flex; align-items:center; gap:6px;}
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand"><img src="img/d89a5fdd-3a94-4b0b-8c39-5b7d5998e345.jpeg"><span class="serif">MEYER · ADMIN</span></div>
+    <nav>
+      <button class="active" data-p="dashboard" onclick="showPanel('dashboard')"><span class="ic">◈</span>Dashboard</button>
+      <button data-p="products" onclick="showPanel('products')"><span class="ic">▤</span>Productos</button>
+      <button data-p="orders" onclick="showPanel('orders')"><span class="ic">▥</span>Pedidos</button>
+      <button data-p="stock" onclick="showPanel('stock')"><span class="ic">◫</span>Stock</button>
+      <button data-p="coupons" onclick="showPanel('coupons')"><span class="ic">◆</span>Cupones</button>
+      <button data-p="editorial" onclick="showPanel('editorial')"><span class="ic">✎</span>The Meyer Edit</button>
+    </nav>
+    <div class="foot">Etapa 3 — Panel administrativo<br>(prototipo de interfaz)</div>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+    <div class="topbar">
+      <h1 id="topTitle">Dashboard</h1>
+      <div class="actions" id="topActions"></div>
+    </div>
+
+    <div class="page">
+
+      <!-- DASHBOARD -->
+      <div class="panel active" id="panel-dashboard">
+        <div class="kpis">
+          <div class="kpi"><div class="label">Ventas del mes</div><div class="value" id="kpiSales">$ 0</div><div class="sub">Datos de ejemplo</div></div>
+          <div class="kpi"><div class="label">Pedidos</div><div class="value" id="kpiOrders">0</div></div>
+          <div class="kpi"><div class="label">Productos activos</div><div class="value" id="kpiProducts">0</div></div>
+          <div class="kpi"><div class="label">Stock bajo</div><div class="value" id="kpiLowStock">0</div></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3>Últimos pedidos</h3></div>
+          <table>
+            <tr><th>N° pedido</th><th>Cliente</th><th>Total</th><th>Estado</th></tr>
+            <tbody id="dashOrdersTable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- PRODUCTOS -->
+      <div class="panel" id="panel-products">
+        <div class="card">
+          <div class="searchbar"><input placeholder="Buscar por nombre, marca o SKU..." oninput="filterProducts(this.value)"></div>
+          <table>
+            <tr><th>Producto</th><th>Categoría</th><th>Precio</th><th>Stock</th><th>Estado</th><th></th></tr>
+            <tbody id="productsTable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- PEDIDOS -->
+      <div class="panel" id="panel-orders">
+        <div class="card">
+          <table>
+            <tr><th>N° pedido</th><th>Cliente</th><th>Fecha</th><th>Total</th><th>Pago</th><th>Estado</th><th></th></tr>
+            <tbody id="ordersTable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- STOCK -->
+      <div class="panel" id="panel-stock">
+        <div class="card">
+          <div class="card-head"><h3>Control de stock</h3></div>
+          <table>
+            <tr><th>Producto</th><th>SKU</th><th>Stock actual</th><th>Umbral mínimo</th><th>Estado</th></tr>
+            <tbody id="stockTable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- CUPONES -->
+      <div class="panel" id="panel-coupons">
+        <div class="card">
+          <div class="card-head"><h3>Cupones</h3></div>
+          <table>
+            <tr><th>Código</th><th>Descuento</th><th>Usos</th><th>Estado</th></tr>
+            <tbody id="couponsTable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- EDITORIAL -->
+      <div class="panel" id="panel-editorial">
+        <div class="card">
+          <div class="card-head"><h3>The Meyer Edit — artículos</h3></div>
+          <table>
+            <tr><th>Título</th><th>Categoría</th><th>Estado</th></tr>
+            <tbody id="editorialTable"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- MODAL PRODUCTO -->
+<div class="modal-overlay" id="productModal">
+  <div class="modal">
+    <div class="modal-head"><h3 id="modalTitle">Nuevo producto</h3><button class="modal-close" onclick="closeModal()">✕</button></div>
+    <div class="modal-body">
+      <div class="field-row">
+        <div class="field"><label>Marca</label><input id="f_brand" placeholder="COSRX"></div>
+        <div class="field"><label>SKU</label><input id="f_sku" placeholder="COS-92-001"></div>
+      </div>
+      <div class="field"><label>Nombre del producto</label><input id="f_name" placeholder="Advanced Snail 92 All In One Cream"></div>
+      <div class="field-row">
+        <div class="field"><label>Categoría</label>
+          <select id="f_cat">
+            <option>Skincare Coreano</option><option>Medical Skincare</option><option>Makeup</option>
+            <option>Labios</option><option>Mascarillas</option><option>Body & Fragrances</option>
+          </select>
+        </div>
+        <div class="field"><label>Precio</label><input id="f_price" type="number" placeholder="32900"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Precio oferta (opcional)</label><input id="f_sale" type="number" placeholder=""></div>
+        <div class="field"><label>Stock</label><input id="f_stock" type="number" placeholder="20"></div>
+      </div>
+      <div class="field"><label>Descripción corta</label><textarea id="f_desc"></textarea></div>
+      <div class="field"><label>Ingredientes clave (separados por coma)</label><input id="f_ing" placeholder="Mucina de caracol, Alantoína"></div>
+      <div class="toggle-row">
+        <label><input type="checkbox" id="f_featured"> Destacado</label>
+        <label><input type="checkbox" id="f_best"> Best seller</label>
+        <label><input type="checkbox" id="f_new"> Novedad</label>
+        <label><input type="checkbox" id="f_active" checked> Activo</label>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-outline" onclick="closeModal()">Cancelar</button>
+      <button class="btn btn-dark" onclick="saveProduct()">Guardar producto</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ---------- DATA DE EJEMPLO (se conecta a Supabase real en el desarrollo final) ----------
+let products = [
+  {sku:"COS-92-001", brand:"COSRX", name:"Advanced Snail 92 All In One Cream", cat:"Skincare Coreano", price:32900, sale:null, stock:24, threshold:5, active:true, icon:"🫙"},
+  {sku:"ANU-HL-002", brand:"ANUA", name:"Heartleaf 77% Soothing Toner", cat:"Skincare Coreano", price:28900, sale:null, stock:31, threshold:5, active:true, icon:"🧴"},
+  {sku:"MED-CAP-003", brand:"MEDIHEAL", name:"Collagen Ampoule Pad", cat:"Mascarillas", price:27900, sale:null, stock:4, threshold:5, active:true, icon:"💿"},
+  {sku:"BOJ-RS-004", brand:"BEAUTY OF JOSEON", name:"Relief Sun Rice + Probiotics SPF50+", cat:"Skincare Coreano", price:24900, sale:null, stock:18, threshold:5, active:true, icon:"☀️"},
+  {sku:"SK1-MC-005", brand:"SKIN1004", name:"Madagascar Centella Ampoule", cat:"Medical Skincare", price:29900, sale:null, stock:2, threshold:5, active:true, icon:"💧"},
+  {sku:"VS-VP-006", brand:"VICTORIA'S SECRET", name:"Velvet Petals Body Mist", cat:"Body & Fragrances", price:18900, sale:16900, stock:0, threshold:5, active:true, icon:"🌺"},
+];
+
+let orders = [
+  {number:"#MSB2587", customer:"Julia Fernández", date:"22 ago 2026", total:61800, payment:"Mercado Pago", status:"paid"},
+  {number:"#MSB2586", customer:"Carla Núñez", date:"22 ago 2026", total:32900, payment:"Mercado Pago", status:"pending"},
+  {number:"#MSB2585", customer:"Rocío Paz", date:"21 ago 2026", total:47800, payment:"Efectivo", status:"paid"},
+  {number:"#MSB2584", customer:"Agostina Ríos", date:"20 ago 2026", total:18900, payment:"Mercado Pago", status:"cancelled"},
+];
+
+let coupons = [
+  {code:"MEYER10", type:"10% OFF", uses:"34 / 100", active:true},
+  {code:"BIENVENIDA", type:"$ 3.000 OFF", uses:"12 / —", active:true},
+];
+
+let editorial = [
+  {title:"Cómo armar tu rutina coreana en 5 pasos", cat:"Rutinas", published:true},
+  {title:"Ingredientes clave: qué hace el ácido hialurónico", cat:"Ingredientes", published:true},
+  {title:"Medical Skincare: cuándo sumar dermocosmética", cat:"Medical Skincare", published:false},
+];
+
+function fmt(n){ return "$ " + n.toLocaleString("es-AR"); }
+
+function showPanel(name){
+  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
+  document.getElementById("panel-"+name).classList.add("active");
+  document.querySelectorAll(".sidebar nav button").forEach(b=>b.classList.remove("active"));
+  document.querySelector(`[data-p="${name}"]`).classList.add("active");
+  const titles = {dashboard:"Dashboard", products:"Productos", orders:"Pedidos", stock:"Stock", coupons:"Cupones", editorial:"The Meyer Edit"};
+  document.getElementById("topTitle").textContent = titles[name];
+  const actions = document.getElementById("topActions");
+  actions.innerHTML = name==="products" ? `<button class="btn btn-dark" onclick="openModal()">+ Nuevo producto</button>` : "";
+  renderAll();
+}
+
+function stockPill(p){
+  if(p.stock===0) return `<span class="pill stock-out">Sin stock</span>`;
+  if(p.stock<=p.threshold) return `<span class="pill stock-low">Pocas unidades</span>`;
+  return `<span class="pill stock-ok">En stock</span>`;
+}
+function statusPill(s){
+  const map={pending:["status-pending","Pendiente"], paid:["status-paid","Pagado"], cancelled:["status-cancelled","Cancelado"]};
+  const [cls,label]=map[s];
+  return `<span class="pill ${cls}">${label}</span>`;
+}
+
+function renderDashboard(){
+  document.getElementById("kpiSales").textContent = fmt(orders.filter(o=>o.status==="paid").reduce((s,o)=>s+o.total,0));
+  document.getElementById("kpiOrders").textContent = orders.length;
+  document.getElementById("kpiProducts").textContent = products.filter(p=>p.active).length;
+  document.getElementById("kpiLowStock").textContent = products.filter(p=>p.stock<=p.threshold).length;
+  document.getElementById("dashOrdersTable").innerHTML = orders.slice(0,4).map(o=>`
+    <tr><td>${o.number}</td><td>${o.customer}</td><td>${fmt(o.total)}</td><td>${statusPill(o.status)}</td></tr>
+  `).join("");
+}
+
+function renderProducts(filter){
+  const list = products.filter(p => !filter || (p.name+p.brand+p.sku).toLowerCase().includes(filter.toLowerCase()));
+  document.getElementById("productsTable").innerHTML = list.map(p=>`
+    <tr>
+      <td><div class="prod-name"><div class="prod-thumb">${p.icon}</div><div><div class="n">${p.name}</div><div class="b">${p.brand} · ${p.sku}</div></div></div></td>
+      <td>${p.cat}</td>
+      <td>${p.sale?`<s style="color:var(--muted)">${fmt(p.price)}</s> ${fmt(p.sale)}`:fmt(p.price)}</td>
+      <td>${stockPill(p)} <span style="color:var(--muted); font-size:11px;">(${p.stock})</span></td>
+      <td>${p.active?'<span class="pill stock-ok">Activo</span>':'<span class="pill stock-out">Inactivo</span>'}</td>
+      <td><div class="row-actions"><button onclick="editProduct('${p.sku}')">Editar</button><button onclick="toggleActive('${p.sku}')">${p.active?'Desactivar':'Activar'}</button></div></td>
+    </tr>
+  `).join("");
+}
+function filterProducts(v){ renderProducts(v); }
+
+function renderOrders(){
+  document.getElementById("ordersTable").innerHTML = orders.map(o=>`
+    <tr>
+      <td>${o.number}</td><td>${o.customer}</td><td>${o.date}</td><td>${fmt(o.total)}</td><td>${o.payment}</td>
+      <td>${statusPill(o.status)}</td>
+      <td><div class="row-actions"><button onclick="alert('Ver detalle de ${o.number}')">Ver</button></div></td>
+    </tr>
+  `).join("");
+}
+
+function renderStock(){
+  document.getElementById("stockTable").innerHTML = products.map(p=>`
+    <tr><td>${p.name}</td><td>${p.sku}</td><td>${p.stock}</td><td>${p.threshold}</td><td>${stockPill(p)}</td></tr>
+  `).join("");
+}
+
+function renderCoupons(){
+  document.getElementById("couponsTable").innerHTML = coupons.map(c=>`
+    <tr><td>${c.code}</td><td>${c.type}</td><td>${c.uses}</td><td>${c.active?'<span class="pill stock-ok">Activo</span>':'<span class="pill stock-out">Inactivo</span>'}</td></tr>
+  `).join("");
+}
+
+function renderEditorial(){
+  document.getElementById("editorialTable").innerHTML = editorial.map(e=>`
+    <tr><td>${e.title}</td><td>${e.cat}</td><td>${e.published?'<span class="pill stock-ok">Publicado</span>':'<span class="pill stock-low">Borrador</span>'}</td></tr>
+  `).join("");
+}
+
+function renderAll(){
+  renderDashboard(); renderProducts(); renderOrders(); renderStock(); renderCoupons(); renderEditorial();
+}
+
+// ---------- MODAL PRODUCTO ----------
+let editingSku = null;
+function openModal(){
+  editingSku = null;
+  document.getElementById("modalTitle").textContent = "Nuevo producto";
+  ["f_brand","f_sku","f_name","f_price","f_sale","f_stock","f_desc","f_ing"].forEach(id=>document.getElementById(id).value="");
+  document.getElementById("f_cat").value = "Skincare Coreano";
+  document.getElementById("f_featured").checked=false;
+  document.getElementById("f_best").checked=false;
+  document.getElementById("f_new").checked=false;
+  document.getElementById("f_active").checked=true;
+  document.getElementById("productModal").classList.add("show");
+}
+function editProduct(sku){
+  const p = products.find(x=>x.sku===sku);
+  editingSku = sku;
+  document.getElementById("modalTitle").textContent = "Editar producto";
+  document.getElementById("f_brand").value = p.brand;
+  document.getElementById("f_sku").value = p.sku;
+  document.getElementById("f_name").value = p.name;
+  document.getElementById("f_cat").value = p.cat;
+  document.getElementById("f_price").value = p.price;
+  document.getElementById("f_sale").value = p.sale || "";
+  document.getElementById("f_stock").value = p.stock;
+  document.getElementById("f_active").checked = p.active;
+  document.getElementById("productModal").classList.add("show");
+}
+function closeModal(){ document.getElementById("productModal").classList.remove("show"); }
+function saveProduct(){
+  const data = {
+    brand: document.getElementById("f_brand").value || "Marca",
+    sku: document.getElementById("f_sku").value || ("SKU-"+Date.now()),
+    name: document.getElementById("f_name").value || "Producto sin nombre",
+    cat: document.getElementById("f_cat").value,
+    price: Number(document.getElementById("f_price").value) || 0,
+    sale: Number(document.getElementById("f_sale").value) || null,
+    stock: Number(document.getElementById("f_stock").value) || 0,
+    threshold: 5,
+    active: document.getElementById("f_active").checked,
+    icon: "🧴"
+  };
+  if(editingSku){
+    const idx = products.findIndex(p=>p.sku===editingSku);
+    products[idx] = {...products[idx], ...data};
+  } else {
+    products.push(data);
+  }
+  closeModal();
+  renderAll();
+}
+function toggleActive(sku){
+  const p = products.find(x=>x.sku===sku);
+  p.active = !p.active;
+  renderAll();
+}
+
+renderAll();
+</script>
+</body>
+</html>

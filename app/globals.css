@@ -628,12 +628,19 @@ footer.site-footer {
   display: block;
   margin-bottom: 5px;
 }
-.field input {
+.field input,
+.field select,
+.field textarea {
   width: 100%;
   padding: 12px 13px;
   border: 1px solid var(--border);
   background: var(--white);
   font-size: 13.5px;
+  font-family: inherit;
+}
+.field textarea {
+  resize: vertical;
+  min-height: 70px;
 }
 .field-row {
   display: flex;
@@ -767,4 +774,239 @@ footer.site-footer {
   font-size: 11.5px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+}
+
+/* ================================================================
+   PANEL /admin — todo escopado bajo .layout para no interferir con
+   las clases del storefront (algunos nombres se repiten a propósito,
+   ej. .btn-outline, pero storefront y admin nunca comparten DOM).
+   ================================================================ */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--ivory);
+}
+
+.layout .sidebar {
+  width: 220px;
+  background: var(--black);
+  color: var(--ivory);
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+.layout .sidebar .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 20px;
+  border-bottom: 1px solid #26221c;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+}
+.layout .sidebar nav {
+  flex: 1;
+  padding: 14px 0;
+}
+.layout .sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 20px;
+  font-size: 12.5px;
+  letter-spacing: 0.03em;
+  color: #c9c2b3;
+}
+.layout .sidebar nav a .ic {
+  font-size: 14px;
+  width: 16px;
+}
+.layout .sidebar nav a.active {
+  color: var(--champagne-l);
+  background: #161410;
+  border-left: 2px solid var(--champagne);
+}
+.layout .sidebar .foot {
+  padding: 16px 20px;
+  font-size: 10.5px;
+  color: #6e6a5e;
+  border-top: 1px solid #26221c;
+  line-height: 1.6;
+}
+.layout .logout-btn {
+  color: #6e6a5e;
+  text-decoration: underline;
+  font-size: 10.5px;
+}
+
+.layout main {
+  flex: 1;
+  min-width: 0;
+}
+.layout .topbar {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.layout .topbar h1 {
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.layout .topbar .actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.layout .page {
+  padding: 26px 28px;
+}
+
+.layout .btn {
+  padding: 9px 16px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  display: inline-block;
+}
+.layout .btn-dark {
+  background: var(--black);
+  color: #fff;
+}
+.layout .btn-outline {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--black);
+}
+
+.layout .card {
+  background: var(--white);
+  border: 1px solid var(--border);
+}
+.layout .card-head {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.layout .card-head h3 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+.layout table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.layout th {
+  text-align: left;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.layout td {
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee6d6;
+  vertical-align: middle;
+}
+.layout tr:last-child td {
+  border-bottom: none;
+}
+.layout .pill {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 9px;
+  border-radius: 2px;
+  display: inline-block;
+}
+.layout .pill.stock-ok,
+.layout .pill.status-paid {
+  background: #eaf1ea;
+  color: #5c8a63;
+}
+.layout .pill.stock-low,
+.layout .pill.status-pending {
+  background: #fbf0e2;
+  color: #c08a3e;
+}
+.layout .pill.stock-out,
+.layout .pill.status-cancelled {
+  background: #f7e9e6;
+  color: #b65b4e;
+}
+.layout .row-actions {
+  display: flex;
+  gap: 12px;
+  font-size: 11.5px;
+}
+.layout .row-actions button,
+.layout .row-actions a {
+  background: none;
+  color: var(--muted);
+  text-decoration: underline;
+}
+.layout .prod-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.layout .prod-thumb {
+  width: 34px;
+  height: 34px;
+  background: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex: none;
+}
+.layout .prod-name .n {
+  font-size: 12.5px;
+}
+.layout .prod-name .b {
+  font-size: 10.5px;
+  color: var(--muted);
+}
+.layout .searchbar {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.layout .searchbar input {
+  width: 280px;
+  max-width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  font-size: 12.5px;
+}
+.layout .toggle-row {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 14px;
+  font-size: 12.5px;
+  flex-wrap: wrap;
+}
+.layout .toggle-row label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.layout .modal-foot {
+  padding: 16px 22px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
 }
