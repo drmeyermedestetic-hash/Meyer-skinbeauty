@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MEYER SKINBEAUTY — Propuesta Digital · Etapa 1</title>
+<style>
+  :root{
+    --black:#0B0B0B;
+    --champagne:#B08D57;
+    --champagne-light:#D8BE94;
+    --ivory:#F3EDE3;
+    --cream:#EDE4D3;
+    --beige:#E3D5BE;
+    --white:#FFFFFF;
+    --text-muted:#8A8478;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--ivory);
+    color:var(--black);
+    font-family:"Georgia","Times New Roman",serif;
+    line-height:1.5;
+  }
+  .sans{font-family:"Helvetica Neue",Arial,sans-serif;}
+  h1,h2,h3{font-weight:400; letter-spacing:.04em;}
+  .eyebrow{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.25em;
+    font-size:11px;
+    color:var(--champagne);
+  }
+  header.hero{
+    background:var(--black);
+    color:var(--ivory);
+    padding:64px 24px 56px;
+    text-align:center;
+  }
+  header.hero img.logo{width:64px;height:64px;margin-bottom:20px;}
+  header.hero h1{
+    font-size:34px;
+    margin:6px 0 4px;
+    color:var(--champagne-light);
+    text-transform:uppercase;
+    letter-spacing:.12em;
+  }
+  header.hero p.sub{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    color:#C8C0B2;
+    font-size:13px;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    margin:0;
+  }
+  header.hero .stage{
+    display:inline-block;
+    margin-top:28px;
+    border:1px solid var(--champagne);
+    color:var(--champagne-light);
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:11px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    padding:8px 18px;
+  }
+
+  section{
+    max-width:1040px;
+    margin:0 auto;
+    padding:64px 24px;
+    border-bottom:1px solid #DCD2BC;
+  }
+  section:last-of-type{border-bottom:none;}
+  .num{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    color:var(--champagne);
+    font-size:12px;
+    letter-spacing:.2em;
+  }
+  h2.title{
+    font-size:28px;
+    margin:6px 0 10px;
+  }
+  p.lead{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    color:#544F45;
+    font-size:15px;
+    max-width:640px;
+    margin-bottom:36px;
+  }
+
+  /* Identity photos */
+  .photo-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:14px;
+  }
+  .photo-grid img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    display:block;
+  }
+  .photo-cap{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:11px;
+    color:var(--text-muted);
+    letter-spacing:.05em;
+    margin-top:6px;
+  }
+
+  /* Palette */
+  .palette{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:16px;
+  }
+  .swatch{border:1px solid #DCD2BC;}
+  .swatch .fill{height:110px;}
+  .swatch .meta{
+    padding:12px 14px;
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    background:var(--white);
+  }
+  .swatch .meta .name{
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    font-weight:600;
+  }
+  .swatch .meta .hex{
+    font-size:12px;
+    color:var(--text-muted);
+    margin-top:2px;
+  }
+
+  /* Typography */
+  .type-sample{
+    border:1px solid #DCD2BC;
+    background:var(--white);
+    padding:28px;
+    margin-bottom:18px;
+  }
+  .type-sample .role{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.2em;
+    color:var(--champagne);
+    margin-bottom:10px;
+  }
+  .type-sample .display{
+    font-family:"Georgia","Times New Roman",serif;
+    font-size:38px;
+    letter-spacing:.02em;
+  }
+  .type-sample .body-sans{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:15px;
+    color:#444;
+  }
+  .type-note{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:12px;
+    color:var(--text-muted);
+    margin-top:8px;
+  }
+
+  /* Mockup reference */
+  .mock-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .mock-grid img{width:100%; display:block; border:1px solid #DCD2BC;}
+  @media(max-width:640px){.mock-grid{grid-template-columns:1fr;}}
+
+  /* Sitemap */
+  .sitemap{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:14px;
+    columns:2;
+    column-gap:40px;
+  }
+  .sitemap .branch{break-inside:avoid; margin-bottom:14px;}
+  .sitemap .branch .top{font-weight:600; color:var(--black);}
+  .sitemap .branch ul{margin:6px 0 0; padding-left:18px; color:#544F45;}
+  .sitemap .branch li{margin-bottom:3px;}
+
+  /* Components list */
+  .comp-list{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:14px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:10px 30px;
+  }
+  .comp-list div{
+    padding:12px 0;
+    border-bottom:1px solid #E4DBC7;
+    color:#333;
+  }
+  .comp-list div b{display:block; color:var(--black); font-size:14px; margin-bottom:2px;}
+  .comp-list div span{color:var(--text-muted); font-size:12.5px;}
+
+  /* Data model table */
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:13px;
+  }
+  table th{
+    text-align:left;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:11px;
+    color:var(--champagne);
+    border-bottom:1px solid var(--champagne);
+    padding:8px 10px;
+  }
+  table td{
+    padding:9px 10px;
+    border-bottom:1px solid #E4DBC7;
+    color:#333;
+  }
+
+  /* wireframe blocks */
+  .wf-note{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:13px;
+    color:#544F45;
+    background:var(--white);
+    border:1px solid #DCD2BC;
+    padding:16px 18px;
+    margin-top:12px;
+  }
+  .wf-note b{color:var(--black);}
+
+  /* stack pills */
+  .stack{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    font-family:"Helvetica Neue",Arial,sans-serif;
+  }
+  .stack span{
+    border:1px solid var(--champagne);
+    color:#4A4437;
+    font-size:12px;
+    padding:6px 12px;
+    letter-spacing:.03em;
+  }
+
+  footer{
+    background:var(--black);
+    color:#B8B2A4;
+    text-align:center;
+    padding:40px 24px;
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:12px;
+    letter-spacing:.1em;
+  }
+  footer .gold{color:var(--champagne-light);}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img class="logo" src="img/d89a5fdd-3a94-4b0b-8c39-5b7d5998e345.jpeg" alt="Logo Meyer">
+  <h1>Meyer SkinBeauty</h1>
+  <p class="sub">Medical Skincare · Cosmetics · Makeup — Tienda online</p>
+  <div class="stage">Etapa 1 · Propuesta de diseño y arquitectura</div>
+</header>
+
+<!-- 1. IDENTIDAD -->
+<section>
+  <div class="num">01</div>
+  <h2 class="title">Identidad de marca</h2>
+  <p class="lead">Punto de partida: el local real y tu Instagram. La web debe sentirse como la extensión digital de este mismo espacio — no una plantilla genérica de skincare coreano.</p>
+  <div class="photo-grid">
+    <div>
+      <img src="img/IMG_1705.jpeg" alt="Cartel Meyer SkinBeauty">
+      <div class="photo-cap">Cartel iluminado — MEYER SKINBEAUTY</div>
+    </div>
+    <div>
+      <img src="img/IMG_1651.jpeg" alt="Interior circulos dorados">
+      <div class="photo-cap">Vidriera — círculos metálicos dorados con luz cálida</div>
+    </div>
+    <div>
+      <img src="img/IMG_1652.jpeg" alt="Fachada nocturna">
+      <div class="photo-cap">Fachada nocturna — estructura de bronce y vidrio</div>
+    </div>
+    <div>
+      <img src="img/IMG_1899.png" alt="Instagram Meyer">
+      <div class="photo-cap">Instagram — negro, dorado, editorial médico</div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. PALETA -->
+<section>
+  <div class="num">02</div>
+  <h2 class="title">Paleta de color — variables globales</h2>
+  <p class="lead">Extraída de la vidriera, el mobiliario dorado y tu comunicación en Instagram. El dorado se mantiene "metal champagne", nunca amarillo.</p>
+  <div class="palette">
+    <div class="swatch">
+      <div class="fill" style="background:#0B0B0B;"></div>
+      <div class="meta"><div class="name">Black</div><div class="hex">#0B0B0B</div></div>
+    </div>
+    <div class="swatch">
+      <div class="fill" style="background:#B08D57;"></div>
+      <div class="meta"><div class="name">Champagne Gold</div><div class="hex">#B08D57</div></div>
+    </div>
+    <div class="swatch">
+      <div class="fill" style="background:#D8BE94;"></div>
+      <div class="meta"><div class="name">Champagne Light</div><div class="hex">#D8BE94</div></div>
+    </div>
+    <div class="swatch">
+      <div class="fill" style="background:#F3EDE3;"></div>
+      <div class="meta"><div class="name">Ivory</div><div class="hex">#F3EDE3</div></div>
+    </div>
+    <div class="swatch">
+      <div class="fill" style="background:#EDE4D3;"></div>
+      <div class="meta"><div class="name">Cream</div><div class="hex">#EDE4D3</div></div>
+    </div>
+    <div class="swatch">
+      <div class="fill" style="background:#E3D5BE;"></div>
+      <div class="meta"><div class="name">Warm Beige</div><div class="hex">#E3D5BE</div></div>
+    </div>
+    <div class="swatch">
+      <div class="fill" style="background:#FFFFFF; border-bottom:1px solid #eee;"></div>
+      <div class="meta"><div class="name">White</div><div class="hex">#FFFFFF</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. TIPOGRAFIA -->
+<section>
+  <div class="num">03</div>
+  <h2 class="title">Tipografía</h2>
+  <p class="lead">Combinación editorial + clínica, tal como en el mockup aprobado.</p>
+  <div class="type-sample">
+    <div class="role">Display / Editorial — títulos, hero, campañas</div>
+    <div class="display">Skincare, Beauty & Science</div>
+    <div class="type-note">Propuesta: <b>Cormorant Garamond</b> o <b>Playfair Display</b> (Google Fonts) — serif alta, elegante, la misma familia visual del cartel "MEYER".</div>
+  </div>
+  <div class="type-sample">
+    <div class="role">Sans / Funcional — precios, botones, filtros, checkout</div>
+    <div class="body-sans" style="font-size:20px;">AGREGAR AL CARRITO — $ 32.900</div>
+    <div class="type-note">Propuesta: <b>Inter</b> o <b>Helvetica Neue</b> — limpia, moderna, para toda la interfaz transaccional.</div>
+  </div>
+</section>
+
+<!-- 4. MOCKUP REFERENCIA -->
+<section>
+  <div class="num">04</div>
+  <h2 class="title">Mockup aprobado — referencia principal de UX/UI</h2>
+  <p class="lead">Este es el diseño que se va a programar tal cual: sin reinterpretar la estética. Se conservan exactamente las secciones, jerarquía y flujo de pantallas que ya definiste.</p>
+  <div class="mock-grid">
+    <div>
+      <img src="img/B9A2B42C-1D89-4880-BBA2-0F6700A59A1C.png" alt="Home desktop">
+      <div class="photo-cap">Home — Desktop</div>
+    </div>
+    <div>
+      <img src="img/2FC3DECD-64BE-496E-AC8B-224BD4B1D3A0.png" alt="Flujo mobile completo">
+      <div class="photo-cap">Flujo completo — Mobile (home → producto → carrito → checkout → confirmación)</div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. SITEMAP -->
+<section>
+  <div class="num">05</div>
+  <h2 class="title">Sitemap</h2>
+  <div class="sitemap">
+    <div class="branch">
+      <div class="top">Inicio</div>
+      <ul><li>Hero + categorías circulares</li><li>Destacados / Best sellers</li><li>Science Meets Skin (Medical)</li><li>Novedades</li><li>The Meyer Edit</li></ul>
+    </div>
+    <div class="branch">
+      <div class="top">Catálogo</div>
+      <ul><li>Skincare Coreano</li><li>Medical Skincare</li><li>Makeup</li><li>Labios</li><li>Mascarillas Coreanas</li><li>Body &amp; Fragrances</li><li>Novedades / Ofertas</li></ul>
+    </div>
+    <div class="branch">
+      <div class="top">Producto</div>
+      <ul><li>Galería (PNG + ficha informativa)</li><li>Descripción / Qué es / Beneficios</li><li>Ingredientes clave</li><li>Agregar al carrito / Comprar ahora</li></ul>
+    </div>
+    <div class="branch">
+      <div class="top">Compra</div>
+      <ul><li>Carrito (drawer)</li><li>Checkout (datos + envío)</li><li>Mercado Pago</li><li>Confirmación de pedido</li></ul>
+    </div>
+    <div class="branch">
+      <div class="top">Cuenta</div>
+      <ul><li>Mis pedidos</li><li>Favoritos</li><li>Direcciones</li><li>Datos personales</li></ul>
+    </div>
+    <div class="branch">
+      <div class="top">Editorial &amp; soporte</div>
+      <ul><li>The Meyer Edit (rutinas, ingredientes, tendencias)</li><li>Buscador inteligente</li><li>WhatsApp / Instagram</li></ul>
+    </div>
+    <div class="branch">
+      <div class="top">Admin (/admin)</div>
+      <ul><li>Productos, marcas, categorías</li><li>Stock y precios</li><li>Pedidos y pagos</li><li>Cupones y contenido editorial</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- 6. ARQUITECTURA -->
+<section>
+  <div class="num">06</div>
+  <h2 class="title">Arquitectura técnica</h2>
+  <div class="stack">
+    <span>Next.js (App Router)</span>
+    <span>TypeScript</span>
+    <span>Tailwind CSS</span>
+    <span>Supabase / PostgreSQL</span>
+    <span>Storage / CDN de imágenes</span>
+    <span>Mercado Pago (SDK oficial)</span>
+    <span>Arquitectura modular (components / app / lib / services / admin / payment / shipping)</span>
+  </div>
+</section>
+
+<!-- 7. MODELO DE DATOS -->
+<section>
+  <div class="num">07</div>
+  <h2 class="title">Modelo de datos — Producto</h2>
+  <table>
+    <tr><th>Campo</th><th>Descripción</th></tr>
+    <tr><td>sku / slug / name / brand</td><td>Identificación del producto</td></tr>
+    <tr><td>category / subcategory</td><td>Skincare Coreano, Medical Skincare, Makeup, etc.</td></tr>
+    <tr><td>short_description / description</td><td>Copy corto y ficha completa</td></tr>
+    <tr><td>what_is_it / what_is_it_for / benefits[]</td><td>Contenido de acordeones</td></tr>
+    <tr><td>key_ingredients[] / how_to_use / warnings</td><td>Información clave (nunca inventada)</td></tr>
+    <tr><td>skin_types[] / skin_concerns[]</td><td>Filtros de necesidad de piel</td></tr>
+    <tr><td>price / sale_price</td><td>Precio y oferta</td></tr>
+    <tr><td>stock / low_stock_threshold / active</td><td>Control de inventario</td></tr>
+    <tr><td>featured / best_seller / new_arrival</td><td>Flags para carruseles de home</td></tr>
+    <tr><td>main_image / gallery_images[] / information_image</td><td>Imágenes (PNG + ficha)</td></tr>
+  </table>
+</section>
+
+<!-- 8. COMPONENTES -->
+<section>
+  <div class="num">08</div>
+  <h2 class="title">Componentes UI</h2>
+  <div class="comp-list">
+    <div><b>Header sticky</b><span>Menú / Logo / Buscador / Carrito</span></div>
+    <div><b>Menú mobile fullscreen</b><span>Fondo negro, logo dorado, categorías</span></div>
+    <div><b>Categoría circular</b><span>Foto + borde champagne + label</span></div>
+    <div><b>Product card</b><span>Imagen, marca, precio, stock, favorito</span></div>
+    <div><b>Carrusel destacados</b><span>Scroll horizontal táctil</span></div>
+    <div><b>Banner Medical Skincare</b><span>Fondo negro, tipografía marfil/champagne</span></div>
+    <div><b>Acordeones de producto</b><span>Qué es, beneficios, ingredientes, modo de uso</span></div>
+    <div><b>Carrito drawer</b><span>Lateral, subtotal/envío/total</span></div>
+    <div><b>Checkout simple</b><span>Datos + envío + Mercado Pago</span></div>
+    <div><b>Pantalla de confirmación</b><span>Negro premium, check dorado</span></div>
+    <div><b>Botón flotante WhatsApp</b><span>Discreto, mensaje automático por producto</span></div>
+  </div>
+</section>
+
+<!-- 9. WIREFRAMES -->
+<section>
+  <div class="num">09</div>
+  <h2 class="title">Wireframes — referencia por pantalla</h2>
+  <div class="wf-note"><b>Home mobile:</b> header sticky → hero con foto real del local → categorías circulares → destacados → banner Science Meets Skin (fondo negro) → novedades → The Meyer Edit → beneficios → Instagram → footer. (ver mockup, pantalla 1)</div>
+  <div class="wf-note"><b>Producto mobile:</b> galería táctil (PNG + ficha) → marca/nombre/precio → selector cantidad → agregar al carrito (negro) / comprar ahora (champagne) → acordeones de información. (pantallas 3–4)</div>
+  <div class="wf-note"><b>Carrito:</b> drawer lateral con items, cantidad editable, subtotal/envío/descuento/total, finalizar compra. (pantalla 5)</div>
+  <div class="wf-note"><b>Checkout:</b> datos de envío → medio de pago (Mercado Pago) → resumen del pedido → confirmación con número de pedido. (pantallas 6–8)</div>
+  <div class="wf-note"><b>Desktop:</b> mismo sistema de diseño, header horizontal con todas las categorías visibles, grilla de 4 productos por fila. (ver mockup desktop, sección 04)</div>
+</section>
+
+<!-- 10. PROXIMOS PASOS -->
+<section style="border-bottom:none;">
+  <div class="num">10</div>
+  <h2 class="title">Próximos pasos</h2>
+  <p class="lead" style="margin-bottom:0;">
+    Una vez que apruebes esta propuesta, seguimos con:<br>
+    <b>Etapa 2</b> — frontend navegable (Home, catálogo, producto, carrito, checkout con el mockup real) ·
+    <b>Etapa 3</b> — base de datos y panel administrativo ·
+    <b>Etapa 4</b> — carga del catálogo real, producto por producto ·
+    <b>Etapa 5</b> — integración Mercado Pago ·
+    <b>Etapa 6</b> — envíos ·
+    <b>Etapa 7</b> — QA, SEO y producción.
+  </p>
+</section>
+
+<footer>
+  MEYER <span class="gold">SKINBEAUTY</span> — Propuesta digital · Etapa 1 de 7
+</footer>
+
+</body>
+</html>

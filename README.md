@@ -61,6 +61,8 @@ supabase/
 scripts/
   seed-products.ts                Carga data/catalog.json en Supabase (marcas/categorías incl.)
 docs/
+  etapa-1-propuesta-diseno-arquitectura.html   Brief maestro: identidad, paleta, tipografía,
+                                                sitemap, modelo de datos, roadmap Etapa 1-7
   design-prototype.html           Prototipo visual original de la tienda (referencia)
   admin-prototype.html            Prototipo visual original del panel admin (referencia)
   etapa-5-mercadopago-notas-originales.md
@@ -204,6 +206,24 @@ detrás (hoy "novedades/destacados" son sólo secciones de la home).
 publicar — no es código, son pasos a probar sobre el sitio ya
 desplegado.
 
+## Brief maestro (Etapa 1) y tipografía
+
+`docs/etapa-1-propuesta-diseno-arquitectura.html` es el brief original
+de identidad/arquitectura/roadmap — confirma que las 7 etapas que este
+README ya venía siguiendo son las correctas. Dos cosas que trajo y que
+se corrigieron:
+
+- **Tipografía real**: el brief pide una serif editorial "de la misma
+  familia visual del cartel MEYER" (Cormorant Garamond o Playfair
+  Display) + una sans funcional para precios/checkout (Inter o
+  Helvetica Neue) — el sitio venía usando sólo las fuentes de sistema
+  de fallback. Ahora carga **Playfair Display** + **Inter** vía
+  `next/font/google` en el layout raíz (autohospedadas, sin requests
+  externos en runtime, `font-display: swap`), con el mismo fallback de
+  siempre por si el build no tiene salida a internet.
+- El resto del brief (paleta, sitemap, modelo de datos, componentes)
+  ya estaba implementado o coincide con lo que se venía construyendo.
+
 ## Qué falta
 
 - **Etapa 6 — tarifas reales**: `lib/shipping.ts` ya tiene la
@@ -221,4 +241,9 @@ desplegado.
 - **Storefront**: cuentas de cliente (login + historial de pedidos +
   favoritos — la base ya lo soporta), emails transaccionales, cupón
   editable desde el checkout (el backend ya lo soporta, falta el campo
-  en la UI), búsqueda.
+  en la UI), buscador, botón flotante de WhatsApp (número de contacto
+  pendiente de definir).
+- **Categoría "Makeup"**: aparece en el sitemap del brief pero no en
+  el catálogo real que se cargó (`meyer_catalogo_real_2.xlsx` sólo
+  trae las 5 categorías actuales) — falta confirmar si hay productos
+  de maquillaje reales para sumarla, o si quedó del brief inicial.
