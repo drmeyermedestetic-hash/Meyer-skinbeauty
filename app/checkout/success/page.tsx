@@ -59,6 +59,17 @@ export default async function CheckoutSuccessPage({
           </button>
         </Link>
       </div>
+
+      {order && !isConfirmed && (
+        // El webhook puede tardar unos segundos en llegar. Mientras el
+        // pedido siga "pending", refrescamos solos hasta que se confirme
+        // (o el usuario se va de la página) — así no depende de que la
+        // clienta recargue a mano para ver el estado final.
+        <script
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: `setTimeout(() => location.reload(), 3000);` }}
+        />
+      )}
     </div>
   );
 }

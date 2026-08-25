@@ -28,9 +28,10 @@ lib/
   orders.ts                       Pedidos: precio/stock SIEMPRE recalculados en servidor
   mercadopago.ts                  Cliente de Mercado Pago (server-only)
   supabase.ts                     Clientes de Supabase (público + admin/service role)
-  shipping.ts                     Cálculo de envío (placeholder por zona — Etapa 6 pendiente)
+  shipping.ts                     Envíos (Etapa 6): zonas manuales por CP + adapter para correo real
   seo.ts                          Metadata, OpenGraph y JSON-LD (Product, Breadcrumb, Organization)
   cart-context.tsx                Carrito client-side (Context + localStorage)
+app/api/shipping/calculate/route.ts   Cotización de envío que consume el checkout
 app/sitemap.ts / app/robots.ts    /sitemap.xml y /robots.txt dinámicos (sólo rutas que existen hoy)
 data/
   catalog.json / categories.json  Catálogo real normalizado desde el xlsx
@@ -87,6 +88,20 @@ cp .env.example .env.local   # completar con credenciales reales
 5. `npm run dev` y probar el flujo completo con tarjetas de prueba de
    Mercado Pago antes de pasar a producción.
 
+## Envíos (Etapa 6)
+
+`lib/shipping.ts` calcula el envío por zona a partir del código postal
+(Fase 1: reglas manuales — San Miguel de Tucumán, resto de Tucumán,
+resto del país). Los costos están en **$0 como placeholder** — hay que
+cargar las tarifas reales antes de publicar. Está armado con un
+`ShippingProviderAdapter`: para conectar un correo real (Andreani,
+Correo Argentino, OCA) alcanza con implementar esa interfaz y
+cambiar una línea, sin tocar el checkout ni `app/api/shipping/calculate`.
+
+**Importante**: esta cotización es sólo para mostrarle un precio al
+usuario antes de pagar — el costo que efectivamente se cobra se
+recalcula igual en `app/api/checkout` (server-side), como todo lo demás.
+
 ## SEO (Etapa 7, parcial)
 
 `app/sitemap.ts`, `app/robots.ts` y `lib/seo.ts` ya están integrados:
@@ -104,8 +119,10 @@ desplegado.
 
 ## Qué falta (por etapa)
 
-- **Etapa 6 — envíos reales**: cálculo por código postal contra un
-  correo, en vez del placeholder de `lib/shipping.ts`.
+- **Etapa 6 — tarifas reales**: `lib/shipping.ts` ya tiene la
+  arquitectura (zonas + adapter), pero los costos siguen en $0 — falta
+  cargar las tarifas reales y, más adelante, conectar un correo de
+  verdad en vez de las reglas manuales.
 - **Etapa 7 — el resto del checklist**: rate limiting en
   `/api/checkout` y `/api/webhooks/mercadopago`, panel `/admin` con
   autenticación real, imágenes con `next/image` + `alt` descriptivo,

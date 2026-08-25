@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useCart } from "@/lib/cart-context";
 import { formatPrice } from "@/lib/format";
-import { getShippingOptions, PICKUP_OPTION, type ShippingOption } from "@/lib/shipping";
+import type { ShippingQuote } from "@/lib/shipping";
 import type { ShippingMethod } from "@/lib/types";
 
 export default function CheckoutPage() {
@@ -17,18 +17,50 @@ export default function CheckoutPage() {
   const [street, setStreet] = useState("");
   const [postalCode, setPostalCode] = useState("");
   const [city, setCity] = useState("");
+  const [province, setProvince] = useState("");
 
   const [shippingMethod, setShippingMethod] = useState<ShippingMethod>("domicilio");
-  const [shippingOptionId, setShippingOptionId] = useState<string>("standard");
+  const [quotes, setQuotes] = useState<ShippingQuote[]>([]);
+  const [quotesLoading, setQuotesLoading] = useState(false);
 
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const homeOptions = useMemo(() => getShippingOptions(postalCode), [postalCode]);
-  const selectedShipping: ShippingOption | null =
+  // El costo de envío SIEMPRE se recalcula server-side en /api/checkout
+  // (lib/orders.ts) — esta cotización acá es sólo para mostrarle un
+  // precio al usuario antes de pagar, no es lo que termina cobrándose.
+  useEffect(() => {
+    if (postalCode.trim().length < 4) {
+      setQuotes([]);
+      return;
+    }
+    const controller = new AbortController();
+    setQuotesLoading(true);
+    const timeout = setTimeout(() => {
+      fetch("/api/shipping/calculate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ postalCode, province, city }),
+        signal: controller.signal,
+      })
+        .then((res) => res.json())
+        .then((data) => setQuotes(data.quotes ?? []))
+        .catch(() => {})
+        .finally(() => setQuotesLoading(false));
+    }, 350);
+    return () => {
+      clearTimeout(timeout);
+      controller.abort();
+      setQuotesLoading(false);
+    };
+  }, [postalCode, province, city]);
+
+  const homeQuote = quotes.find((q) => q.method === "domicilio") ?? null;
+  const pickupQuote = quotes.find((q) => q.method === "retiro_local") ?? null;
+  const selectedShipping: ShippingQuote | null =
     shippingMethod === "retiro_local"
-      ? PICKUP_OPTION
-      : homeOptions.find((o) => o.id === shippingOptionId) ?? null;
+      ? pickupQuote ?? { method: "retiro_local", label: "Retiro en local", cost: 0, etaDays: "" }
+      : homeQuote;
 
   const shippingCost = selectedShipping?.cost ?? 0;
   const total = subtotal + shippingCost;
@@ -141,7 +173,15 @@ export default function CheckoutPage() {
             checked={shippingMethod === "retiro_local"}
             onChange={() => setShippingMethod("retiro_local")}
           />
-          <span className="meta">Retiro en local</span>
+          <span className="meta">
+            Retiro en local
+            {pickupQuote?.etaDays && (
+              <>
+                <br />
+                <span className="co-hint">{pickupQuote.etaDays}</span>
+              </>
+            )}
+          </span>
           <span className="cost">Gratis</span>
         </label>
 
@@ -167,29 +207,26 @@ export default function CheckoutPage() {
                 <input value={city} onChange={(e) => setCity(e.target.value)} placeholder="San Miguel de Tucumán" />
               </div>
             </div>
+            <div className="field">
+              <label>Provincia</label>
+              <input value={province} onChange={(e) => setProvince(e.target.value)} placeholder="Tucumán" />
+            </div>
 
-            {homeOptions.length === 0 ? (
-              <p className="co-hint">Ingresá tu código postal para ver las opciones de envío.</p>
+            {postalCode.trim().length < 4 ? (
+              <p className="co-hint">Ingresá tu código postal para ver el costo de envío.</p>
+            ) : quotesLoading ? (
+              <p className="co-hint">Calculando envío…</p>
+            ) : homeQuote ? (
+              <div className="ship-option selected">
+                <span className="meta">
+                  {homeQuote.label}
+                  <br />
+                  <span className="co-hint">{homeQuote.etaDays}</span>
+                </span>
+                <span className="cost">{formatPrice(homeQuote.cost)}</span>
+              </div>
             ) : (
-              homeOptions.map((opt) => (
-                <label
-                  key={opt.id}
-                  className={`ship-option${shippingOptionId === opt.id ? " selected" : ""}`}
-                >
-                  <input
-                    type="radio"
-                    name="shipOption"
-                    checked={shippingOptionId === opt.id}
-                    onChange={() => setShippingOptionId(opt.id)}
-                  />
-                  <span className="meta">
-                    {opt.label}
-                    <br />
-                    <span className="co-hint">{opt.etaDays}</span>
-                  </span>
-                  <span className="cost">{formatPrice(opt.cost)}</span>
-                </label>
-              ))
+              <p className="co-hint">No pudimos calcular el envío para ese código postal.</p>
             )}
           </>
         )}
