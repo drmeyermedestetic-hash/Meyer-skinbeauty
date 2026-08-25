@@ -23,6 +23,8 @@ export interface Product {
   stock: number;
   imageUrl?: string | null;
   infoSheetFile: string | null;
+  /** Sólo se completa cuando el producto viene de Supabase (products.updated_at). */
+  updatedAt?: string | null;
 }
 
 export interface Category {

@@ -40,6 +40,7 @@ function mapRowToProduct(row: any): Product {
     stock: row.stock ?? 0,
     imageUrl: row.image_url,
     infoSheetFile: row.info_sheet_file,
+    updatedAt: row.updated_at,
   };
 }
 

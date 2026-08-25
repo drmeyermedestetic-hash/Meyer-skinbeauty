@@ -29,7 +29,9 @@ lib/
   mercadopago.ts                  Cliente de Mercado Pago (server-only)
   supabase.ts                     Clientes de Supabase (público + admin/service role)
   shipping.ts                     Cálculo de envío (placeholder por zona — Etapa 6 pendiente)
+  seo.ts                          Metadata, OpenGraph y JSON-LD (Product, Breadcrumb, Organization)
   cart-context.tsx                Carrito client-side (Context + localStorage)
+app/sitemap.ts / app/robots.ts    /sitemap.xml y /robots.txt dinámicos (sólo rutas que existen hoy)
 data/
   catalog.json / categories.json  Catálogo real normalizado desde el xlsx
   meyer_catalogo_real_2.xlsx      Archivo original de la clienta (referencia)
@@ -40,6 +42,7 @@ scripts/
 docs/
   design-prototype.html           Prototipo visual original (referencia de diseño)
   etapa-5-mercadopago-notas-originales.md
+  checklist-etapa7-qa.md          Checklist de QA/seguridad/SEO/perf antes de producción (manual)
 ```
 
 ## Reglas de seguridad (se mantienen en todo el código)
@@ -84,7 +87,29 @@ cp .env.example .env.local   # completar con credenciales reales
 5. `npm run dev` y probar el flujo completo con tarjetas de prueba de
    Mercado Pago antes de pasar a producción.
 
-## Próxima etapa
+## SEO (Etapa 7, parcial)
 
-Etapa 6 — envíos reales (cálculo por código postal contra un correo,
-en vez del placeholder de `lib/shipping.ts`).
+`app/sitemap.ts`, `app/robots.ts` y `lib/seo.ts` ya están integrados:
+cada producto y categoría trae su `<title>`/`description`/OpenGraph
+(`generateMetadata`) y JSON-LD (`Product`, `BreadcrumbList`;
+`Organization` una vez en el layout raíz). El sitemap sólo lista rutas
+que existen de verdad hoy — `/novedades`, `/ofertas` y
+`/the-meyer-edit` quedan afuera hasta que tengan una página real
+detrás (hoy "novedades/destacados" son sólo secciones de la home).
+
+`docs/checklist-etapa7-qa.md` es la lista de verificación manual
+(mobile, seguridad, performance, accesibilidad) a repasar antes de
+publicar — no es código, son pasos a probar sobre el sitio ya
+desplegado.
+
+## Qué falta (por etapa)
+
+- **Etapa 6 — envíos reales**: cálculo por código postal contra un
+  correo, en vez del placeholder de `lib/shipping.ts`.
+- **Etapa 7 — el resto del checklist**: rate limiting en
+  `/api/checkout` y `/api/webhooks/mercadopago`, panel `/admin` con
+  autenticación real, imágenes con `next/image` + `alt` descriptivo,
+  y todo lo demás en `docs/checklist-etapa7-qa.md`.
+- Cuentas de cliente, historial de pedidos, emails transaccionales,
+  cupón editable desde el checkout (el backend ya lo soporta, falta
+  el campo en la UI) — sin etapa asignada todavía.
