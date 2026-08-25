@@ -1,0 +1,2309 @@
+[
+  {
+    "sku": "ARE-MOC-001",
+    "slug": "are-moc-001",
+    "name": "Fresh Blue Hyssop Rice Mochi Cleanser",
+    "brand": "Arencia",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Limpiadores",
+    "shortDescription": "Limpiador facial en formato mochi con arroz coreano e hisopo azul.",
+    "description": "Limpiador facial en formato mochi, elaborado con arroz coreano y extracto de hisopo azul, que limpia en profundidad sin resecar.",
+    "benefits": [
+      "Limpia profundamente los poros",
+      "Controla el exceso de grasa",
+      "Calma y equilibra la piel",
+      "No reseca, mantiene la hidratación",
+      "Suaviza y mejora la textura",
+      "Apto para uso diario"
+    ],
+    "keyIngredients": [
+      "Arroz coreano",
+      "Hisopo azul",
+      "Té verde"
+    ],
+    "skinType": [
+      "Piel mixta",
+      "Piel grasa",
+      "Piel sensible",
+      "Poros visibles"
+    ],
+    "usageInstructions": null,
+    "origin": null,
+    "size": null,
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "01-arencia-mochi.png"
+  },
+  {
+    "sku": "QS-JAB-002",
+    "slug": "qs-jab-002",
+    "name": "Jabón Pieles Sensibles Phyto Descongestive",
+    "brand": "Quimeral Skin (QS)",
+    "category": "Medical Skincare",
+    "categorySlug": "medical-skincare",
+    "subcategory": "Limpiadores",
+    "shortDescription": "Jabón líquido dermocosmético para pieles sensibles y con condiciones dermatológicas.",
+    "description": "Jabón líquido dermocosmético formulado con activos botánicos y calmantes que limpia en profundidad sin agredir la piel. Su acción fito-descongestiva ayuda a reducir la inflamación, el enrojecimiento y el picor.",
+    "benefits": [
+      "Limpia suavemente sin irritar",
+      "Hidrata y mantiene la barrera cutánea",
+      "Calma rojeces y reduce la inflamación",
+      "Ayuda a equilibrar la microbiota de la piel",
+      "Deja la piel limpia, fresca y confortable"
+    ],
+    "keyIngredients": [
+      "Manzanilla",
+      "Aloe Vera",
+      "Extractos botánicos"
+    ],
+    "skinType": [
+      "Piel sensible",
+      "Psoriasis",
+      "Eccemas",
+      "Rosácea"
+    ],
+    "usageInstructions": "Aplicar sobre la piel húmeda, masajear suavemente en círculos, enjuagar con agua tibia. Usar mañana y noche.",
+    "origin": null,
+    "size": null,
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "02-qs-jabon.png"
+  },
+  {
+    "sku": "VS-CP-003",
+    "slug": "vs-cp-003",
+    "name": "Coconut Passion",
+    "brand": "Victoria's Secret",
+    "category": "Body & Fragrances",
+    "categorySlug": "body-fragrances",
+    "subcategory": "Fragancias",
+    "shortDescription": "Bruma corporal tropical con coco, vainilla y flor de tiaré.",
+    "description": "Bruma corporal de Victoria's Secret con un aroma tropical que combina coco cremoso, vainilla y notas dulces de flor de tiaré.",
+    "benefits": [
+      "Aroma duradero y envolvente",
+      "Sensación de frescura inmediata",
+      "Hidrata suavemente la piel",
+      "Perfecta para el día o la noche",
+      "Ideal para capas con crema corporal"
+    ],
+    "keyIngredients": [
+      "Coco",
+      "Flor de tiaré",
+      "Vainilla"
+    ],
+    "skinType": [],
+    "usageInstructions": "Rociar sobre el cuerpo a una distancia de 15-20 cm, después de la ducha o cuando se desee refrescar.",
+    "origin": "Estados Unidos",
+    "size": "250 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "03-vs-coconut.png"
+  },
+  {
+    "sku": "VS-BV-004",
+    "slug": "vs-bv-004",
+    "name": "Bare Vanilla",
+    "brand": "Victoria's Secret",
+    "category": "Body & Fragrances",
+    "categorySlug": "body-fragrances",
+    "subcategory": "Fragancias",
+    "shortDescription": "Bruma corporal cálida con vainilla, flores suaves y almizcle.",
+    "description": "Bruma corporal de Victoria's Secret con una mezcla adictiva de vainilla, flores suaves y un toque de almizcle.",
+    "benefits": [
+      "Aroma envolvente y duradero",
+      "Sensación de frescura inmediata",
+      "Hidrata suavemente la piel",
+      "Perfecta para el día o la noche",
+      "Ideal para capas con crema"
+    ],
+    "keyIngredients": [
+      "Vainilla cremosa",
+      "Flor de cachemira",
+      "Almizcle dorado"
+    ],
+    "skinType": [],
+    "usageInstructions": "Rociar sobre el cuerpo a una distancia de 15-20 cm, después de la ducha o cuando se desee refrescar.",
+    "origin": "Estados Unidos",
+    "size": "75 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "04-vs-barevanilla.png"
+  },
+  {
+    "sku": "VS-VP-005",
+    "slug": "vs-vp-005",
+    "name": "Velvet Petals",
+    "brand": "Victoria's Secret",
+    "category": "Body & Fragrances",
+    "categorySlug": "body-fragrances",
+    "subcategory": "Fragancias",
+    "shortDescription": "Bruma corporal floral y dulce con pétalos, coco y frambuesa.",
+    "description": "Fragancia corporal tipo body mist de Victoria's Secret, con un aroma floral dulce y seductor.",
+    "benefits": [
+      "Aroma duradero y envolvente",
+      "Sensación de frescura inmediata",
+      "Ideal para el día o la noche",
+      "Hidrata suavemente la piel",
+      "Perfecta para capas con crema"
+    ],
+    "keyIngredients": [
+      "Pétalos de gardenia",
+      "Coco",
+      "Frambuesa"
+    ],
+    "skinType": [],
+    "usageInstructions": "Rociar sobre el cuerpo a una distancia de 15-20 cm, después de la ducha o cuando se desee refrescar.",
+    "origin": "Estados Unidos",
+    "size": "250 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "05-vs-velvetpetals.png"
+  },
+  {
+    "sku": "BIO-KELP-006",
+    "slug": "bio-kelp-006",
+    "name": "Refreshing Sea Kelp Real Deep Mask",
+    "brand": "Biodance",
+    "category": "Mascarillas Coreanas",
+    "categorySlug": "mascarillas-coreanas",
+    "subcategory": "Mascarillas",
+    "shortDescription": "Mascarilla facial calmante con alga marina y agua de mar profunda.",
+    "description": "Mascarilla facial coreana formulada con extracto y fermento de alga marina (Dasima/Kelp), agua de mar profunda y activos calmantes.",
+    "benefits": [
+      "Calma irritaciones y rojeces",
+      "Purifica y controla el exceso de sebo",
+      "Hidrata sin sensación grasa",
+      "Refresca y revitaliza",
+      "Fortalece la barrera cutánea",
+      "Mejora la textura de la piel"
+    ],
+    "keyIngredients": [
+      "Dasima (Kelp)",
+      "Agua de mar profunda",
+      "Fermento de alga marina"
+    ],
+    "skinType": [
+      "Piel mixta",
+      "Piel grasa",
+      "Piel sensible"
+    ],
+    "usageInstructions": "Limpiar y tonificar. Aplicar la mascarilla y dejar actuar 15-20 min. Retirar y dar suaves toques.",
+    "origin": "Corea del Sur",
+    "size": "34 g",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "06-biodance-kelp.png"
+  },
+  {
+    "sku": "BIO-HCN-007",
+    "slug": "bio-hcn-007",
+    "name": "Hydro Cera-Nol Real Deep Mask",
+    "brand": "Biodance",
+    "category": "Mascarillas Coreanas",
+    "categorySlug": "mascarillas-coreanas",
+    "subcategory": "Mascarillas",
+    "shortDescription": "Mascarilla facial de hidratación profunda con ácido hialurónico y ceramidas.",
+    "description": "Mascarilla coreana con complejo Hydro Cera-Nol, combinación de ácido hialurónico, ceramidas y pantenol, para hidratación intensa y reparación de la barrera cutánea. Ideal para piel seca, sensible o deshidratada.",
+    "benefits": [
+      "Hidratación intensa",
+      "Calma y reduce irritaciones",
+      "Refuerza la barrera cutánea",
+      "Mejora la textura y elasticidad",
+      "Aporta luminosidad y confort"
+    ],
+    "keyIngredients": [
+      "Ácido hialurónico",
+      "Agua de glaciar",
+      "Pantenol",
+      "Ceramidas"
+    ],
+    "skinType": [
+      "Piel seca",
+      "Piel sensible",
+      "Piel deshidratada"
+    ],
+    "usageInstructions": "Limpiar el rostro. Aplicar la mascarilla y dejar actuar 15-20 min. Retirar y masajear suavemente el exceso de esencia.",
+    "origin": "Corea del Sur",
+    "size": "34 g",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "07-biodance-hydro.png"
+  },
+  {
+    "sku": "BIO-COL-008",
+    "slug": "bio-col-008",
+    "name": "Bio Collagen Real Deep Mask",
+    "brand": "Biodance",
+    "category": "Mascarillas Coreanas",
+    "categorySlug": "mascarillas-coreanas",
+    "subcategory": "Mascarillas",
+    "shortDescription": "Mascarilla facial con colágeno para firmeza, elasticidad y piel más uniforme.",
+    "description": "Mascarilla facial coreana en formato de hoja, formulada con colágeno de bajo peso molecular, ácido hialurónico y fermentos probióticos.",
+    "benefits": [
+      "Hidratación profunda y duradera",
+      "Mejora la elasticidad y firmeza",
+      "Minimiza la apariencia de poros",
+      "Suaviza líneas finas",
+      "Piel más uniforme y luminosa"
+    ],
+    "keyIngredients": [
+      "Colágeno de bajo peso molecular",
+      "Ácido hialurónico",
+      "Fermentos probióticos (Galactomyces)"
+    ],
+    "skinType": [],
+    "usageInstructions": "Limpiar y tonificar el rostro. Aplicar la mascarilla y dejar actuar 15-20 min. Retirar y dar suaves toques.",
+    "origin": "Corea del Sur",
+    "size": "34 g",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "08-biodance-collagen.png"
+  },
+  {
+    "sku": "MED-MADE-009",
+    "slug": "med-made-009",
+    "name": "Madecassoside Blemish Repair (x Hechi)",
+    "brand": "Mediheal",
+    "category": "Mascarillas Coreanas",
+    "categorySlug": "mascarillas-coreanas",
+    "subcategory": "Mascarillas",
+    "shortDescription": "Mascarilla calmante con Madecassoside derivado de Centella Asiática.",
+    "description": "Mascarilla de alta adhesión infundida con Madecassoside, un activo derivado de la Centella Asiática, reconocido por sus propiedades calmantes, reparadoras y antiinflamatorias.",
+    "benefits": [
+      "Calma la piel sensible y con rojeces",
+      "Repara y fortalece la barrera cutánea",
+      "Hidrata profundamente",
+      "Mejora la textura y el aspecto de la piel",
+      "Aporta frescura y confort inmediato"
+    ],
+    "keyIngredients": [
+      "Madecassoside",
+      "Ácido hialurónico",
+      "Complejo calmante"
+    ],
+    "skinType": [
+      "Piel sensible",
+      "Piel con rojeces",
+      "Piel con imperfecciones"
+    ],
+    "usageInstructions": "Limpiar el rostro. Aplicar la mascarilla y dejar actuar 15-20 min. Retirar y dar suaves toques para absorber la esencia.",
+    "origin": "Corea del Sur",
+    "size": null,
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "09-mediheal-madecassoside.png"
+  },
+  {
+    "sku": "MED-VITC-010",
+    "slug": "med-vitc-010",
+    "name": "Vitamin C Clear Toning Mask",
+    "brand": "Mediheal",
+    "category": "Mascarillas Coreanas",
+    "categorySlug": "mascarillas-coreanas",
+    "subcategory": "Mascarillas",
+    "shortDescription": "Mascarilla iluminadora con vitamina C de alta pureza.",
+    "description": "Mascarilla facial coreana con vitamina C de alta pureza, diseñada para iluminar, unificar el tono y revitalizar la piel.",
+    "benefits": [
+      "Ilumina y unifica el tono de la piel",
+      "Reduce la apariencia de manchas",
+      "Hidrata y revitaliza",
+      "Mejora la textura",
+      "Deja la piel fresca y radiante"
+    ],
+    "keyIngredients": [
+      "Vitamina C (ácido ascórbico)",
+      "Ácido hialurónico",
+      "Liposoma Vitamin C",
+      "Extractos botánicos"
+    ],
+    "skinType": [],
+    "usageInstructions": "Limpiar el rostro. Aplicar la mascarilla y dejar actuar 15-20 min. Retirar y dar suaves toques para absorber la esencia.",
+    "origin": "Corea del Sur",
+    "size": null,
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "10-mediheal-vitaminc.png"
+  },
+  {
+    "sku": "MED-TEA-011",
+    "slug": "med-tea-011",
+    "name": "Teatree Calming Moisture Mask",
+    "brand": "Mediheal",
+    "category": "Mascarillas Coreanas",
+    "categorySlug": "mascarillas-coreanas",
+    "subcategory": "Mascarillas",
+    "shortDescription": "Mascarilla calmante e hidratante con extracto de árbol de té.",
+    "description": "Mascarilla coreana original de alta adherencia, formulada con extracto de árbol de té y 4-Terpineol para calmar, hidratar y purificar la piel.",
+    "benefits": [
+      "Calma y reduce irritaciones",
+      "Hidratación profunda 24H",
+      "Purifica y minimiza poros",
+      "Controla el exceso de grasa",
+      "Mejora la textura de la piel",
+      "Piel fresca, suave y revitalizada"
+    ],
+    "keyIngredients": [
+      "Extracto de árbol de té",
+      "4-Terpineol",
+      "Calming Moisture"
+    ],
+    "skinType": [
+      "Piel sensible",
+      "Piel mixta",
+      "Piel con tendencia a imperfecciones"
+    ],
+    "usageInstructions": "Limpiar y tonificar. Aplicar la mascarilla y dejar actuar 15-20 minutos. Retirar y dar suaves toques.",
+    "origin": "Corea del Sur",
+    "size": null,
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "11-mediheal-teatree.png"
+  },
+  {
+    "sku": "MIX-CENT-012",
+    "slug": "mix-cent-012",
+    "name": "Soondy Centella Asiatica Essence",
+    "brand": "mixsoon",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Esencias",
+    "shortDescription": "Esencia calmante y reparadora con Centella Asiática de Jeju.",
+    "description": "Esencia ligera de alta pureza, formulada con Centella Asiática de la isla de Jeju, famosa por sus propiedades calmantes, reparadoras e hidratantes.",
+    "benefits": [
+      "Reduce enrojecimiento y sensibilidad",
+      "Acelera la regeneración de la piel",
+      "Refuerza la barrera cutánea",
+      "Hidrata sin sensación pegajosa",
+      "Deja la piel más suave y luminosa"
+    ],
+    "keyIngredients": [
+      "Centella Asiática (CICA) de Jeju"
+    ],
+    "skinType": [
+      "Piel sensible",
+      "Piel con rojeces"
+    ],
+    "usageInstructions": "Después de la limpieza, aplicar una cantidad adecuada en rostro y cuello con suaves toques hasta su completa absorción. Usar mañana y/o noche.",
+    "origin": "Corea del Sur",
+    "size": "100 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "12-mixsoon-centella.png"
+  },
+  {
+    "sku": "COS-EYE-013",
+    "slug": "cos-eye-013",
+    "name": "Advanced Snail Peptide Eye Cream",
+    "brand": "COSRX",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Contorno de ojos",
+    "shortDescription": "Crema para el contorno de ojos con mucina de caracol y péptidos.",
+    "description": "Crema para el contorno de ojos enriquecida con mucina de caracol y 5 tipos de péptidos. Hidrata, nutre y fortalece la piel delicada del contorno de ojos.",
+    "benefits": [
+      "Reduce líneas finas y arrugas",
+      "Ilumina y revitaliza la mirada",
+      "Hidrata profundamente",
+      "Fortalece la barrera cutánea",
+      "Fórmula ligera y de rápida absorción"
+    ],
+    "keyIngredients": [
+      "Mucina de caracol",
+      "5 tipos de péptidos",
+      "Niacinamida"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar una pequeña cantidad en el contorno de ojos, con suaves toquecitos, mañana y noche.",
+    "origin": "Corea del Sur",
+    "size": "25 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "13-cosrx-eyecream.png"
+  },
+  {
+    "sku": "COS-SNAIL-014",
+    "slug": "cos-snail-014",
+    "name": "Advanced Snail 92 All In One Cream",
+    "brand": "COSRX",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Cremas",
+    "shortDescription": "Crema facial todo en uno con 92% de mucina de caracol.",
+    "description": "Una crema facial todo en uno, formulada con 92% de mucina de caracol, conocida por sus propiedades regeneradoras, hidratantes y reparadoras.",
+    "benefits": [
+      "Repara y regenera la piel",
+      "Hidratación profunda y duradera",
+      "Mejora la elasticidad y firmeza",
+      "Reduce la apariencia de líneas finas",
+      "Calma la piel irritada",
+      "Aporta un brillo saludable"
+    ],
+    "keyIngredients": [
+      "Mucina de caracol 92%"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar una cantidad adecuada sobre la piel limpia, como último paso de la rutina facial. Masajear suavemente hasta su completa absorción.",
+    "origin": "Corea del Sur",
+    "size": "50 g",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "14-cosrx-snail92.png"
+  },
+  {
+    "sku": "DC-VIP-015",
+    "slug": "dc-vip-015",
+    "name": "Premium V.I.P.",
+    "brand": "DC Cosmetics (Duilio Cortella)",
+    "category": "Labios",
+    "categorySlug": "labios",
+    "subcategory": "Gloss",
+    "shortDescription": "Gloss de labios premium con hidratación intensa y efecto gold.",
+    "description": "Gloss de labios premium que combina hidratación intensa, nutrición y protección 24 horas, con efecto GOLD.",
+    "benefits": [
+      "Hidratación profunda",
+      "Protección 24 horas",
+      "Efecto GOLD radiante",
+      "Labios suaves, nutridos y visiblemente más saludables",
+      "Fórmula ligera y no pegajosa"
+    ],
+    "keyIngredients": [
+      "Ácido hialurónico",
+      "Aceites vegetales",
+      "Vitamina E",
+      "Pigmentos dorados"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar directamente sobre labios limpios y secos. Usar durante el día para hidratación y protección 24hs, o de noche para hidratación intensiva.",
+    "origin": "España",
+    "size": null,
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "15-dc-vip-gloss.png"
+  },
+  {
+    "sku": "COS-NIAC-016",
+    "slug": "cos-niac-016",
+    "name": "The Niacinamide 15 Serum",
+    "brand": "COSRX",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Serums",
+    "shortDescription": "Sérum de niacinamida al 15% con acetyl glucosamine y zinc PCA.",
+    "description": "Un sérum ligero de alta concentración de niacinamida (15%) que ayuda a controlar el exceso de sebo, minimizar los poros, mejorar la textura de la piel y unificar el tono.",
+    "benefits": [
+      "Reduce el exceso de grasa",
+      "Minimiza poros y textura",
+      "Unifica el tono de la piel",
+      "Mejora la luminosidad",
+      "Refuerza la barrera cutánea",
+      "Piel más suave y saludable"
+    ],
+    "keyIngredients": [
+      "Niacinamida 15%",
+      "Acetyl Glucosamine",
+      "Zinc PCA"
+    ],
+    "skinType": [
+      "Piel grasa",
+      "Piel con poros dilatados"
+    ],
+    "usageInstructions": "Aplicar unas gotas sobre la piel limpia y seca, por la mañana y/o noche. Seguir con hidratante.",
+    "origin": "Corea del Sur",
+    "size": "20 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "16-cosrx-niacinamide.png"
+  },
+  {
+    "sku": "KOS-EYE-017",
+    "slug": "kos-eye-017",
+    "name": "Sérum de Ojos Tensor + Ginseng",
+    "brand": "Kosmos",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Contorno de ojos",
+    "shortDescription": "Sérum tensor para contorno de ojos con Eyeseryl, niacinamida, cafeína y ginseng.",
+    "description": "Un sérum ligero y de rápida absorción, especialmente formulado para el contorno de ojos, para desinflamar, tensar, reducir bolsas y ojeras, y mejorar la luminosidad de la mirada.",
+    "benefits": [
+      "Reduce bolsas y ojeras",
+      "Suaviza líneas de expresión",
+      "Tensa y mejora la firmeza",
+      "Ilumina la mirada",
+      "Hidrata y revitaliza",
+      "Aporta un aspecto descansado"
+    ],
+    "keyIngredients": [
+      "Eyeseryl 3%",
+      "Niacinamida 3%",
+      "Cafeína 2%",
+      "Ginseng"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar una pequeña cantidad en el contorno de ojos con suaves toquecitos hasta su completa absorción.",
+    "origin": null,
+    "size": "30 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "17-kosmos-eyeserum.png"
+  },
+  {
+    "sku": "PINK-BS-018",
+    "slug": "pink-bs-018",
+    "name": "Brown Sugar Hair & Body Mist",
+    "brand": "PINK",
+    "category": "Body & Fragrances",
+    "categorySlug": "body-fragrances",
+    "subcategory": "Fragancias",
+    "shortDescription": "Bruma ligera para cuerpo y cabello con azúcar morena, caramelo y vainilla.",
+    "description": "Una bruma ligera para cuerpo y cabello de la línea PINK, con una fragancia cálida, dulce y envolvente de azúcar morena, vainilla y caramelo.",
+    "benefits": [
+      "Aroma duradero",
+      "Refresca al instante",
+      "Suave y ligera",
+      "No deja sensación pegajosa",
+      "Ideal para cuerpo y cabello",
+      "Perfecta para uso diario"
+    ],
+    "keyIngredients": [
+      "Azúcar morena",
+      "Caramelo",
+      "Vainilla"
+    ],
+    "skinType": [],
+    "usageInstructions": "Rociar a 15-20 cm del cuerpo o cabello. Usar las veces que se desee durante el día.",
+    "origin": null,
+    "size": "75 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "18-pink-brownsugar-mist.png"
+  },
+  {
+    "sku": "PINK-SP-019",
+    "slug": "pink-sp-019",
+    "name": "Sugar Plum Hair & Body Mist",
+    "brand": "PINK",
+    "category": "Body & Fragrances",
+    "categorySlug": "body-fragrances",
+    "subcategory": "Fragancias",
+    "shortDescription": "Bruma ligera para cuerpo y cabello con ciruela, frutos rojos y jazmín.",
+    "description": "Una bruma ligera para cuerpo y cabello de la línea PINK, con una fragancia dulce y juvenil que combina ciruela, frutos rojos y flores.",
+    "benefits": [
+      "Aroma duradero",
+      "Refresca al instante",
+      "Ideal para cuerpo y cabello",
+      "No deja sensación pegajosa",
+      "Perfecta para llevar a todos lados"
+    ],
+    "keyIngredients": [
+      "Ciruela jugosa",
+      "Frutos rojos",
+      "Jazmín"
+    ],
+    "skinType": [],
+    "usageInstructions": "Rociar a 15-20 cm del cuerpo o cabello. Usar las veces que se desee durante el día.",
+    "origin": null,
+    "size": "75 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "19-pink-sugarplum-mist.png"
+  },
+  {
+    "sku": "PINK-BSL-020",
+    "slug": "pink-bsl-020",
+    "name": "Brown Sugar Daily Drench Body Lotion",
+    "brand": "PINK",
+    "category": "Body & Fragrances",
+    "categorySlug": "body-fragrances",
+    "subcategory": "Body Care",
+    "shortDescription": "Loción corporal hidratante con azúcar morena, vainilla y caramelo.",
+    "description": "Una loción corporal hidratante de la línea PINK, con una fragancia dulce y cálida de azúcar morena, vainilla y caramelo. Su fórmula ligera se absorbe rápidamente.",
+    "benefits": [
+      "Hidratación en profundidad",
+      "Suaviza la piel",
+      "Aroma cálido y envolvente duradero",
+      "Textura ligera de rápida absorción",
+      "Apta para todo tipo de piel"
+    ],
+    "keyIngredients": [
+      "Azúcar morena",
+      "Caramelo",
+      "Vainilla"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar sobre la piel limpia y seca, masajeando suavemente hasta su completa absorción. Ideal para uso diario.",
+    "origin": null,
+    "size": "75 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "20-pink-brownsugar-lotion.png"
+  },
+  {
+    "sku": "PINK-SPL-021",
+    "slug": "pink-spl-021",
+    "name": "Sugar Plum Body Lotion",
+    "brand": "PINK",
+    "category": "Body & Fragrances",
+    "categorySlug": "body-fragrances",
+    "subcategory": "Body Care",
+    "shortDescription": "Loción corporal hidratante con ciruela y frutos rojos.",
+    "description": "Una loción corporal hidratante de la línea PINK, con una fragancia dulce y frutal de ciruela y frutos rojos.",
+    "benefits": [
+      "Hidratación inmediata",
+      "Deja la piel suave y sedosa",
+      "Aroma dulce y duradero",
+      "Textura ligera, no grasosa",
+      "Apta para todo tipo de piel"
+    ],
+    "keyIngredients": [
+      "Ciruela",
+      "Frutos rojos",
+      "Vainilla"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar sobre la piel limpia y seca, masajeando suavemente hasta su completa absorción. Ideal para uso diario.",
+    "origin": null,
+    "size": "75 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "21-pink-sugarplum-lotion.png"
+  },
+  {
+    "sku": "KOS-MILK-022",
+    "slug": "kos-milk-022",
+    "name": "Milky Toner",
+    "brand": "Kosmos",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Tónicos",
+    "shortDescription": "Tónico calmante facial de textura lechosa.",
+    "description": "Un tónico facial de textura lechosa, formulado con activos calmantes, hidratantes y reparadores que equilibran la piel y refuerzan la barrera cutánea.",
+    "benefits": [
+      "Hidratación profunda y prolongada",
+      "Calma y reduce rojeces e irritación",
+      "Refuerza la barrera cutánea",
+      "Mejora la textura y luminosidad",
+      "Prepara la piel para sérums y cremas"
+    ],
+    "keyIngredients": [
+      "Ácido poliglutámico",
+      "Alantoína",
+      "Ectoína",
+      "Pantenol",
+      "Sodium PCA",
+      "Ganocalm"
+    ],
+    "skinType": [
+      "Apto para todo tipo de piel, incluso sensible"
+    ],
+    "usageInstructions": "Aplicar con las manos o con un algodón sobre la piel limpia, realizando suaves toques.",
+    "origin": null,
+    "size": "100 gr",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "22-kosmos-milkytoner.png"
+  },
+  {
+    "sku": "KOS-PATCH-023",
+    "slug": "kos-patch-023",
+    "name": "Forever Patches — Parches Reutilizables",
+    "brand": "Kosmos",
+    "category": "Medical Skincare",
+    "categorySlug": "medical-skincare",
+    "subcategory": "Accesorios",
+    "shortDescription": "Parches de silicona reutilizables para contorno de ojos, hasta 30 usos.",
+    "description": "Parches de silicona reutilizables diseñados para cuidar la piel de forma efectiva y sostenible. Ayudan a mantener la hidratación, suavizar líneas finas y potenciar la absorción de productos.",
+    "benefits": [
+      "Mantienen la hidratación por más tiempo",
+      "Suavizan líneas finas y previenen signos de expresión",
+      "Potencian la absorción de sérums y cremas",
+      "Reutilizables hasta 30 veces",
+      "Alternativa ecológica y económica",
+      "Aptos para todo tipo de piel"
+    ],
+    "keyIngredients": [
+      "Silicona médica"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar el sérum o crema de tratamiento, colocar los parches sobre la zona deseada y dejar actuar 15-30 minutos. Lavar con agua tibia y jabón neutro después de cada uso.",
+    "origin": null,
+    "size": "1 par",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "23-kosmos-foreverpatches.png"
+  },
+  {
+    "sku": "KOS-GLOW-024",
+    "slug": "kos-glow-024",
+    "name": "Glowy Mist",
+    "brand": "Kosmos",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Brumas faciales",
+    "shortDescription": "Bruma hidratante facial que refresca e ilumina al instante.",
+    "description": "Una bruma facial hidratante y calmante que refresca, revitaliza y aporta luminosidad al instante, fortaleciendo la barrera cutánea.",
+    "benefits": [
+      "Hidratación inmediata y prolongada",
+      "Calma y reduce la irritación",
+      "Mejora la luminosidad y el aspecto de la piel",
+      "Refuerza la barrera cutánea",
+      "Apta para todo tipo de piel"
+    ],
+    "keyIngredients": [
+      "Se(HA) 3%",
+      "Alantoína",
+      "Pantenol",
+      "Lightmony"
+    ],
+    "skinType": [
+      "Apto para todo tipo de piel, incluso sensible"
+    ],
+    "usageInstructions": "Rociar a 20-30 cm del rostro con los ojos cerrados. Usar por la mañana, durante el día o por la noche. También puede aplicarse sobre el maquillaje.",
+    "origin": null,
+    "size": "100 gr",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "24-kosmos-glowymist.png"
+  },
+  {
+    "sku": "KOS-BUB-025",
+    "slug": "kos-bub-025",
+    "name": "Cleansing Bubbles",
+    "brand": "Kosmos",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Limpiadores",
+    "shortDescription": "Gel de limpieza facial con niacinamida, té verde, kale y moringa.",
+    "description": "Un gel de limpieza facial con espuma suave y efectiva, que limpia en profundidad, elimina impurezas y exceso de sebo, sin resecar la piel.",
+    "benefits": [
+      "Limpieza profunda y suave",
+      "Elimina impurezas y exceso de sebo",
+      "No reseca ni irrita",
+      "Mejora la textura y luminosidad",
+      "Calma y equilibra la piel",
+      "Apto para todo tipo de piel"
+    ],
+    "keyIngredients": [
+      "Niacinamida 8%",
+      "Pro vitamina B5",
+      "Té verde",
+      "Kale",
+      "Moringa"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar sobre la piel húmeda, masajear suavemente en movimientos circulares y enjuagar con agua tibia. Usar por la mañana y/o noche.",
+    "origin": null,
+    "size": "200 gr",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "25-kosmos-cleansingbubbles.png"
+  },
+  {
+    "sku": "KOS-OIL-026",
+    "slug": "kos-oil-026",
+    "name": "Cleansing Oil",
+    "brand": "Kosmos",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Limpiadores",
+    "shortDescription": "Aceite de limpieza facial con almendra, girasol, jojoba y macadamia.",
+    "description": "Un aceite de limpieza facial suave y eficaz que elimina maquillaje, protector solar, exceso de sebo e impurezas, respetando la barrera natural de la piel.",
+    "benefits": [
+      "Elimina maquillaje y protector solar",
+      "Limpia impurezas y exceso de sebo",
+      "Hidrata y deja la piel suave",
+      "Calma y reduce la irritación",
+      "Mejora la textura y luminosidad",
+      "Apto para todo tipo de piel"
+    ],
+    "keyIngredients": [
+      "Aceite de almendra",
+      "Aceite de girasol",
+      "Aceite de jojoba",
+      "Aceite de macadamia",
+      "Vitamina E",
+      "Caléndula"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar sobre el rostro seco, masajear suavemente en movimientos circulares. Emulsionar con un poco de agua y enjuagar. Usar de día y/o noche.",
+    "origin": null,
+    "size": "200 gr",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "26-kosmos-cleansingoil.png"
+  },
+  {
+    "sku": "PINK-HB-027",
+    "slug": "pink-hb-027",
+    "name": "Love Shimmer Heart Breaker",
+    "brand": "PINK",
+    "category": "Body & Fragrances",
+    "categorySlug": "body-fragrances",
+    "subcategory": "Body Care",
+    "shortDescription": "Loción corporal con brillo sutil, fresa, jazmín y vainilla.",
+    "description": "Loción corporal hidratante con brillo sutil que deja la piel suave, luminosa y delicadamente perfumada. Fórmula ligera con aceites esenciales.",
+    "benefits": [
+      "Hidratación profunda y duradera",
+      "Piel suave, luminosa y con brillo sutil",
+      "Absorción rápida, sin sensación grasosa",
+      "Aroma irresistible que dura todo el día",
+      "Mejora la textura de la piel",
+      "Apta para todo tipo de piel"
+    ],
+    "keyIngredients": [
+      "Aceites esenciales",
+      "Micropartículas de brillo",
+      "Glicerina"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar diariamente sobre la piel limpia y seca, masajeando suavemente hasta su completa absorción. Usar por la mañana y/o después de la ducha.",
+    "origin": null,
+    "size": "236 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "27-pink-heartbreaker-lotion.png"
+  },
+  {
+    "sku": "VS-CP-LOC-028",
+    "slug": "vs-cp-loc-028",
+    "name": "Coconut Passion — Fragrance Lotion",
+    "brand": "Victoria's Secret",
+    "category": "Body & Fragrances",
+    "categorySlug": "body-fragrances",
+    "subcategory": "Body Care",
+    "shortDescription": "Loción corporal hidratante y perfumada con coco, vainilla y lirio de los valles.",
+    "description": "Una loción corporal hidratante y perfumada con el aroma Coconut Passion de Victoria's Secret. Fórmula ligera de rápida absorción.",
+    "benefits": [
+      "Hidrata en profundidad",
+      "Suaviza y mejora la textura de la piel",
+      "Perfuma con un aroma irresistible y duradero",
+      "Fórmula ligera, sin sensación grasosa"
+    ],
+    "keyIngredients": [
+      "Coco cremoso",
+      "Vainilla de Madagascar",
+      "Lirio de los valles"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar sobre la piel limpia y seca, masajeando suavemente hasta su completa absorción. Usar a diario.",
+    "origin": null,
+    "size": "236 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "28-vs-coconutpassion-lotion.png"
+  },
+  {
+    "sku": "KOS-SMOOTH-029",
+    "slug": "kos-smooth-029",
+    "name": "Smooth Potion",
+    "brand": "Kosmos",
+    "category": "Medical Skincare",
+    "categorySlug": "medical-skincare",
+    "subcategory": "Cremas",
+    "shortDescription": "Crema hidratante y nutritiva con niacinamida al 5%, indicada para ayudar con el acné.",
+    "description": "Crema hidratante y nutritiva que combina activos de última generación para mejorar la calidad de la piel. Ayuda a mejorar y prevenir los brotes de acné.",
+    "benefits": [
+      "Hidratación profunda y duradera",
+      "Mejora la textura y luminosidad",
+      "Desobstruye poros y regula el sebo",
+      "Mejora y previene los brotes de acné",
+      "Fortalece la barrera cutánea",
+      "Calma y reduce la irritación"
+    ],
+    "keyIngredients": [
+      "Niacinamida 5%",
+      "Psidium Guajava",
+      "MARSrutina 2%",
+      "Regaliz"
+    ],
+    "skinType": [
+      "Piel con tendencia acneica"
+    ],
+    "usageInstructions": "Aplicar sobre el rostro limpio y seco, mañana y noche. Masajear suavemente hasta su completa absorción.",
+    "origin": null,
+    "size": null,
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "29-kosmos-smoothpotion.png"
+  },
+  {
+    "sku": "KOS-RENSA-030",
+    "slug": "kos-rensa-030",
+    "name": "Renewing Toner (Ácido Salicílico)",
+    "brand": "Kosmos",
+    "category": "Medical Skincare",
+    "categorySlug": "medical-skincare",
+    "subcategory": "Tónicos",
+    "shortDescription": "Tónico exfoliante facial con ácido salicílico 2% y zinc, indicado para ayudar con el acné.",
+    "description": "Un tónico exfoliante de uso diario que ayuda a renovar la piel, desobstruir poros y mejorar su textura. Ayuda a mejorar y prevenir los brotes de acné.",
+    "benefits": [
+      "Renueva la piel y mejora la textura",
+      "Desobstruye poros y reduce imperfecciones",
+      "Controla el exceso de grasa",
+      "Mejora y previene los brotes de acné",
+      "Aporta luminosidad y frescura",
+      "Calma y equilibra"
+    ],
+    "keyIngredients": [
+      "Ácido salicílico 2%",
+      "Zinc sebum",
+      "Kale",
+      "Aloe + Malva"
+    ],
+    "skinType": [
+      "Piel con tendencia acneica",
+      "Piel grasa"
+    ],
+    "usageInstructions": "Aplicar con un algodón sobre el rostro limpio, mañana y/o noche. No enjuagar.",
+    "origin": null,
+    "size": "50 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "30-kosmos-renewingtoner-sa.png"
+  },
+  {
+    "sku": "KOS-RENAHA-031",
+    "slug": "kos-renaha-031",
+    "name": "Renewing Toner (AHA)",
+    "brand": "Kosmos",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Tónicos",
+    "shortDescription": "Tónico exfoliante facial con ácido glicólico y láctico.",
+    "description": "Un tónico exfoliante de uso diario que renueva la piel, mejora su textura y aporta luminosidad, sin irritar. Combina ácidos exfoliantes con activos calmantes y botánicos.",
+    "benefits": [
+      "Renueva y mejora la textura de la piel",
+      "Aporta luminosidad y uniformidad",
+      "Reduce apariencia de poros",
+      "Calma y equilibra",
+      "Hidrata sin sensación pegajosa",
+      "Apto para todo tipo de piel"
+    ],
+    "keyIngredients": [
+      "Ácido glicólico 7%",
+      "Ácido láctico 3%",
+      "Camomila",
+      "Aloe + Malva"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar con un algodón o con las manos sobre la piel limpia, mañana y/o noche. No enjuagar.",
+    "origin": null,
+    "size": "50 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "31-kosmos-renewingtoner-aha.png"
+  },
+  {
+    "sku": "KOS-AQUA-032",
+    "slug": "kos-aqua-032",
+    "name": "Aqua Potion",
+    "brand": "Kosmos",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Cremas",
+    "shortDescription": "Crema hidratante en gel, ligera y refrescante, con centella asiática.",
+    "description": "Una crema hidratante en gel, ligera y refrescante, que repone la hidratación, calma la piel y ayuda a fortalecer la barrera cutánea.",
+    "benefits": [
+      "Hidratación intensa",
+      "Calma y reduce rojeces",
+      "Refuerza la barrera cutánea",
+      "Textura ligera y refrescante",
+      "Aporta suavidad y luminosidad",
+      "Ideal para todo tipo de piel"
+    ],
+    "keyIngredients": [
+      "Pantenol",
+      "Alantoína",
+      "Centella asiática"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar una cantidad adecuada sobre rostro limpio, mañana y/o noche, con suaves movimientos hasta su completa absorción.",
+    "origin": null,
+    "size": "50 g",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "32-kosmos-aquapotion.png"
+  },
+  {
+    "sku": "KOS-BOOST-033",
+    "slug": "kos-boost-033",
+    "name": "Boosting Drops",
+    "brand": "Kosmos",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Serums",
+    "shortDescription": "Sérum facial hidratante y tensor con ácido hialurónico y aloe vera.",
+    "description": "Un sérum de última generación que hidrata intensamente, mejora la elasticidad y protege la piel del estrés ambiental.",
+    "benefits": [
+      "Hidratación profunda",
+      "Mejora la firmeza y elasticidad",
+      "Reduce líneas finas y arrugas",
+      "Calma y refresca la piel",
+      "Refuerza la barrera cutánea",
+      "Apto para todo tipo de piel"
+    ],
+    "keyIngredients": [
+      "Epidermosil SC 3%",
+      "Munapsys 2%",
+      "Ácido hialurónico 0,5%",
+      "Aloe vera"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar 2-3 gotas sobre rostro limpio, mañana y/o noche. Masajear suavemente hasta su completa absorción.",
+    "origin": null,
+    "size": "30 gr",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "33-kosmos-boostingdrops.png"
+  },
+  {
+    "sku": "KOS-BLOOM-034",
+    "slug": "kos-bloom-034",
+    "name": "Blooming Drops",
+    "brand": "Kosmos",
+    "category": "Medical Skincare",
+    "categorySlug": "medical-skincare",
+    "subcategory": "Serums",
+    "shortDescription": "Sérum facial regenerador con retinol 3,5% y rosa mosqueta.",
+    "description": "Un sérum facial avanzado con retinol de última tecnología, que estimula la renovación celular, mejora la textura de la piel y reduce signos de la edad.",
+    "benefits": [
+      "Renueva y regenera la piel",
+      "Reduce líneas finas y arrugas",
+      "Mejora la elasticidad y firmeza",
+      "Unifica el tono y mejora la textura",
+      "Aporta luminosidad natural",
+      "Hidrata y calma"
+    ],
+    "keyIngredients": [
+      "InuMax Advanced Retinol Pro 3,5%",
+      "Reneseed 2%",
+      "Rosa mosqueta",
+      "Complejo calmante"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar 2-3 gotas sobre rostro limpio, por la noche. Masajear suavemente hasta su completa absorción. De día, usar protector solar.",
+    "origin": null,
+    "size": "30 gr",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "34-kosmos-bloomingdrops.png"
+  },
+  {
+    "sku": "KOS-ACOIL-035",
+    "slug": "kos-acoil-035",
+    "name": "Aceite Facial",
+    "brand": "Kosmos",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Aceites faciales",
+    "shortDescription": "Aceite facial multibeneficio con jojoba, macadamia, palta y carotolino.",
+    "description": "Un aceite facial multibeneficio que hidrata, suaviza y mejora la textura de la piel, aportando luminosidad y protección antioxidante.",
+    "benefits": [
+      "Nutrición profunda y duradera",
+      "Mejora la elasticidad y firmeza",
+      "Aporta luminosidad natural",
+      "Calma y reduce la irritación",
+      "Protege contra radicales libres",
+      "Apto para todo tipo de piel"
+    ],
+    "keyIngredients": [
+      "Aceite de jojoba",
+      "Macadamia",
+      "Palta",
+      "Carotolino"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar 2-4 gotas sobre rostro limpio, mañana y/o noche. Masajear suavemente hasta su completa absorción.",
+    "origin": null,
+    "size": "30 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "35-kosmos-aceitefacial.png"
+  },
+  {
+    "sku": "KOS-CLAR-036",
+    "slug": "kos-clar-036",
+    "name": "Clarifying Toner",
+    "brand": "Kosmos",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Tónicos",
+    "shortDescription": "Tónico exfoliante facial con ácido mandélico y lactobiónico, avena y aloe.",
+    "description": "Tónico exfoliante de uso diario con AHA y PHA que elimina células muertas, mejora la textura de la piel, reduce la apariencia de poros y aporta luminosidad, sin irritar.",
+    "benefits": [
+      "Exfoliación química suave y efectiva",
+      "Piel más luminosa y uniforme",
+      "Reduce apariencia de poros y manchas",
+      "Textura más suave y refinada",
+      "Calma y equilibra la piel",
+      "Apto para todo tipo de piel, incluso sensible"
+    ],
+    "keyIngredients": [
+      "Ácido mandélico 8%",
+      "Ácido lactobiónico 2%",
+      "Avena sativa",
+      "Aloe + Malva"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar sobre la piel limpia con un disco de algodón o con las manos, evitando el contorno de ojos. No enjuagar.",
+    "origin": null,
+    "size": "50 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "36-kosmos-clarifyingtoner.png"
+  },
+  {
+    "sku": "COS-SUN-037",
+    "slug": "cos-sun-037",
+    "name": "Airy-Light Invisible Sun Stick SPF50+",
+    "brand": "COSRX",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Protección solar",
+    "shortDescription": "Protector solar en barra ultraligero y de acabado invisible, SPF50+ PA++++.",
+    "description": "Protector solar en barra con textura ultraligera y acabado invisible. Se desliza suavemente sobre la piel, dejando un acabado fresco, sin brillo ni residuos blancos. Ideal para retocar durante el día, incluso sobre el maquillaje.",
+    "benefits": [
+      "Protección solar muy alta",
+      "Textura liviana y transpirable",
+      "No deja residuos blancos",
+      "Controla el brillo",
+      "Hidrata y calma",
+      "Apto para todo tipo de piel, incluso sensible"
+    ],
+    "keyIngredients": [
+      "Centella asiática",
+      "Ácido hialurónico",
+      "Niacinamida"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar directamente sobre rostro y cuello, como último paso de la rutina de cuidado. Reaplicar cada 2-3 horas.",
+    "origin": "Corea del Sur",
+    "size": "19 g",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "37-cosrx-sunstick.png"
+  },
+  {
+    "sku": "ARE-GREEN-038",
+    "slug": "are-green-038",
+    "name": "Fresh Green Rice Mochi Cleanser",
+    "brand": "Arencia",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Limpiadores",
+    "shortDescription": "Limpiador facial en textura mochi con arroz, té verde y centella asiática.",
+    "description": "Un limpiador en textura mochi que combina el poder del arroz y extractos verdes para eliminar impurezas, controlar el exceso de grasa y dejar la piel fresca, hidratada y suave.",
+    "benefits": [
+      "Limpieza profunda",
+      "Hidrata y suaviza",
+      "Calma la piel",
+      "No reseca",
+      "Purifica los poros",
+      "Controla el exceso de grasa"
+    ],
+    "keyIngredients": [
+      "Extracto de arroz",
+      "Té verde",
+      "Centella asiática"
+    ],
+    "skinType": [],
+    "usageInstructions": "Tomar una pequeña cantidad y humedecer con agua. Masajear suavemente en el rostro con movimientos circulares. Enjuagar con agua tibia.",
+    "origin": null,
+    "size": "120 g",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "38-arencia-freshgreen.png"
+  },
+  {
+    "sku": "ARE-ROSE-039",
+    "slug": "are-rose-039",
+    "name": "Fresh Rosehip Rice Mochi Cleanser",
+    "brand": "Arencia",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Limpiadores",
+    "shortDescription": "Limpiador facial en textura mochi con arroz, rosa mosqueta y arcilla rosa.",
+    "description": "Una espuma densa y elástica tipo mochi que limpia profundamente, elimina impurezas y exceso de grasa, mientras hidrata y suaviza la piel. Deja el rostro fresco, limpio y radiante, sin sensación de tirantez.",
+    "benefits": [
+      "Limpieza profunda",
+      "Hidratación duradera",
+      "Suaviza la piel",
+      "Calma la irritación",
+      "Mejora la textura",
+      "Apta para todo tipo de piel, incluso sensible"
+    ],
+    "keyIngredients": [
+      "Arroz",
+      "Rosa mosqueta",
+      "Arcilla rosa"
+    ],
+    "skinType": [],
+    "usageInstructions": "Tomar una pequeña cantidad y humedecer con agua. Masajear suavemente sobre el rostro con movimientos circulares. Enjuagar con agua tibia.",
+    "origin": null,
+    "size": "120 g",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "39-arencia-freshrosehip.png"
+  },
+  {
+    "sku": "TOC-SUN-040",
+    "slug": "toc-sun-040",
+    "name": "Cica Cooling Sun Stick SPF50+",
+    "brand": "TOCOBO",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Protección solar",
+    "shortDescription": "Protector solar en barra con efecto refrescante y centella asiática, SPF50+ PA++++.",
+    "description": "Protector solar en barra con efecto refrescante, formulado con centella asiática y extractos calmantes. Brinda alta protección contra rayos UVA y UVB, hidrata, calma y controla el exceso de grasa sin dejar sensación pegajosa.",
+    "benefits": [
+      "Alta protección SPF50+ PA++++",
+      "Efecto cooling inmediato",
+      "Calma y reduce irritación",
+      "Controla el exceso de grasa",
+      "No deja residuos blancos",
+      "Textura ligera y mate"
+    ],
+    "keyIngredients": [
+      "Centella asiática",
+      "Herb AC Complex",
+      "Ácido hialurónico"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar directamente en rostro y cuello como último paso de la rutina y/o durante el día para retoques.",
+    "origin": null,
+    "size": "18 g",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "40-tocobo-sunstick.png"
+  },
+  {
+    "sku": "DRA-AQUA-041",
+    "slug": "dra-aqua-041",
+    "name": "Aqua Marine Water Cream",
+    "brand": "Dr. Althea",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Cremas",
+    "shortDescription": "Crema hidratante y reparadora tipo gel-crema con agua marina y centella asiática.",
+    "description": "Crema ligera tipo gel-crema formulada con agua marina, extractos botánicos y activos calmantes, que hidrata intensamente, refuerza la barrera cutánea y mejora la elasticidad.",
+    "benefits": [
+      "Hidratación profunda y duradera",
+      "Calma la piel sensible o irritada",
+      "Mejora la textura y elasticidad",
+      "Refuerza la barrera cutánea",
+      "Deja la piel más luminosa y saludable"
+    ],
+    "keyIngredients": [
+      "Agua marina",
+      "Centella Asiática",
+      "Ceramida NP"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar una pequeña cantidad en rostro y/o cuello, como último paso de la rutina. Masajear suavemente hasta su completa absorción.",
+    "origin": null,
+    "size": "50 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "41-dralthea-aquamarine.png"
+  },
+  {
+    "sku": "ARE-VITC-042",
+    "slug": "are-vitc-042",
+    "name": "Vitamin C Booster Shot",
+    "brand": "Arencia",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Cremas",
+    "shortDescription": "Crema hidratante para rostro y contorno de ojos con vitamina C 5% y glutatión.",
+    "description": "Crema hidratante para rostro y contorno de ojos con complejo de Vitamina C (5%) y Glutatión, diseñada para iluminar, unificar el tono y mejorar la textura de la piel.",
+    "benefits": [
+      "Ilumina la piel",
+      "Mejora la textura",
+      "Hidrata en profundidad",
+      "Protege y revitaliza"
+    ],
+    "keyIngredients": [
+      "Vitamin C Complex 5%",
+      "Glutatión"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar una pequeña cantidad en rostro y contorno de ojos, masajeando suavemente hasta su completa absorción.",
+    "origin": null,
+    "size": "30 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "42-arencia-vitcbooster.png"
+  },
+  {
+    "sku": "DRA-147-043",
+    "slug": "dra-147-043",
+    "name": "147 Barrier Cream",
+    "brand": "Dr. Althea",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Cremas",
+    "shortDescription": "Crema hidratante y reparadora con 7 tipos de ácido hialurónico y ceramidas.",
+    "description": "Crema ligera pero profundamente nutritiva, formulada con 7 tipos de Ácido Hialurónico, Ceramidas y extractos botánicos que hidratan, calman y fortalecen la barrera cutánea.",
+    "benefits": [
+      "Hidratación profunda y duradera",
+      "Calma la piel sensible o irritada",
+      "Mejora la elasticidad y la textura",
+      "Refuerza la barrera cutánea",
+      "Ideal para piel normal a seca"
+    ],
+    "keyIngredients": [
+      "Paeonia Albiflora Flower Extract",
+      "Persea Gratissima (Avocado) Fruit Extract",
+      "7 tipos de Ácido Hialurónico",
+      "Ceramide NP"
+    ],
+    "skinType": [
+      "Piel normal a seca"
+    ],
+    "usageInstructions": "Aplicar una cantidad adecuada en rostro y cuello, como último paso de la rutina. Usar por la mañana y/o noche.",
+    "origin": null,
+    "size": "50 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "43-dralthea-147barrier.png"
+  },
+  {
+    "sku": "DRA-345-044",
+    "slug": "dra-345-044",
+    "name": "345 Relief Cream Mist",
+    "brand": "Dr. Althea",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Brumas faciales",
+    "shortDescription": "Crema en bruma hidratante y calmante con agua de salvado de arroz y pantenol.",
+    "description": "Una crema en formato mist con textura liviana y refrescante, enriquecida con agua de salvado de arroz (Oryza Sativa) y pantenol, que hidrata, calma y fortalece la piel.",
+    "benefits": [
+      "Calma la piel sensible e irritada",
+      "Hidratación duradera",
+      "Refuerza la barrera cutánea",
+      "Mejora la textura y el equilibrio de la piel",
+      "Textura ligera, sin sensación pegajosa"
+    ],
+    "keyIngredients": [
+      "Oryza Sativa (Rice) Bran Water",
+      "Panthenol"
+    ],
+    "skinType": [
+      "Todo tipo de piel, especialmente piel sensible o con tendencia a la irritación"
+    ],
+    "usageInstructions": "Rociar sobre el rostro a 15-20 cm de distancia, con los ojos cerrados. Usar después de la limpieza, antes o después de la crema.",
+    "origin": null,
+    "size": "60 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "44-dralthea-345mist.png"
+  },
+  {
+    "sku": "BOJ-RS-045",
+    "slug": "boj-rs-045",
+    "name": "Relief Sun Rice + Probiotics SPF50+",
+    "brand": "Beauty of Joseon",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Protección solar",
+    "shortDescription": "Protector solar hidratante de uso diario con extracto de arroz y probióticos.",
+    "description": "Protector solar químico híbrido con textura tipo crema. Protege la piel de los rayos UVA y UVB, mientras nutre, hidrata y refuerza la barrera cutánea.",
+    "benefits": [
+      "Alta protección SPF50+ PA++++",
+      "Textura ligera y cremosa",
+      "Acabado natural, sin brillo graso",
+      "No deja residuo blanco",
+      "Apto para todo tipo de piel, incluso sensible"
+    ],
+    "keyIngredients": [
+      "Extracto de arroz",
+      "Probióticos",
+      "Agentes hidratantes"
+    ],
+    "skinType": [
+      "Piel sensible"
+    ],
+    "usageInstructions": "Aplicar una cantidad generosa sobre rostro y cuello como último paso de la rutina de mañana. Reaplicar cada 2-3 horas si hay exposición al sol.",
+    "origin": null,
+    "size": null,
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "45-boj-reliefsun.png"
+  },
+  {
+    "sku": "MAD-CALMCR-046",
+    "slug": "mad-calmcr-046",
+    "name": "Tecassoside Calming Cream",
+    "brand": "Madeca 21",
+    "category": "Medical Skincare",
+    "categorySlug": "medical-skincare",
+    "subcategory": "Cremas",
+    "shortDescription": "Crema calmante e hidratante con Tecassoside (Centella Asiática).",
+    "description": "Crema calmante de alta concentración con TECASSOSIDE, diseñada para cuidar la piel sensible e irritada, fortaleciendo la barrera cutánea y aportando hidratación.",
+    "benefits": [
+      "Alivio inmediato",
+      "Hidratación duradera",
+      "Reparación de la piel",
+      "Textura ligera y no grasa",
+      "Ideal para uso diario"
+    ],
+    "keyIngredients": [
+      "Tecassoside",
+      "Agentes hidratantes",
+      "Pantenol"
+    ],
+    "skinType": [
+      "Piel irritada",
+      "Piel sensible"
+    ],
+    "usageInstructions": "Aplicar una cantidad adecuada en el rostro, extender suavemente hasta su completa absorción. Usar mañana y noche.",
+    "origin": null,
+    "size": "30 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "46-madeca21-calmingcream.png"
+  },
+  {
+    "sku": "MAD-CALMPAD-047",
+    "slug": "mad-calmpad-047",
+    "name": "Tecassocide Calming Pad",
+    "brand": "Madeca 21",
+    "category": "Medical Skincare",
+    "categorySlug": "medical-skincare",
+    "subcategory": "Accesorios",
+    "shortDescription": "Pads de cuidado intensivo con Tecassocide, calman en 3 segundos.",
+    "description": "Pads tónicos pre-impregnados que ayudan a calmar la piel sensible, reducir el enrojecimiento y aportar hidratación inmediata.",
+    "benefits": [
+      "Efecto calmante en 3 segundos",
+      "Textura suave y refrescante",
+      "Fórmula hipoalergénica",
+      "Sin fragancia fuerte",
+      "Apto para piel sensible"
+    ],
+    "keyIngredients": [
+      "Tecassocide",
+      "Centella Asiática",
+      "Agentes hidratantes"
+    ],
+    "skinType": [
+      "Piel sensible"
+    ],
+    "usageInstructions": "Limpiar el rostro, pasar el pad suavemente por todo el rostro o aplicar en zonas específicas. Dejar que la esencia se absorba.",
+    "origin": null,
+    "size": "30 ml / 12 pads",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "47-madeca21-calmingpad.png"
+  },
+  {
+    "sku": "BOJ-MATTE-048",
+    "slug": "boj-matte-048",
+    "name": "Matte Sun Stick Mugwort + Camelia",
+    "brand": "Beauty of Joseon",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Protección solar",
+    "shortDescription": "Protector solar en barra con acabado mate, artemisa y camelia.",
+    "description": "Protector solar en barra con extracto de artemisa (mugwort) y camelia, que protege la piel de los rayos UV mientras calma, hidrata y controla el exceso de grasa.",
+    "benefits": [
+      "Protección solar SPF 50+ / PA++++",
+      "Calma y reduce la irritación",
+      "Hidrata y protege",
+      "Acabado mate y sin sensación pegajosa"
+    ],
+    "keyIngredients": [
+      "Artemisa (Mugwort)",
+      "Camellia (Camelia)"
+    ],
+    "skinType": [
+      "Piel mixta y grasa"
+    ],
+    "usageInstructions": "Aplicar la barra sobre la piel limpia, deslizar suavemente en rostro, cuello y zonas expuestas al sol. Reaplicar cada 2-3 horas.",
+    "origin": null,
+    "size": "18 g",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "48-boj-mattesunstick.png"
+  },
+  {
+    "sku": "ORD-NMFHA-049",
+    "slug": "ord-nmfha-049",
+    "name": "Natural Moisturizing Factors + HA",
+    "brand": "The Ordinary",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Cremas",
+    "shortDescription": "Hidratante ligero con factores naturales de hidratación y ácido hialurónico.",
+    "description": "Un hidratante ligero que proporciona hidratación inmediata y duradera, ayudando a mantener la barrera natural de la piel y mejorar su textura.",
+    "benefits": [
+      "Aporta hidratación profunda y duradera",
+      "Fortalece la barrera cutánea",
+      "Mejora la textura y elasticidad de la piel",
+      "Reduce la sensación de tirantez y resequedad",
+      "Ideal para el uso diario"
+    ],
+    "keyIngredients": [
+      "Ácido Hialurónico (HA)",
+      "Factores Naturales de Hidratación (NMF)",
+      "Glicerina"
+    ],
+    "skinType": [
+      "Piel seca",
+      "Piel deshidratada",
+      "Piel sensible",
+      "Piel mixta",
+      "Piel normal"
+    ],
+    "usageInstructions": "Aplicar una pequeña cantidad sobre la piel limpia. Distribuir suavemente en rostro y cuello. Usar por la mañana y/o noche.",
+    "origin": null,
+    "size": "100 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "49-ordinary-nmfha.png"
+  },
+  {
+    "sku": "BYL-BALM-050",
+    "slug": "byl-balm-050",
+    "name": "Berry Cool Plumping Lip Balm — No.2 Peach Hush",
+    "brand": "un byleasha",
+    "category": "Labios",
+    "categorySlug": "labios",
+    "subcategory": "Bálsamos",
+    "shortDescription": "Bálsamo labial con color, efecto plumping y acabado jugoso, tono Peach Hush.",
+    "description": "Bálsamo labial con color, efecto plumping y acabado jugoso. Hidrata, da volumen y realza el color natural de los labios en un solo paso.",
+    "benefits": [
+      "Labios más suaves y firmes",
+      "Efecto plumping visible",
+      "Brillo duradero",
+      "No pegajoso",
+      "Fórmula ligera y confortable"
+    ],
+    "keyIngredients": [
+      "Extracto de durazno",
+      "Ácido hialurónico",
+      "Berry Complex"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar directamente sobre los labios.",
+    "origin": null,
+    "size": null,
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "50-byleasha-lipbalm-peach.png"
+  },
+  {
+    "sku": "BYL-TINT-051",
+    "slug": "byl-tint-051",
+    "name": "Cloudkiss Velvet Tint — No.4 Blush Pink",
+    "brand": "un byleasha",
+    "category": "Labios",
+    "categorySlug": "labios",
+    "subcategory": "Tintes labiales",
+    "shortDescription": "Tinte labial líquido acabado velvet, tono Blush Pink.",
+    "description": "Tinte labial líquido con acabado velvet (aterciopelado) que tiñe los labios de forma uniforme, aportando un color suave, duradero y de aspecto saludable.",
+    "benefits": [
+      "Color de larga duración",
+      "Acabado velvet suave",
+      "No reseca los labios",
+      "Textura ligera y confortable",
+      "Efecto difuminado natural"
+    ],
+    "keyIngredients": [
+      "Hyaluronic Acid",
+      "Jojoba Oil",
+      "Extractos botánicos"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar directamente sobre los labios.",
+    "origin": null,
+    "size": null,
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "51-byleasha-velvettint-blushpink.png"
+  },
+  {
+    "sku": "BYL-GLAZE-052",
+    "slug": "byl-glaze-052",
+    "name": "Tanghulu Glaze Tint — No.4 Cherry Coke",
+    "brand": "byunleasha",
+    "category": "Labios",
+    "categorySlug": "labios",
+    "subcategory": "Tintes labiales",
+    "shortDescription": "Tinte labial de acabado glossy tipo glass, tono Cherry Coke.",
+    "description": "Tint labial de acabado glossy que aporta un color jugoso y vibrante con un brillo tipo 'glass' que se mantiene por horas, sin sensación pegajosa.",
+    "benefits": [
+      "Color intenso y duradero",
+      "Acabado ultra brillante tipo glass",
+      "Textura ligera y no pegajosa",
+      "Hidratación y confort",
+      "Efecto labios jugosos"
+    ],
+    "keyIngredients": [
+      "Cherry Extract",
+      "Hyaluronic Acid",
+      "Jojoba Oil"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar directamente sobre los labios.",
+    "origin": null,
+    "size": null,
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "52-byleasha-tanghulu-cherrycoke.png"
+  },
+  {
+    "sku": "VAS-ROSY-053",
+    "slug": "vas-rosy-053",
+    "name": "Lip Therapy Rosy Lips",
+    "brand": "Vaseline",
+    "category": "Labios",
+    "categorySlug": "labios",
+    "subcategory": "Bálsamos",
+    "shortDescription": "Bálsamo labial con Petroleum Jelly y un sutil tono rosado.",
+    "description": "Bálsamo labial con Petroleum Jelly (Vaselina), formulado para hidratar, proteger y suavizar los labios, aportando un sutil tono rosado y brillo natural.",
+    "benefits": [
+      "Hidratación profunda y duradera",
+      "Suaviza y repara labios secos",
+      "Aporta un suave tono rosado",
+      "Brillo natural y saludable",
+      "Fórmula no pegajosa"
+    ],
+    "keyIngredients": [
+      "Petroleum Jelly (Vaselina)"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar tantas veces como sea necesario, especialmente en labios secos o expuestos al sol, frío o viento.",
+    "origin": null,
+    "size": null,
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "53-vaseline-rosylips.png"
+  },
+  {
+    "sku": "MAD-TECATONER-054",
+    "slug": "mad-tecatoner-054",
+    "name": "Teca Toning Toner",
+    "brand": "Madeca 21",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Tónicos",
+    "shortDescription": "Tónico facial calmante y revitalizante con TECA (Centella Asiática).",
+    "description": "Tónico facial calmante y revitalizante formulado con TECA (Centella Asiática). Ayuda a calmar la piel sensible, reforzar la barrera cutánea y mejorar el equilibrio de la piel.",
+    "benefits": [
+      "Efecto calmante inmediato",
+      "Refuerza la barrera cutánea",
+      "Reduce la sensibilidad",
+      "Aporta hidratación duradera",
+      "Piel más suave, uniforme y saludable"
+    ],
+    "keyIngredients": [
+      "TECA (Centella Asiática)",
+      "Pantenol",
+      "Betaína",
+      "Alantoína"
+    ],
+    "skinType": [
+      "Piel sensible",
+      "Piel mixta",
+      "Piel grasa",
+      "Piel con rojeces"
+    ],
+    "usageInstructions": "Aplicar sobre un algodón o en las manos limpias. Distribuir suavemente en rostro y cuello. Usar mañana y noche.",
+    "origin": null,
+    "size": "180 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "54-madeca21-tecatoner.png"
+  },
+  {
+    "sku": "MED-PDRN-055",
+    "slug": "med-pdrn-055",
+    "name": "PDRN Pink Collagen Capsule Cream",
+    "brand": "medicube",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Cremas",
+    "shortDescription": "Crema facial hidratante y reafirmante con cápsulas de colágeno, PDRN y niacinamida.",
+    "description": "Crema facial hidratante y reafirmante con cápsulas de colágeno, PDRN (Sodium DNA) y niacinamida. Ayuda a mejorar la elasticidad, luminosidad y textura de la piel.",
+    "benefits": [
+      "Piel más firme y elástica",
+      "Hidratación intensa",
+      "Luminosidad y tono uniforme",
+      "Textura suave y sedosa",
+      "Fortalece la barrera cutánea"
+    ],
+    "keyIngredients": [
+      "PDRN (Sodium DNA)",
+      "Colágeno",
+      "Niacinamida 5%"
+    ],
+    "skinType": [
+      "Piel cansada",
+      "Piel con pérdida de firmeza",
+      "Piel seca o mixta"
+    ],
+    "usageInstructions": "Aplicar una cantidad adecuada sobre rostro limpio, mañana y/o noche.",
+    "origin": null,
+    "size": "50 g",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "55-medicube-pdrncream.png"
+  },
+  {
+    "sku": "MED-ZPP-056",
+    "slug": "med-zpp-056",
+    "name": "Zero Pore Pad",
+    "brand": "medicube",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Tónicos",
+    "shortDescription": "Pads exfoliantes y calmantes con AHA, BHA, pantenol y alantoína.",
+    "description": "Pads exfoliantes impregnados en una fórmula con AHA, BHA y activos hidratantes que eliminan células muertas, exceso de sebo e impurezas, ayudando a minimizar la apariencia de los poros.",
+    "benefits": [
+      "Exfolia sin irritar",
+      "Minimiza la apariencia de poros",
+      "Controla el exceso de sebo",
+      "Mejora la textura y luminosidad",
+      "Hidrata y calma la piel"
+    ],
+    "keyIngredients": [
+      "AHA (Ácido glicólico)",
+      "BHA (Ácido salicílico)",
+      "Panthenol",
+      "Allantoin"
+    ],
+    "skinType": [
+      "Piel mixta/grasa",
+      "Piel con poros dilatados",
+      "Piel con imperfecciones",
+      "Piel sensible (uso moderado)"
+    ],
+    "usageInstructions": "Pasar el pad suavemente sobre el rostro limpio, evitando el contorno de ojos.",
+    "origin": null,
+    "size": "155 g / 70 pads",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "56-medicube-zeroporepad.png"
+  },
+  {
+    "sku": "CAR-CLASSIC-057",
+    "slug": "car-classic-057",
+    "name": "Classic Lip Balm Medicated",
+    "brand": "Carmex",
+    "category": "Labios",
+    "categorySlug": "labios",
+    "subcategory": "Bálsamos",
+    "shortDescription": "Bálsamo labial medicado que alivia, protege e hidrata los labios.",
+    "description": "Bálsamo labial medicado y protector que ayuda a aliviar labios secos, agrietados o resecos. Formulado con ingredientes que proporcionan un alivio inmediato y una hidratación duradera.",
+    "benefits": [
+      "Alivio inmediato",
+      "Hidratación profunda",
+      "Repara labios agrietados",
+      "Protege del clima y la resequedad",
+      "Textura rica y duradera"
+    ],
+    "keyIngredients": [
+      "Mentol",
+      "Alcanfor",
+      "Cera de abeja"
+    ],
+    "skinType": [],
+    "usageInstructions": "Aplicar tantas veces como sea necesario, especialmente en labios secos o expuestos al sol, frío o viento.",
+    "origin": null,
+    "size": "7.5 g",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "57-carmex-classic.png"
+  },
+  {
+    "sku": "CAR-STRAW-058",
+    "slug": "car-straw-058",
+    "name": "Daily Care Lip Balm — Strawberry SPF15",
+    "brand": "Carmex",
+    "category": "Labios",
+    "categorySlug": "labios",
+    "subcategory": "Bálsamos",
+    "shortDescription": "Bálsamo labial hidratante con sabor a fresa y protector solar SPF15.",
+    "description": "Bálsamo labial hidratante con sabor a fresa y protector solar SPF 15. Ayuda a suavizar, proteger y reparar los labios secos y agrietados.",
+    "benefits": [
+      "Con protector solar SPF 15",
+      "Hidratación de larga duración",
+      "Suaviza y repara labios secos",
+      "Sabor a fresa",
+      "Fórmula no pegajosa"
+    ],
+    "keyIngredients": [],
+    "skinType": [],
+    "usageInstructions": "Aplicar sobre los labios según sea necesario.",
+    "origin": null,
+    "size": "4.25 g",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "58-carmex-strawberry.png"
+  },
+  {
+    "sku": "TOC-CICASERUM-059",
+    "slug": "toc-cicaserum-059",
+    "name": "Cica Calming Serum",
+    "brand": "TOCOBO",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Serums",
+    "shortDescription": "Sérum facial calmante e hidratante con Cica, ácido hialurónico y tea tree.",
+    "description": "Sérum facial calmante formulado con Cica (Centella Asiática), Ácido Hialurónico y Tea Tree. Ayuda a reducir rojeces, calmar la piel irritada y fortalecer la barrera cutánea.",
+    "benefits": [
+      "Calma y reduce rojeces",
+      "Hidrata en profundidad",
+      "Fortalece la barrera de la piel",
+      "Controla el exceso de sebo",
+      "Textura ligera y de rápida absorción"
+    ],
+    "keyIngredients": [
+      "Cica Complex",
+      "Multi HA Complex",
+      "Ecocycle Tea Tree"
+    ],
+    "skinType": [
+      "Piel sensible",
+      "Piel mixta/grasa",
+      "Piel con acné"
+    ],
+    "usageInstructions": "Aplicar unas gotas sobre rostro limpio, mañana y/o noche.",
+    "origin": null,
+    "size": null,
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "59-tocobo-cicaserum.png"
+  },
+  {
+    "sku": "UNL-CKV-FAN-060",
+    "slug": "unl-ckv-fan-060",
+    "name": "Cloud Kiss Velvet Tint — No.2 Fancy",
+    "brand": "by unleashia",
+    "category": "Labios",
+    "categorySlug": "labios",
+    "subcategory": "Tintes labiales",
+    "shortDescription": "Tinte labial acabado velvet, tono Fancy, color intenso y difuminado.",
+    "description": "Tinta labial de acabado velvet (aterciopelado) que aporta color intenso, difuminado y de larga duración.",
+    "benefits": [
+      "Acabado velvet, suave y difuminado",
+      "Color edificable e intenso",
+      "Larga duración",
+      "No reseca los labios"
+    ],
+    "keyIngredients": [],
+    "skinType": [
+      "Todo tipo de labios, incluso labios secos"
+    ],
+    "usageInstructions": "Aplicar directamente sobre los labios.",
+    "origin": null,
+    "size": null,
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "60-unleashia-cloudkiss-fancy.png"
+  },
+  {
+    "sku": "ANUA-HL77-061",
+    "slug": "anua-hl77-061",
+    "name": "Heartleaf 77+ Hyaluron Soothing Toner",
+    "brand": "Anua",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Tónicos",
+    "shortDescription": "Tónico calmante con 77% de extracto de Heartleaf y ácido hialurónico.",
+    "description": "Tónico facial hidratante y calmante, ideal para el uso diario. Su fórmula ligera equilibra la piel y ayuda a mantenerla suave, fresca y saludable.",
+    "benefits": [
+      "Calma y alivia la piel sensible",
+      "Hidrata con ácido hialurónico",
+      "Mejora la textura y el tono de la piel",
+      "Sin sensación pegajosa"
+    ],
+    "keyIngredients": [
+      "Heartleaf 77%",
+      "Ácido Hialurónico"
+    ],
+    "skinType": [
+      "Todo tipo de piel",
+      "Piel sensible",
+      "Piel mixta/grasa",
+      "Piel seca"
+    ],
+    "usageInstructions": "Aplicar con un algodón o las manos sobre el rostro limpio.",
+    "origin": null,
+    "size": "250 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "61-anua-heartleaf77.png"
+  },
+  {
+    "sku": "COS-LOWPH-062",
+    "slug": "cos-lowph-062",
+    "name": "Low pH Good Morning Gel Cleanser",
+    "brand": "COSRX",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Limpiadores",
+    "shortDescription": "Gel limpiador facial de pH bajo con té verde y centella asiática.",
+    "description": "Gel limpiador facial de pH bajo (5.0-6.0), formulado con ingredientes botánicos que limpian suavemente sin resecar la piel.",
+    "benefits": [
+      "Limpieza profunda y suave",
+      "Equilibra el pH de la piel",
+      "No reseca",
+      "Refresca y calma"
+    ],
+    "keyIngredients": [
+      "Extracto de té verde",
+      "Centella Asiática",
+      "BHA natural"
+    ],
+    "skinType": [
+      "Todo tipo de piel, incluyendo piel sensible, mixta y grasa"
+    ],
+    "usageInstructions": "Aplicar sobre el rostro húmedo, masajear suavemente y enjuagar con agua tibia.",
+    "origin": null,
+    "size": "150 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "62-cosrx-lowphcleanser.png"
+  },
+  {
+    "sku": "BOJ-RICEHONEY-063",
+    "slug": "boj-ricehoney-063",
+    "name": "Ground Rice and Honey Glow Mask",
+    "brand": "Beauty of Joseon",
+    "category": "Mascarillas Coreanas",
+    "categorySlug": "mascarillas-coreanas",
+    "subcategory": "Mascarillas",
+    "shortDescription": "Mascarilla facial tipo wash-off con arroz molido y miel, iluminadora.",
+    "description": "Mascarilla facial tipo wash-off con arroz molido y miel, que exfolia suavemente, limpia los poros y aporta luminosidad a la piel sin irritarla.",
+    "benefits": [
+      "Exfoliación suave",
+      "Piel más luminosa y uniforme",
+      "Minimiza la apariencia de poros",
+      "Hidratante y calmante"
+    ],
+    "keyIngredients": [
+      "Arroz molido",
+      "Miel",
+      "Arcilla de caolín"
+    ],
+    "skinType": [
+      "Piel opaca, con textura irregular o poros visibles"
+    ],
+    "usageInstructions": "Aplicar sobre el rostro limpio, dejar actuar y masajear suavemente antes de retirar con agua.",
+    "origin": null,
+    "size": "150 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "63-boj-ricehoneymask.png"
+  },
+  {
+    "sku": "BOJ-DYNASTY-064",
+    "slug": "boj-dynasty-064",
+    "name": "Dynasty Cream",
+    "brand": "Beauty of Joseon",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Cremas",
+    "shortDescription": "Crema facial hidratante de uso diario con ginseng y niacinamida.",
+    "description": "Crema facial hidratante de uso diario con textura ligera y sedosa, formulada con ingredientes tradicionales coreanos para nutrir, proteger y revitalizar la piel.",
+    "benefits": [
+      "Hidrata profundamente",
+      "Mejora la elasticidad",
+      "Fortalece la barrera de la piel",
+      "Acabado suave y radiante, sin sensación pegajosa"
+    ],
+    "keyIngredients": [
+      "Agua de salvado de arroz",
+      "Ginseng",
+      "Niacinamida"
+    ],
+    "skinType": [
+      "Piel normal, seca o sensible"
+    ],
+    "usageInstructions": "Aplicar sobre rostro limpio, mañana y/o noche.",
+    "origin": null,
+    "size": "50 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "64-boj-dynastycream.png"
+  },
+  {
+    "sku": "UNL-TGZ-ANGELPINK-065",
+    "slug": "unl-tgz-angelpink-065",
+    "name": "Tanghulu Glaze Tint — No.3 Angel Pink",
+    "brand": "by unleashia",
+    "category": "Labios",
+    "categorySlug": "labios",
+    "subcategory": "Tintes labiales",
+    "shortDescription": "Tinte labial acabado glaze, tono Angel Pink, rosado claro y fresco.",
+    "description": "Tinta labial con acabado glaze (brillante) que aporta color y brillo jugoso de larga duración.",
+    "benefits": [
+      "Acabado glaze brillante y jugoso",
+      "Color edificable y duradero",
+      "Hidratante y cómodo de usar",
+      "No pegajoso, textura ligera"
+    ],
+    "keyIngredients": [],
+    "skinType": [
+      "Todo tipo de piel"
+    ],
+    "usageInstructions": "Aplicar directamente sobre los labios.",
+    "origin": null,
+    "size": null,
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "65-unleashia-tanghulu-angelpink.png"
+  },
+  {
+    "sku": "UNL-TGZ-HUSHGRAPE-066",
+    "slug": "unl-tgz-hushgrape-066",
+    "name": "Tanghulu Glaze Tint — No.3 Hush Grape",
+    "brand": "by unleashia",
+    "category": "Labios",
+    "categorySlug": "labios",
+    "subcategory": "Tintes labiales",
+    "shortDescription": "Tinte labial acabado glaze, tono Hush Grape.",
+    "description": "Tinta labial con acabado glaze que aporta color, brillo y una apariencia fresca y voluminosa a los labios.",
+    "benefits": [
+      "Acabado glaze brillante y jugoso",
+      "Color edificable y duradero",
+      "Hidratante y cómodo de usar",
+      "No pegajoso, textura ligera"
+    ],
+    "keyIngredients": [],
+    "skinType": [
+      "Todo tipo de piel"
+    ],
+    "usageInstructions": "Aplicar directamente sobre los labios.",
+    "origin": null,
+    "size": null,
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "66-unleashia-tanghulu-hushgrape.png"
+  },
+  {
+    "sku": "TOC-CALAMINE-067",
+    "slug": "toc-calamine-067",
+    "name": "Calamine Pore Control Cleansing Oil",
+    "brand": "TOCOBO",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Limpiadores",
+    "shortDescription": "Aceite limpiador facial calmante para poros con calamina.",
+    "description": "Aceite limpiador que disuelve suavemente el maquillaje, el exceso de sebo y las impurezas, ayudando a calmar la piel y minimizar la apariencia de los poros.",
+    "benefits": [
+      "Limpieza profunda de maquillaje e impurezas",
+      "Controla el exceso de sebo y los poros",
+      "Calma y suaviza la piel sensible",
+      "Fórmula vegana"
+    ],
+    "keyIngredients": [
+      "Calamina",
+      "Aceite de oliva",
+      "Aceite de coco"
+    ],
+    "skinType": [
+      "Piel grasa, mixta y con poros dilatados",
+      "Piel sensible"
+    ],
+    "usageInstructions": "Aplicar sobre el rostro seco, masajear y enjuagar con agua.",
+    "origin": null,
+    "size": "200 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "67-tocobo-calamineoil.png"
+  },
+  {
+    "sku": "UNL-TGZ-AMBEROSE-068",
+    "slug": "unl-tgz-amberose-068",
+    "name": "Tanghulu Glaze Tint — No.2 Amberose",
+    "brand": "by unleashia",
+    "category": "Labios",
+    "categorySlug": "labios",
+    "subcategory": "Tintes labiales",
+    "shortDescription": "Tinte labial acabado glaze tipo gloss, tono Amberose, color duradero y jugoso.",
+    "description": "Tinta labial de acabado brillante tipo 'gloss', con color duradero, textura ligera y efecto jugoso. No reseca, hidrata y deja los labios con un look fresco y luminoso.",
+    "benefits": [
+      "Color duradero y efecto glossy",
+      "Textura ligera y confortable",
+      "Hidrata y no reseca"
+    ],
+    "keyIngredients": [],
+    "skinType": [],
+    "usageInstructions": "Aplicar directamente sobre los labios.",
+    "origin": null,
+    "size": null,
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "68-unleashia-tanghulu-amberose.png"
+  },
+  {
+    "sku": "TOC-COCOCLAY-069",
+    "slug": "toc-cococlay-069",
+    "name": "Coconut Clay Cleansing Foam",
+    "brand": "TOCOBO",
+    "category": "Skincare Coreano",
+    "categorySlug": "skincare-coreano",
+    "subcategory": "Limpiadores",
+    "shortDescription": "Limpiador facial en espuma con arcilla de coco.",
+    "description": "Limpiador facial en espuma con arcilla de coco que limpia profundamente los poros y el exceso de sebo sin resecar la piel.",
+    "benefits": [
+      "Limpieza profunda",
+      "Controla el exceso de sebo y minimiza los poros",
+      "100% ingredientes veganos",
+      "No reseca"
+    ],
+    "keyIngredients": [
+      "Arcilla de coco",
+      "Extracto de saponaria"
+    ],
+    "skinType": [
+      "Piel mixta a grasa y con poros dilatados"
+    ],
+    "usageInstructions": "Aplicar sobre el rostro húmedo, masajear con espuma y enjuagar con agua tibia.",
+    "origin": null,
+    "size": "150 ml",
+    "price": null,
+    "salePrice": null,
+    "priceIsPending": true,
+    "stock": 0,
+    "infoSheetFile": "69-tocobo-coconutclayfoam.png"
+  }
+]
