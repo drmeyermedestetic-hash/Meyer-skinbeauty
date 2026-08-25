@@ -441,6 +441,24 @@ footer.site-footer {
   border-top: 1px solid var(--border);
   max-width: 640px;
 }
+
+.pd-infosheet {
+  margin-top: 24px;
+  max-width: 640px;
+}
+.pd-infosheet h3 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--champagne);
+  margin-bottom: 12px;
+}
+.pd-infosheet img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--border);
+}
 .acc-item {
   border-bottom: 1px solid var(--border);
 }

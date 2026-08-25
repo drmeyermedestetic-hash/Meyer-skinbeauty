@@ -35,7 +35,7 @@
     "salePrice": null,
     "priceIsPending": true,
     "stock": 0,
-    "infoSheetFile": "01-arencia-mochi.png"
+    "infoSheetFile": "01-arencia-mochi.jpg"
   },
   {
     "sku": "QS-JAB-002",
@@ -104,7 +104,7 @@
     "salePrice": null,
     "priceIsPending": true,
     "stock": 0,
-    "infoSheetFile": "03-vs-coconut.png"
+    "infoSheetFile": "03-vs-coconut.jpg"
   },
   {
     "sku": "VS-BV-004",
@@ -136,7 +136,7 @@
     "salePrice": null,
     "priceIsPending": true,
     "stock": 0,
-    "infoSheetFile": "04-vs-barevanilla.png"
+    "infoSheetFile": "04-vs-barevanilla.jpg"
   },
   {
     "sku": "VS-VP-005",
@@ -168,7 +168,7 @@
     "salePrice": null,
     "priceIsPending": true,
     "stock": 0,
-    "infoSheetFile": "05-vs-velvetpetals.png"
+    "infoSheetFile": "05-vs-velvetpetals.jpg"
   },
   {
     "sku": "BIO-KELP-006",
@@ -205,7 +205,7 @@
     "salePrice": null,
     "priceIsPending": true,
     "stock": 0,
-    "infoSheetFile": "06-biodance-kelp.png"
+    "infoSheetFile": "06-biodance-kelp.jpg"
   },
   {
     "sku": "BIO-HCN-007",

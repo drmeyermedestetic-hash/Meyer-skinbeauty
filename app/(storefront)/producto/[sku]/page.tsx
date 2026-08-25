@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllProducts, getProductBySlug } from "@/lib/products";
@@ -80,6 +81,20 @@ export default async function ProductPage({
         <AddToCartControls product={product} />
 
         <ProductAccordion product={product} />
+
+        {product.infoSheetFile && (
+          <div className="pd-infosheet">
+            <h3>Ficha técnica</h3>
+            <Image
+              src={`/img/catalogo/${product.infoSheetFile}`}
+              alt={`Ficha técnica de ${product.name}`}
+              width={1536}
+              height={1024}
+              sizes="(max-width: 640px) 100vw, 640px"
+              style={{ width: "100%", height: "auto" }}
+            />
+          </div>
+        )}
       </div>
     </>
   );
