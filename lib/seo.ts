@@ -88,8 +88,8 @@ export function buildBreadcrumbJsonLd(items: { name: string; url: string }[]) {
 
 /**
  * JSON-LD schema.org/Organization — se incluye una sola vez en el layout raíz.
- * TODO: reemplazar `logo` por un archivo real en public/ y confirmar el
- * handle de Instagram de la tienda (puede ser distinto al de la clínica).
+ * TODO: confirmar el handle de Instagram de la tienda (puede ser
+ * distinto al de la clínica) — hoy no se incluye `sameAs` por eso.
  */
 export function buildOrganizationJsonLd() {
   return {

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { getSupabaseBrowserClient } from "@/lib/supabase-browser";
 
@@ -56,8 +57,18 @@ export default function AdminLoginPage() {
       >
         <div
           className="serif"
-          style={{ fontSize: 20, letterSpacing: "0.1em", marginBottom: 4, textAlign: "center" }}
+          style={{
+            fontSize: 20,
+            letterSpacing: "0.1em",
+            marginBottom: 4,
+            textAlign: "center",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 8,
+          }}
         >
+          <Image src="/logo-meyer.png" alt="" width={44} height={44} />
           MEYER
         </div>
         <p

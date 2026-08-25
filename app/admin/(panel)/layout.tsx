@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { requireAdminOrRedirect } from "@/lib/admin-auth";
 import AdminNav from "@/components/admin/AdminNav";
 import LogoutButton from "@/components/admin/LogoutButton";
@@ -15,6 +16,7 @@ export default async function AdminPanelLayout({ children }: { children: React.R
     <div className="layout">
       <aside className="sidebar">
         <div className="brand">
+          <Image src="/logo-meyer.png" alt="" width={30} height={30} />
           <span className="serif">MEYER · ADMIN</span>
         </div>
         <AdminNav />
