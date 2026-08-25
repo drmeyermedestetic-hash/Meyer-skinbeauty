@@ -61,10 +61,13 @@ supabase/
 scripts/
   seed-products.ts                Carga data/catalog.json en Supabase (marcas/categorías incl.)
 docs/
-  etapa-1-propuesta-diseno-arquitectura.html   Brief maestro: identidad, paleta, tipografía,
-                                                sitemap, modelo de datos, roadmap Etapa 1-7
+  prompt-original.md              Transcripción del prompt original de la clienta (fuente de alcance)
+  etapa-1-propuesta-diseno-arquitectura.html   Propuesta de diseño/arquitectura a partir de ese prompt
+  etapa-1-mockup-pantallas.png    Mockup de las 12 pantallas aprobadas (home → checkout → buscador →
+                                  favoritos → editorial → menú mobile)
   design-prototype.html           Prototipo visual original de la tienda (referencia)
   admin-prototype.html            Prototipo visual original del panel admin (referencia)
+  foto-local-cartel.jpg           Foto real del local (referencia de identidad)
   etapa-5-mercadopago-notas-originales.md
   checklist-etapa7-qa.md          Checklist de QA/seguridad/SEO/perf antes de producción (manual)
 ```
@@ -208,10 +211,15 @@ desplegado.
 
 ## Brief maestro (Etapa 1) y tipografía
 
-`docs/etapa-1-propuesta-diseno-arquitectura.html` es el brief original
-de identidad/arquitectura/roadmap — confirma que las 7 etapas que este
-README ya venía siguiendo son las correctas. Dos cosas que trajo y que
-se corrigieron:
+`docs/prompt-original.md` es la transcripción del prompt original de
+la clienta (el punto de partida de todo el proyecto) y
+`docs/etapa-1-propuesta-diseno-arquitectura.html` +
+`docs/etapa-1-mockup-pantallas.png` son la propuesta de diseño/
+arquitectura y el mockup de las 12 pantallas que se aprobaron a partir
+de ese prompt — confirman que las 7 etapas que este README ya venía
+siguiendo son las correctas, y son la fuente autoritativa para
+resolver dudas de alcance. Dos cosas que trajeron y que se
+corrigieron:
 
 - **Tipografía real**: el brief pide una serif editorial "de la misma
   familia visual del cartel MEYER" (Cormorant Garamond o Playfair
@@ -223,6 +231,10 @@ se corrigieron:
   siempre por si el build no tiene salida a internet.
 - El resto del brief (paleta, sitemap, modelo de datos, componentes)
   ya estaba implementado o coincide con lo que se venía construyendo.
+- **Tailwind CSS**: el prompt original lo pedía como parte del stack;
+  se usó CSS plano portado del prototipo aprobado en su lugar, a
+  propósito (fidelidad pixel a pixel con el diseño ya validado) — ver
+  el detalle en `docs/prompt-original.md`.
 
 ## Qué falta
 
@@ -241,9 +253,13 @@ se corrigieron:
 - **Storefront**: cuentas de cliente (login + historial de pedidos +
   favoritos — la base ya lo soporta), emails transaccionales, cupón
   editable desde el checkout (el backend ya lo soporta, falta el campo
-  en la UI), buscador, botón flotante de WhatsApp (número de contacto
-  pendiente de definir).
-- **Categoría "Makeup"**: aparece en el sitemap del brief pero no en
-  el catálogo real que se cargó (`meyer_catalogo_real_2.xlsx` sólo
-  trae las 5 categorías actuales) — falta confirmar si hay productos
-  de maquillaje reales para sumarla, o si quedó del brief inicial.
+  en la UI), buscador inteligente, botón flotante de WhatsApp (número
+  de contacto pendiente de definir), "The Meyer Edit" (editorial).
+- **Filtros avanzados** (marca, tipo de producto, tipo de piel,
+  necesidades, precio) en `/categoria/[slug]`: el prompt original los
+  pedía explícitamente; hoy sólo están los rótulos "Filtrar"/"Ordenar"
+  sin lógica real detrás.
+- **Categoría "Makeup"**: confirmada en el prompt original como parte
+  del alcance (`docs/prompt-original.md`), pero el catálogo real que
+  se cargó (`meyer_catalogo_real_2.xlsx`) todavía no trae productos de
+  esa categoría — falta cargarlos cuando estén definidos.
