@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Skincare Coreano",
+    "slug": "skincare-coreano",
+    "icon": "🌿"
+  },
+  {
+    "name": "Medical Skincare",
+    "slug": "medical-skincare",
+    "icon": "🧬"
+  },
+  {
+    "name": "Body & Fragrances",
+    "slug": "body-fragrances",
+    "icon": "🌸"
+  },
+  {
+    "name": "Mascarillas Coreanas",
+    "slug": "mascarillas-coreanas",
+    "icon": "🪷"
+  },
+  {
+    "name": "Labios",
+    "slug": "labios",
+    "icon": "💋"
+  }
+]

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meyer SkinBeauty</title>
+<style>
+:root{
+  --black:#0B0B0B; --champagne:#B08D57; --champagne-l:#D8BE94;
+  --ivory:#F3EDE3; --cream:#EDE4D3; --beige:#E3D5BE; --white:#fff;
+  --muted:#8A8478;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:"Helvetica Neue",Arial,sans-serif; background:var(--ivory); color:var(--black); -webkit-font-smoothing:antialiased;}
+.serif{font-family:"Georgia","Times New Roman",serif;}
+a{color:inherit; text-decoration:none;}
+button{font-family:inherit; cursor:pointer; border:none;}
+.app{max-width:480px; margin:0 auto; background:var(--ivory); min-height:100vh; position:relative; box-shadow:0 0 40px rgba(0,0,0,.08);}
+
+/* HEADER */
+header.top{
+  position:sticky; top:0; z-index:20; background:var(--ivory);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 16px; border-bottom:1px solid #E1D6C0;
+}
+header.top .icon-btn{width:22px; height:22px; display:flex; align-items:center; justify-content:center;}
+header.top .logo{display:flex; align-items:center; gap:8px;}
+header.top .logo img{width:30px; height:30px; border-radius:50%;}
+header.top .logo span{font-size:14px; letter-spacing:.15em;}
+header.top .right{display:flex; gap:16px; align-items:center;}
+.cart-count{
+  position:relative;
+}
+.cart-count .badge{
+  position:absolute; top:-7px; right:-9px; background:var(--champagne); color:#fff;
+  font-size:9px; width:15px; height:15px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+}
+
+/* VIEWS */
+.view{display:none;}
+.view.active{display:block;}
+
+/* HOME HERO */
+.hero{position:relative; height:280px; overflow:hidden;}
+.hero img{width:100%; height:100%; object-fit:cover; filter:brightness(.55);}
+.hero .content{position:absolute; bottom:20px; left:20px; right:20px; color:#fff;}
+.hero .content h1{font-size:26px; line-height:1.15; font-weight:400; text-transform:uppercase; letter-spacing:.02em;}
+.hero .content p{font-size:12.5px; color:#E9E3D6; margin:8px 0 14px; max-width:280px;}
+.hero .btns{display:flex; gap:8px;}
+.hero .btns button{padding:10px 16px; font-size:11px; letter-spacing:.08em; text-transform:uppercase;}
+.btn-primary{background:var(--black); color:#fff;}
+.btn-outline{background:transparent; border:1px solid #fff !important; color:#fff;}
+
+/* CATEGORIES */
+.section{padding:24px 16px;}
+.section h3{font-size:11px; text-transform:uppercase; letter-spacing:.18em; color:var(--champagne); margin-bottom:14px;}
+.cat-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px 10px;}
+.cat-item{text-align:center;}
+.cat-circle{
+  width:100%; aspect-ratio:1; border-radius:50%; border:1.5px solid var(--champagne);
+  display:flex; align-items:center; justify-content:center; background:var(--white); font-size:22px; margin-bottom:8px;
+}
+.cat-item span{font-size:10.5px; text-transform:uppercase; letter-spacing:.03em; line-height:1.3; display:block;}
+
+/* PRODUCT CAROUSEL / GRID */
+.h-scroll{display:flex; gap:12px; overflow-x:auto; padding-bottom:4px; -webkit-overflow-scrolling:touch;}
+.h-scroll::-webkit-scrollbar{display:none;}
+.pcard{flex:0 0 130px; background:var(--white); border:1px solid #E1D6C0; cursor:pointer;}
+.pcard.grid-card{flex:none; width:100%;}
+.pcard .img{height:110px; background:var(--cream); display:flex; align-items:center; justify-content:center; font-size:26px; position:relative;}
+.pcard .fav{position:absolute; top:6px; right:6px; font-size:13px;}
+.pcard .info{padding:8px 10px 10px;}
+.pcard .brand{font-size:9px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);}
+.pcard .name{font-size:11.5px; margin:3px 0 5px; line-height:1.25; min-height:28px;}
+.pcard .price{font-size:12.5px; font-weight:600;}
+.pcard .stock{font-size:8.5px; text-transform:uppercase; color:#7A9D7E; margin-top:4px; letter-spacing:.05em;}
+.pcard .stock.low{color:#C08A3E;}
+
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+
+/* BLACK BANNER */
+.banner-black{background:var(--black); color:var(--ivory); padding:36px 20px; text-align:left;}
+.banner-black .eyebrow{font-size:10px; letter-spacing:.2em; color:var(--champagne-l); text-transform:uppercase;}
+.banner-black h2{font-size:24px; margin:8px 0 10px; font-weight:400;}
+.banner-black p{font-size:12.5px; color:#C9C2B3; max-width:260px; margin-bottom:16px;}
+.banner-black button{background:transparent; border:1px solid var(--champagne-l); color:var(--champagne-l); padding:9px 16px; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;}
+
+/* FOOTER NAV */
+.tabbar{
+  position:sticky; bottom:0; background:var(--white); border-top:1px solid #E1D6C0;
+  display:flex; justify-content:space-around; padding:10px 0 14px;
+}
+.tabbar button{background:none; display:flex; flex-direction:column; align-items:center; gap:3px; font-size:9px; color:var(--muted); letter-spacing:.03em;}
+.tabbar button.active{color:var(--black);}
+.tabbar .ic{font-size:16px;}
+
+/* CATEGORY / LISTADO */
+.page-head{padding:16px; display:flex; align-items:center; gap:10px; border-bottom:1px solid #E1D6C0;}
+.back{font-size:18px;}
+.page-head h2{font-size:16px; text-transform:uppercase; letter-spacing:.06em; font-weight:400;}
+.filters{display:flex; gap:10px; padding:12px 16px; font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); border-bottom:1px solid #E1D6C0;}
+.filters span{border:1px solid #DCD2BC; padding:5px 10px;}
+
+/* PRODUCT DETAIL */
+.pd-gallery{height:320px; background:var(--cream); display:flex; align-items:center; justify-content:center; font-size:60px; position:relative;}
+.pd-gallery .dots{position:absolute; bottom:12px; left:0; right:0; display:flex; justify-content:center; gap:5px;}
+.pd-gallery .dots span{width:5px; height:5px; border-radius:50%; background:#00000030;}
+.pd-gallery .dots span:first-child{background:var(--black);}
+.pd-body{padding:18px 16px;}
+.pd-brand{font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted);}
+.pd-name{font-size:19px; margin:6px 0 8px;}
+.pd-desc{font-size:12.5px; color:#544F45; margin-bottom:14px; line-height:1.5;}
+.pd-price-row{display:flex; align-items:center; justify-content:space-between; margin-bottom:16px;}
+.pd-price{font-size:20px; font-weight:600;}
+.qty{display:flex; align-items:center; border:1px solid #DCD2BC;}
+.qty button{width:32px; height:32px; background:none; font-size:15px;}
+.qty span{width:26px; text-align:center; font-size:13px;}
+.pd-actions{display:flex; flex-direction:column; gap:8px; margin-bottom:20px;}
+.pd-actions button{padding:14px; font-size:12px; text-transform:uppercase; letter-spacing:.1em;}
+.btn-add{background:var(--black); color:#fff;}
+.btn-buy{background:var(--champagne); color:#fff;}
+.accordion{border-top:1px solid #E1D6C0;}
+.acc-item{border-bottom:1px solid #E1D6C0;}
+.acc-head{padding:14px 2px; display:flex; justify-content:space-between; align-items:center; font-size:12.5px; text-transform:uppercase; letter-spacing:.06em; background:none; width:100%;}
+.acc-body{max-height:0; overflow:hidden; transition:max-height .25s ease; font-size:12.5px; color:#544F45; line-height:1.6;}
+.acc-body div{padding:0 2px 14px;}
+.acc-item.open .acc-body{max-height:300px;}
+.acc-item.open .chevron{transform:rotate(180deg);}
+.chevron{transition:transform .2s;}
+
+/* CART DRAWER */
+.overlay{position:fixed; inset:0; background:rgba(0,0,0,.4); z-index:40; opacity:0; pointer-events:none; transition:opacity .25s;}
+.overlay.show{opacity:1; pointer-events:auto;}
+.drawer{
+  position:fixed; top:0; right:-100%; width:88%; max-width:400px; height:100%; background:var(--white); z-index:50;
+  transition:right .28s ease; display:flex; flex-direction:column;
+}
+.drawer.show{right:0;}
+.drawer-head{padding:16px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #E1D6C0;}
+.drawer-head h3{font-size:14px; text-transform:uppercase; letter-spacing:.06em;}
+.drawer-items{flex:1; overflow-y:auto; padding:0 16px;}
+.cart-item{display:flex; gap:10px; padding:14px 0; border-bottom:1px solid #EEE6D6;}
+.cart-item .thumb{width:56px; height:56px; background:var(--cream); flex:none; display:flex; align-items:center; justify-content:center; font-size:20px;}
+.cart-item .meta{flex:1;}
+.cart-item .meta .brand{font-size:9px; color:var(--muted); text-transform:uppercase;}
+.cart-item .meta .name{font-size:12px; margin:2px 0 6px;}
+.cart-item .meta .row{display:flex; justify-content:space-between; align-items:center;}
+.cart-item .qty{transform:scale(.85); transform-origin:left;}
+.cart-item .price{font-size:12px; font-weight:600;}
+.cart-item .del{font-size:10px; color:var(--muted); text-decoration:underline; margin-top:4px; background:none;}
+.drawer-summary{padding:16px; border-top:1px solid #E1D6C0;}
+.sum-row{display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:8px; color:#544F45;}
+.sum-row.total{font-size:15px; font-weight:600; color:var(--black); border-top:1px solid #E1D6C0; padding-top:10px; margin-top:6px;}
+.drawer-summary button{width:100%; padding:14px; font-size:12px; text-transform:uppercase; letter-spacing:.1em; margin-top:6px;}
+.empty-cart{padding:40px 16px; text-align:center; color:var(--muted); font-size:12.5px;}
+
+/* CHECKOUT */
+.co-section{padding:18px 16px; border-bottom:8px solid var(--ivory);}
+.co-section h4{font-size:11px; text-transform:uppercase; letter-spacing:.12em; color:var(--champagne); margin-bottom:12px;}
+.field{margin-bottom:10px;}
+.field label{font-size:10.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.05em; display:block; margin-bottom:4px;}
+.field input{width:100%; padding:11px 12px; border:1px solid #DCD2BC; background:var(--white); font-size:13px; font-family:inherit;}
+.field-row{display:flex; gap:10px;}
+.field-row .field{flex:1;}
+.pay-option{display:flex; align-items:center; gap:10px; padding:14px; border:1px solid #DCD2BC; margin-bottom:8px; font-size:12.5px;}
+.pay-option.selected{border-color:var(--champagne); background:#FBF7EF;}
+.pay-option input{accent-color:var(--champagne);}
+.co-submit{padding:16px;}
+.co-submit button{width:100%; background:var(--black); color:#fff; padding:15px; font-size:12px; text-transform:uppercase; letter-spacing:.1em;}
+
+/* CONFIRMATION */
+.confirm{background:var(--black); color:var(--ivory); min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:40px 24px;}
+.confirm .check{width:56px; height:56px; border:1.5px solid var(--champagne-l); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:24px; color:var(--champagne-l); margin-bottom:22px;}
+.confirm h2{font-size:20px; font-weight:400; margin-bottom:8px; text-transform:uppercase; letter-spacing:.05em;}
+.confirm p{font-size:12.5px; color:#C9C2B3; margin-bottom:24px;}
+.confirm .order-box{border:1px solid #33302A; padding:16px; width:100%; margin-bottom:26px; font-size:12px; text-align:left;}
+.confirm .order-box .row{display:flex; justify-content:space-between; padding:6px 0; color:#C9C2B3;}
+.confirm .order-box .row b{color:#fff; font-weight:400;}
+.confirm button{width:100%; padding:14px; margin-bottom:10px; font-size:11.5px; text-transform:uppercase; letter-spacing:.1em;}
+
+/* PRICE EDIT MODE */
+.price-fab{
+  position:fixed; bottom:90px; right:16px; z-index:35;
+  background:var(--black); color:#fff; border-radius:50%; width:48px; height:48px;
+  display:flex; align-items:center; justify-content:center; font-size:18px; box-shadow:0 4px 14px rgba(0,0,0,.25);
+}
+.price-drawer-overlay{position:fixed; inset:0; background:rgba(0,0,0,.4); z-index:60; opacity:0; pointer-events:none; transition:opacity .25s;}
+.price-drawer-overlay.show{opacity:1; pointer-events:auto;}
+.price-drawer{
+  position:fixed; top:0; right:-100%; width:92%; max-width:420px; height:100%; background:var(--white); z-index:61;
+  transition:right .28s ease; display:flex; flex-direction:column;
+}
+.price-drawer.show{right:0;}
+.price-drawer-head{padding:16px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #E1D6C0;}
+.price-drawer-head h3{font-size:14px; text-transform:uppercase; letter-spacing:.06em;}
+.price-drawer-list{flex:1; overflow-y:auto; padding:0 16px;}
+.price-row{display:flex; align-items:center; gap:10px; padding:12px 0; border-bottom:1px solid #EEE6D6;}
+.price-row .thumb{width:44px; height:44px; background:var(--cream); flex:none;}
+.price-row .thumb img{width:100%; height:100%; object-fit:cover;}
+.price-row .meta{flex:1; min-width:0;}
+.price-row .meta .brand{font-size:9px; color:var(--muted); text-transform:uppercase;}
+.price-row .meta .name{font-size:11.5px; line-height:1.25;}
+.price-row .price-input{width:100px; padding:8px 10px; border:1px solid #DCD2BC; font-size:13px; text-align:right;}
+.price-drawer-foot{padding:14px 16px; border-top:1px solid #E1D6C0; display:flex; flex-direction:column; gap:8px;}
+.price-drawer-foot button{padding:13px; font-size:11.5px; text-transform:uppercase; letter-spacing:.08em;}
+.price-note{font-size:11px; color:var(--muted); padding:10px 16px 0; line-height:1.5;}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+
+  <!-- HEADER -->
+  <header class="top">
+    <button class="icon-btn" onclick="nav('home')">☰</button>
+    <div class="logo" onclick="nav('home')"><img src="img/d89a5fdd-3a94-4b0b-8c39-5b7d5998e345.jpeg"><span class="serif">MEYER</span></div>
+    <div class="right">
+      <div class="icon-btn">🔍</div>
+      <div class="icon-btn cart-count" onclick="openCart()">🛍<span class="badge" id="cartBadge">0</span></div>
+    </div>
+  </header>
+
+  <!-- HOME -->
+  <div class="view active" id="view-home">
+    <div class="hero">
+      <img src="img/IMG_1651.jpeg">
+      <div class="content">
+        <h1 class="serif">Skincare,<br>Beauty &amp; Science</h1>
+        <p>Una selección de belleza y cuidado de la piel elegida para transformar tu rutina.</p>
+        <div class="btns">
+          <button class="btn-primary" onclick="nav('cat', 'Skincare Coreano')">Ver productos</button>
+          <button class="btn-outline" onclick="nav('cat', 'Skincare Coreano')">K-Beauty</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Categorías</h3>
+      <div class="cat-grid" id="catGrid"></div>
+    </div>
+
+    <div class="section">
+      <h3>Destacados</h3>
+      <div class="h-scroll" id="featuredRow"></div>
+    </div>
+
+    <div class="banner-black">
+      <div class="eyebrow">Selección profesional</div>
+      <h2 class="serif">Science<br>Meets Skin</h2>
+      <p>Dermocosmética avanzada para resultados visibles y respaldados por la ciencia.</p>
+      <button onclick="nav('cat','Medical Skincare')">Descubrir</button>
+    </div>
+
+    <div class="section">
+      <h3>Novedades</h3>
+      <div class="h-scroll" id="newRow"></div>
+    </div>
+  </div>
+
+  <!-- CATEGORY LIST -->
+  <div class="view" id="view-cat">
+    <div class="page-head"><span class="back" onclick="nav('home')">←</span><h2 id="catTitle">Categoría</h2></div>
+    <div class="filters"><span>Filtrar</span><span>Ordenar</span></div>
+    <div class="section" style="padding-top:16px;">
+      <div class="grid2" id="catList"></div>
+    </div>
+  </div>
+
+  <!-- PRODUCT DETAIL -->
+  <div class="view" id="view-product">
+    <div class="page-head"><span class="back" onclick="history.back?nav('home'):nav('home')">←</span><h2>Producto</h2></div>
+    <div class="pd-gallery" id="pdImg">
+      <div class="dots"><span></span><span></span><span></span></div>
+    </div>
+    <div class="pd-body">
+      <div class="pd-brand" id="pdBrand"></div>
+      <div class="pd-name serif" id="pdName"></div>
+      <div class="pd-desc" id="pdDesc"></div>
+      <div class="pd-price-row">
+        <div class="pd-price" id="pdPrice"></div>
+        <div class="qty"><button onclick="changeQty(-1)">−</button><span id="pdQty">1</span><button onclick="changeQty(1)">+</button></div>
+      </div>
+      <div class="pd-actions">
+        <button class="btn-add" onclick="addToCart()">Agregar al carrito</button>
+        <button class="btn-buy" onclick="addToCart(); openCart();">Comprar ahora</button>
+      </div>
+      <div class="accordion" id="pdAccordion"></div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT -->
+  <div class="view" id="view-checkout">
+    <div class="page-head"><span class="back" onclick="nav('home')">←</span><h2>Checkout</h2></div>
+    <div class="co-section">
+      <h4>Datos de envío</h4>
+      <div class="field-row">
+        <div class="field"><label>Nombre</label><input placeholder="Mario"></div>
+        <div class="field"><label>Apellido</label><input placeholder="Meyer"></div>
+      </div>
+      <div class="field"><label>Email</label><input placeholder="tu@email.com"></div>
+      <div class="field"><label>Teléfono</label><input placeholder="+54 9 ..."></div>
+      <div class="field"><label>Dirección</label><input placeholder="Calle y número"></div>
+      <div class="field-row">
+        <div class="field"><label>Código postal</label><input id="coPostal" placeholder="4000" oninput="calcShipping(this.value)"></div>
+        <div class="field"><label>Ciudad</label><input placeholder="San Miguel de Tucumán"></div>
+      </div>
+    </div>
+    <div class="co-section">
+      <h4>Método de envío</h4>
+      <div id="shippingOptions" style="font-size:12.5px; color:var(--muted);">Ingresá tu código postal para ver las opciones de envío.</div>
+    </div>
+    <div class="co-section">
+      <h4>Método de pago</h4>
+      <label class="pay-option selected"><input type="radio" name="pay" checked> Mercado Pago — tarjetas, transferencia y más</label>
+      <label class="pay-option"><input type="radio" name="pay"> Efectivo (Rapipago / Pago Fácil)</label>
+    </div>
+    <div class="co-section" style="border-bottom:none;">
+      <h4>Resumen</h4>
+      <div class="sum-row"><span>Subtotal</span><span id="coSubtotal">$ 0</span></div>
+      <div class="sum-row"><span>Envío</span><span id="coShipping">A confirmar</span></div>
+      <div class="sum-row total"><span>Total</span><span id="coTotal">$ 0</span></div>
+    </div>
+    <div class="co-submit"><button onclick="confirmOrder()">Pagar con Mercado Pago</button></div>
+  </div>
+
+  <!-- CONFIRMATION -->
+  <div class="view" id="view-confirm">
+    <div class="confirm">
+      <div class="check">✓</div>
+      <h2 class="serif">¡Gracias por tu compra!</h2>
+      <p>Tu pedido ha sido confirmado.</p>
+      <div class="order-box">
+        <div class="row"><span>N° de pedido</span><b id="confOrder">#MSB0000</b></div>
+        <div class="row"><span>Método de pago</span><b>Mercado Pago</b></div>
+        <div class="row"><span>Estado</span><b>Pago confirmado</b></div>
+      </div>
+      <button class="btn-outline" style="color:var(--champagne-l); border:1px solid var(--champagne-l); background:none;" onclick="nav('home')">Seguir comprando</button>
+    </div>
+  </div>
+
+  <!-- TABBAR -->
+  <div class="tabbar" id="tabbar">
+    <button class="active" data-tab="home" onclick="nav('home')"><span class="ic">⌂</span>Inicio</button>
+    <button data-tab="cat" onclick="nav('cat','Skincare Coreano')"><span class="ic">▦</span>Categorías</button>
+    <button data-tab="fav"><span class="ic">♡</span>Favoritos</button>
+    <button data-tab="account"><span class="ic">◎</span>Cuenta</button>
+  </div>
+
+  <!-- PRICE EDIT -->
+  <div class="price-fab" onclick="openPriceDrawer()" title="Editar precios">✎</div>
+  <div class="price-drawer-overlay" id="priceOverlay" onclick="closePriceDrawer()"></div>
+  <div class="price-drawer" id="priceDrawer">
+    <div class="price-drawer-head"><h3>Cargar precios</h3><span onclick="closePriceDrawer()" style="font-size:18px; cursor:pointer;">✕</span></div>
+    <div class="price-note">Escribí el precio de cada producto y tocá "Aplicar precios". Se van a ver en toda la tienda al instante. Al final descargá el archivo para guardarlos — esta vista no los recuerda si cerrás la página.</div>
+    <div class="price-drawer-list" id="priceList"></div>
+    <div class="price-drawer-foot">
+      <button class="btn-primary" onclick="applyPrices()">Aplicar precios</button>
+      <button class="btn-outline" style="border:1px solid var(--black) !important; color:var(--black); background:none;" onclick="downloadPrices()">Descargar precios (CSV)</button>
+    </div>
+  </div>
+
+  <!-- CART DRAWER -->
+  <div class="overlay" id="overlay" onclick="closeCart()"></div>
+  <div class="drawer" id="drawer">
+    <div class="drawer-head"><h3>Mi carrito (<span id="drawerCount">0</span>)</h3><span onclick="closeCart()" style="font-size:18px; cursor:pointer;">✕</span></div>
+    <div class="drawer-items" id="drawerItems"></div>
+    <div class="drawer-summary">
+      <div class="sum-row"><span>Subtotal</span><span id="dSubtotal">$ 0</span></div>
+      <div class="sum-row"><span>Envío</span><span>Se calcula en checkout</span></div>
+      <div class="sum-row total"><span>Total</span><span id="dTotal">$ 0</span></div>
+      <button class="btn-primary" onclick="goCheckout()">Finalizar compra</button>
+      <button class="btn-outline" style="border:1px solid var(--black) !important; color:var(--black); background:none;" onclick="closeCart()">Seguir comprando</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ---------- DATA (placeholder de catálogo — se reemplaza en Etapa 4 con productos reales) ----------
+const CATEGORIES = [
+  {name:"Skincare Coreano", icon:"🌿"},
+  {name:"Medical Skincare", icon:"🧴"},
+  {name:"Makeup", icon:"💄"},
+  {name:"Labios", icon:"💋"},
+  {name:"Mascarillas", icon:"🧖‍♀️"},
+  {name:"Body & Fragrances", icon:"🌸"},
+];
+
+const PRODUCTS = [{"id": "ARE-MOC-001", "brand": "Arencia", "name": "Fresh Blue Hyssop Rice Mochi Cleanser", "cat": "Skincare Coreano", "img": "img/productos/01-arencia-mochi.png", "desc": "Limpiador facial en formato mochi, elaborado con arroz coreano y extracto de hisopo azul, que limpia en profundidad sin resecar.", "benefits": ["Limpia profundamente los poros", "Controla el exceso de grasa", "Calma y equilibra la piel"], "ingredients": ["Arroz coreano", "Hisopo azul", "Té verde"], "price": null}, {"id": "QS-JAB-002", "brand": "Quimeral Skin (QS)", "name": "Jabón Pieles Sensibles Phyto Descongestive", "cat": "Medical Skincare", "img": "img/productos/02-qs-jabon.png", "desc": "Jabón líquido dermocosmético formulado con activos botánicos y calmantes que limpia en profundidad sin agredir la piel.", "benefits": ["Limpia suavemente sin irritar", "Calma rojeces y reduce la inflamación", "Ayuda a equilibrar la microbiota"], "ingredients": ["Manzanilla", "Aloe Vera", "Extractos botánicos"], "price": null}, {"id": "VS-CP-003", "brand": "Victoria's Secret", "name": "Coconut Passion — Fragrance Mist", "cat": "Body & Fragrances", "img": "img/productos/03-vs-coconut.png", "desc": "Bruma corporal de aroma tropical que combina coco cremoso, vainilla y notas dulces de flor de tiaré.", "benefits": ["Aroma duradero y envolvente", "Hidrata suavemente la piel", "Ideal para el día o la noche"], "ingredients": ["Coco", "Flor de tiaré", "Vainilla"], "price": null}, {"id": "VS-BV-004", "brand": "Victoria's Secret", "name": "Bare Vanilla — Fragrance Mist", "cat": "Body & Fragrances", "img": "img/productos/04-vs-barevanilla.png", "desc": "Bruma corporal con una mezcla adictiva de vainilla, flores suaves y un toque de almizcle.", "benefits": ["Aroma envolvente y duradero", "Hidrata suavemente la piel", "Perfecta para el día o la noche"], "ingredients": ["Vainilla cremosa", "Flor de cachemira", "Almizcle dorado"], "price": null}, {"id": "VS-VP-005", "brand": "Victoria's Secret", "name": "Velvet Petals — Fragrance Mist", "cat": "Body & Fragrances", "img": "img/productos/05-vs-velvetpetals.png", "desc": "Fragancia corporal tipo body mist con un aroma floral dulce y seductor.", "benefits": ["Aroma duradero y envolvente", "Ideal para el día o la noche", "Hidrata suavemente la piel"], "ingredients": ["Pétalos de gardenia", "Coco", "Frambuesa"], "price": null}, {"id": "BIO-KELP-006", "brand": "Biodance", "name": "Refreshing Sea Kelp Real Deep Mask", "cat": "Mascarillas Coreanas", "img": "img/productos/06-biodance-kelp.png", "desc": "Mascarilla facial coreana con alga marina (Dasima/Kelp), agua de mar profunda y activos calmantes.", "benefits": ["Calma irritaciones y rojeces", "Purifica y controla el exceso de sebo", "Fortalece la barrera cutánea"], "ingredients": ["Dasima (Kelp)", "Agua de mar profunda", "Fermento de alga marina"], "price": null}, {"id": "BIO-HCN-007", "brand": "Biodance", "name": "Hydro Cera-Nol Real Deep Mask", "cat": "Mascarillas Coreanas", "img": "img/productos/07-biodance-hydro.png", "desc": "Mascarilla con complejo Hydro Cera-Nol: ácido hialurónico, ceramidas y pantenol, para hidratación intensa.", "benefits": ["Hidratación intensa", "Calma y reduce irritaciones", "Refuerza la barrera cutánea"], "ingredients": ["Ácido hialurónico", "Agua de glaciar", "Ceramidas"], "price": null}, {"id": "BIO-COL-008", "brand": "Biodance", "name": "Bio Collagen Real Deep Mask", "cat": "Mascarillas Coreanas", "img": "img/productos/08-biodance-collagen.png", "desc": "Mascarilla con colágeno de bajo peso molecular, ácido hialurónico y fermentos probióticos.", "benefits": ["Hidratación profunda y duradera", "Mejora la elasticidad y firmeza", "Minimiza la apariencia de poros"], "ingredients": ["Colágeno de bajo peso molecular", "Ácido hialurónico", "Fermentos probióticos"], "price": null}, {"id": "MED-MADE-009", "brand": "Mediheal", "name": "Madecassoside Blemish Repair (x Hechi)", "cat": "Mascarillas Coreanas", "img": "img/productos/09-mediheal-madecassoside.png", "desc": "Mascarilla de alta adhesión con Madecassoside derivado de Centella Asiática: calmante, reparadora y antiinflamatoria.", "benefits": ["Calma la piel sensible y con rojeces", "Repara y fortalece la barrera cutánea", "Hidrata profundamente"], "ingredients": ["Madecassoside", "Ácido hialurónico", "Complejo calmante"], "price": null}, {"id": "MED-VITC-010", "brand": "Mediheal", "name": "Vitamin C Clear Toning Mask", "cat": "Mascarillas Coreanas", "img": "img/productos/10-mediheal-vitaminc.png", "desc": "Mascarilla con vitamina C de alta pureza, diseñada para iluminar, unificar el tono y revitalizar la piel.", "benefits": ["Ilumina y unifica el tono", "Reduce la apariencia de manchas", "Deja la piel fresca y radiante"], "ingredients": ["Vitamina C", "Ácido hialurónico", "Liposoma Vitamin C"], "price": null}, {"id": "MED-TEA-011", "brand": "Mediheal", "name": "Teatree Calming Moisture Mask", "cat": "Mascarillas Coreanas", "img": "img/productos/11-mediheal-teatree.png", "desc": "Mascarilla con extracto de árbol de té y 4-Terpineol para calmar, hidratar y purificar la piel.", "benefits": ["Calma y reduce irritaciones", "Hidratación profunda 24H", "Purifica y minimiza poros"], "ingredients": ["Extracto de árbol de té", "4-Terpineol", "Calming Moisture"], "price": null}, {"id": "MIX-CENT-012", "brand": "mixsoon", "name": "Soondy Centella Asiatica Essence", "cat": "Skincare Coreano", "img": "img/productos/12-mixsoon-centella.png", "desc": "Esencia ligera de alta pureza con Centella Asiática de Jeju: calmante, reparadora e hidratante.", "benefits": ["Reduce enrojecimiento y sensibilidad", "Acelera la regeneración de la piel", "Refuerza la barrera cutánea"], "ingredients": ["Centella Asiática (CICA) de Jeju"], "price": null}, {"id": "COS-EYE-013", "brand": "COSRX", "name": "Advanced Snail Peptide Eye Cream", "cat": "Skincare Coreano", "img": "img/productos/13-cosrx-eyecream.png", "desc": "Crema para el contorno de ojos con mucina de caracol y 5 tipos de péptidos.", "benefits": ["Reduce líneas finas y arrugas", "Ilumina y revitaliza la mirada", "Hidrata profundamente"], "ingredients": ["Mucina de caracol", "5 tipos de péptidos", "Niacinamida"], "price": null}, {"id": "COS-SNAIL-014", "brand": "COSRX", "name": "Advanced Snail 92 All In One Cream", "cat": "Skincare Coreano", "img": "img/productos/14-cosrx-snail92.png", "desc": "Crema facial todo en uno con 92% de mucina de caracol, regeneradora e hidratante.", "benefits": ["Repara y regenera la piel", "Hidratación profunda y duradera", "Mejora la elasticidad y firmeza"], "ingredients": ["Mucina de caracol 92%"], "price": null}, {"id": "DC-VIP-015", "brand": "DC Cosmetics", "name": "Premium V.I.P.", "cat": "Labios", "img": "img/productos/15-dc-vip-gloss.png", "desc": "Gloss de labios premium con hidratación intensa, nutrición y protección 24 horas, efecto GOLD.", "benefits": ["Hidratación profunda", "Protección 24 horas", "Efecto GOLD radiante"], "ingredients": ["Ácido hialurónico", "Aceites vegetales", "Vitamina E"], "price": null}, {"id": "COS-NIAC-016", "brand": "COSRX", "name": "The Niacinamide 15 Serum", "cat": "Skincare Coreano", "img": "img/productos/16-cosrx-niacinamide.png", "desc": "Sérum con niacinamida al 15% para controlar el sebo, minimizar poros y unificar el tono.", "benefits": ["Reduce el exceso de grasa", "Minimiza poros y textura", "Unifica el tono de la piel"], "ingredients": ["Niacinamida 15%", "Acetyl Glucosamine", "Zinc PCA"], "price": null}, {"id": "KOS-EYE-017", "brand": "Kosmos", "name": "Sérum de Ojos Tensor + Ginseng", "cat": "Skincare Coreano", "img": "img/productos/17-kosmos-eyeserum.png", "desc": "Sérum tensor para contorno de ojos con Eyeseryl, niacinamida, cafeína y ginseng.", "benefits": ["Reduce bolsas y ojeras", "Suaviza líneas de expresión", "Tensa y mejora la firmeza"], "ingredients": ["Eyeseryl 3%", "Niacinamida 3%", "Cafeína 2%", "Ginseng"], "price": null}, {"id": "PINK-BS-018", "brand": "PINK", "name": "Brown Sugar Hair & Body Mist", "cat": "Body & Fragrances", "img": "img/productos/18-pink-brownsugar-mist.png", "desc": "Bruma ligera para cuerpo y cabello con azúcar morena, caramelo y vainilla.", "benefits": ["Aroma duradero", "Refresca al instante", "Ideal para cuerpo y cabello"], "ingredients": ["Azúcar morena", "Caramelo", "Vainilla"], "price": null}, {"id": "PINK-SP-019", "brand": "PINK", "name": "Sugar Plum Hair & Body Mist", "cat": "Body & Fragrances", "img": "img/productos/19-pink-sugarplum-mist.png", "desc": "Bruma ligera para cuerpo y cabello con ciruela, frutos rojos y jazmín.", "benefits": ["Aroma duradero", "Refresca al instante", "No deja sensación pegajosa"], "ingredients": ["Ciruela jugosa", "Frutos rojos", "Jazmín"], "price": null}, {"id": "PINK-BSL-020", "brand": "PINK", "name": "Brown Sugar Daily Drench Body Lotion", "cat": "Body & Fragrances", "img": "img/productos/20-pink-brownsugar-lotion.png", "desc": "Loción corporal hidratante con azúcar morena, vainilla y caramelo.", "benefits": ["Hidratación en profundidad", "Suaviza la piel", "Textura ligera de rápida absorción"], "ingredients": ["Azúcar morena", "Caramelo", "Vainilla"], "price": null}, {"id": "PINK-SPL-021", "brand": "PINK", "name": "Sugar Plum Body Lotion", "cat": "Body & Fragrances", "img": "img/productos/21-pink-sugarplum-lotion.png", "desc": "Loción corporal hidratante con fragancia dulce y frutal de ciruela y frutos rojos.", "benefits": ["Hidratación inmediata", "Deja la piel suave y sedosa", "Aroma dulce y duradero"], "ingredients": ["Ciruela", "Frutos rojos", "Vainilla"], "price": null}, {"id": "KOS-MILK-022", "brand": "Kosmos", "name": "Milky Toner", "cat": "Skincare Coreano", "img": "img/productos/22-kosmos-milkytoner.png", "desc": "Tónico facial de textura lechosa con activos calmantes, hidratantes y reparadores.", "benefits": ["Hidratación profunda y prolongada", "Calma y reduce rojeces", "Refuerza la barrera cutánea"], "ingredients": ["Ácido poliglutámico", "Alantoína", "Ectoína", "Ganocalm"], "price": null}, {"id": "KOS-PATCH-023", "brand": "Kosmos", "name": "Forever Patches — Parches Reutilizables", "cat": "Medical Skincare", "img": "img/productos/23-kosmos-foreverpatches.png", "desc": "Parches de silicona reutilizables para contorno de ojos, hasta 30 usos, sostenibles.", "benefits": ["Mantienen la hidratación por más tiempo", "Suavizan líneas finas", "Potencian la absorción de sérums"], "ingredients": ["Silicona médica"], "price": null}, {"id": "KOS-GLOW-024", "brand": "Kosmos", "name": "Glowy Mist", "cat": "Skincare Coreano", "img": "img/productos/24-kosmos-glowymist.png", "desc": "Bruma hidratante facial que refresca, revitaliza y aporta luminosidad al instante.", "benefits": ["Hidratación inmediata y prolongada", "Calma y reduce la irritación", "Mejora la luminosidad"], "ingredients": ["Se(HA) 3%", "Alantoína", "Pantenol", "Lightmony"], "price": null}, {"id": "KOS-BUB-025", "brand": "Kosmos", "name": "Cleansing Bubbles", "cat": "Skincare Coreano", "img": "img/productos/25-kosmos-cleansingbubbles.png", "desc": "Gel de limpieza facial con niacinamida, té verde, kale y moringa.", "benefits": ["Limpieza profunda y suave", "Elimina impurezas y exceso de sebo", "No reseca ni irrita"], "ingredients": ["Niacinamida 8%", "Té verde", "Kale", "Moringa"], "price": null}, {"id": "KOS-OIL-026", "brand": "Kosmos", "name": "Cleansing Oil", "cat": "Skincare Coreano", "img": "img/productos/26-kosmos-cleansingoil.png", "desc": "Aceite de limpieza facial con almendra, girasol, jojoba y macadamia.", "benefits": ["Elimina maquillaje y protector solar", "Hidrata y deja la piel suave", "Calma y reduce la irritación"], "ingredients": ["Aceite de almendra", "Jojoba", "Macadamia", "Vitamina E"], "price": null}, {"id": "PINK-HB-027", "brand": "PINK", "name": "Love Shimmer Heart Breaker", "cat": "Body & Fragrances", "img": "img/productos/27-pink-heartbreaker-lotion.png", "desc": "Loción corporal con brillo sutil, fresa, jazmín y vainilla.", "benefits": ["Hidratación profunda y duradera", "Piel con brillo sutil", "Absorción rápida, sin sensación grasosa"], "ingredients": ["Aceites esenciales", "Micropartículas de brillo", "Glicerina"], "price": null}, {"id": "VS-CP-LOC-028", "brand": "Victoria's Secret", "name": "Coconut Passion — Fragrance Lotion", "cat": "Body & Fragrances", "img": "img/productos/28-vs-coconutpassion-lotion.png", "desc": "Loción corporal hidratante y perfumada con coco, vainilla y lirio de los valles.", "benefits": ["Hidrata en profundidad", "Suaviza y mejora la textura", "Aroma irresistible y duradero"], "ingredients": ["Coco cremoso", "Vainilla de Madagascar", "Lirio de los valles"], "price": null}, {"id": "KOS-SMOOTH-029", "brand": "Kosmos", "name": "Smooth Potion", "cat": "Medical Skincare", "img": "img/productos/29-kosmos-smoothpotion.png", "desc": "Crema hidratante y nutritiva con niacinamida 5%, ayuda a mejorar y prevenir brotes de acné.", "benefits": ["Hidratación profunda y duradera", "Desobstruye poros y regula el sebo", "Mejora y previene brotes de acné"], "ingredients": ["Niacinamida 5%", "Psidium Guajava", "MARSrutina 2%", "Regaliz"], "price": null}, {"id": "KOS-RENSA-030", "brand": "Kosmos", "name": "Renewing Toner (Ácido Salicílico)", "cat": "Medical Skincare", "img": "img/productos/30-kosmos-renewingtoner-sa.png", "desc": "Tónico exfoliante con ácido salicílico 2% y zinc, ayuda a mejorar y prevenir brotes de acné.", "benefits": ["Renueva la piel y mejora la textura", "Desobstruye poros", "Mejora y previene brotes de acné"], "ingredients": ["Ácido salicílico 2%", "Zinc sebum", "Kale", "Aloe + Malva"], "price": null}, {"id": "KOS-RENAHA-031", "brand": "Kosmos", "name": "Renewing Toner (AHA)", "cat": "Skincare Coreano", "img": "img/productos/31-kosmos-renewingtoner-aha.png", "desc": "Tónico exfoliante con ácido glicólico 7% y láctico 3%, renueva y aporta luminosidad.", "benefits": ["Renueva y mejora la textura", "Aporta luminosidad y uniformidad", "Calma y equilibra"], "ingredients": ["Ácido glicólico 7%", "Ácido láctico 3%", "Camomila", "Aloe + Malva"], "price": null}, {"id": "KOS-AQUA-032", "brand": "Kosmos", "name": "Aqua Potion", "cat": "Skincare Coreano", "img": "img/productos/32-kosmos-aquapotion.png", "desc": "Crema hidratante en gel, ligera y refrescante, con centella asiática.", "benefits": ["Hidratación intensa", "Calma y reduce rojeces", "Textura ligera y refrescante"], "ingredients": ["Pantenol", "Alantoína", "Centella asiática"], "price": null}, {"id": "KOS-BOOST-033", "brand": "Kosmos", "name": "Boosting Drops", "cat": "Skincare Coreano", "img": "img/productos/33-kosmos-boostingdrops.png", "desc": "Sérum hidratante y tensor con ácido hialurónico y aloe vera.", "benefits": ["Hidratación profunda", "Mejora la firmeza y elasticidad", "Reduce líneas finas y arrugas"], "ingredients": ["Epidermosil SC 3%", "Munapsys 2%", "Ácido hialurónico 0,5%", "Aloe vera"], "price": null}, {"id": "KOS-BLOOM-034", "brand": "Kosmos", "name": "Blooming Drops", "cat": "Medical Skincare", "img": "img/productos/34-kosmos-bloomingdrops.png", "desc": "Sérum regenerador con retinol 3,5% y rosa mosqueta, reduce signos de la edad.", "benefits": ["Renueva y regenera la piel", "Reduce líneas finas y arrugas", "Unifica el tono y mejora la textura"], "ingredients": ["InuMax Advanced Retinol Pro 3,5%", "Reneseed 2%", "Rosa mosqueta"], "price": null}, {"id": "KOS-ACOIL-035", "brand": "Kosmos", "name": "Aceite Facial", "cat": "Skincare Coreano", "img": "img/productos/35-kosmos-aceitefacial.png", "desc": "Aceite facial multibeneficio con jojoba, macadamia, palta y carotolino.", "benefits": ["Nutrición profunda y duradera", "Aporta luminosidad natural", "Protege contra radicales libres"], "ingredients": ["Aceite de jojoba", "Macadamia", "Palta", "Carotolino"], "price": null}, {"id": "KOS-CLAR-036", "brand": "Kosmos", "name": "Clarifying Toner", "cat": "Skincare Coreano", "img": "img/productos/36-kosmos-clarifyingtoner.png", "desc": "Tónico exfoliante con ácido mandélico y lactobiónico, avena y aloe.", "benefits": ["Exfoliación química suave y efectiva", "Piel más luminosa y uniforme", "Reduce apariencia de poros"], "ingredients": ["Ácido mandélico 8%", "Ácido lactobiónico 2%", "Avena sativa", "Aloe + Malva"], "price": null}, {"id": "COS-SUN-037", "brand": "COSRX", "name": "Airy-Light Invisible Sun Stick SPF50+", "cat": "Skincare Coreano", "img": "img/productos/37-cosrx-sunstick.png", "desc": "Protector solar en barra ultraligero y de acabado invisible, SPF50+ PA++++.", "benefits": ["Protección solar muy alta", "No deja residuos blancos", "Apto para todo tipo de piel"], "ingredients": ["Centella asiática", "Ácido hialurónico", "Niacinamida"], "price": null}, {"id": "ARE-GREEN-038", "brand": "Arencia", "name": "Fresh Green Rice Mochi Cleanser", "cat": "Skincare Coreano", "img": "img/productos/38-arencia-freshgreen.png", "desc": "Limpiador en textura mochi con arroz, té verde y centella asiática.", "benefits": ["Limpieza profunda", "Hidrata y suaviza", "Purifica los poros"], "ingredients": ["Extracto de arroz", "Té verde", "Centella asiática"], "price": null}, {"id": "ARE-ROSE-039", "brand": "Arencia", "name": "Fresh Rosehip Rice Mochi Cleanser", "cat": "Skincare Coreano", "img": "img/productos/39-arencia-freshrosehip.png", "desc": "Espuma tipo mochi con arroz, rosa mosqueta y arcilla rosa, limpia sin sensación de tirantez.", "benefits": ["Limpieza profunda", "Hidratación duradera", "Calma la irritación"], "ingredients": ["Arroz", "Rosa mosqueta", "Arcilla rosa"], "price": null}, {"id": "TOC-SUN-040", "brand": "TOCOBO", "name": "Cica Cooling Sun Stick SPF50+", "cat": "Skincare Coreano", "img": "img/productos/40-tocobo-sunstick.png", "desc": "Protector solar en barra con efecto refrescante y centella asiática, SPF50+ PA++++.", "benefits": ["Alta protección SPF50+ PA++++", "Efecto cooling inmediato", "Controla el exceso de grasa"], "ingredients": ["Centella asiática", "Herb AC Complex", "Ácido hialurónico"], "price": null}, {"id": "DRA-AQUA-041", "brand": "Dr. Althea", "name": "Aqua Marine Water Cream", "cat": "Skincare Coreano", "img": "img/productos/41-dralthea-aquamarine.png", "desc": "Crema ligera tipo gel-crema con agua marina, extractos botánicos y activos calmantes, que hidrata intensamente y refuerza la barrera cutánea.", "benefits": ["Hidratación profunda y duradera", "Calma la piel sensible o irritada", "Mejora la textura y elasticidad"], "ingredients": ["Agua marina", "Centella Asiática", "Ceramida NP"], "price": null}, {"id": "ARE-VITC-042", "brand": "Arencia", "name": "Vitamin C Booster Shot", "cat": "Skincare Coreano", "img": "img/productos/42-arencia-vitcbooster.png", "desc": "Crema hidratante para rostro y contorno de ojos con vitamina C 5% y glutatión, para iluminar y unificar el tono.", "benefits": ["Ilumina la piel", "Mejora la textura", "Hidrata en profundidad"], "ingredients": ["Vitamin C Complex 5%", "Glutatión"], "price": null}, {"id": "DRA-147-043", "brand": "Dr. Althea", "name": "147 Barrier Cream", "cat": "Skincare Coreano", "img": "img/productos/43-dralthea-147barrier.png", "desc": "Crema ligera pero profundamente nutritiva con 7 tipos de ácido hialurónico, ceramidas y extractos botánicos.", "benefits": ["Hidratación profunda y duradera", "Calma la piel sensible o irritada", "Refuerza la barrera cutánea"], "ingredients": ["Paeonia Albiflora", "Extracto de palta", "7 tipos de ácido hialurónico"], "price": null}, {"id": "DRA-345-044", "brand": "Dr. Althea", "name": "345 Relief Cream Mist", "cat": "Skincare Coreano", "img": "img/productos/44-dralthea-345mist.png", "desc": "Crema en formato mist con agua de salvado de arroz y pantenol, que hidrata, calma y fortalece la piel.", "benefits": ["Calma la piel sensible e irritada", "Hidratación duradera", "Textura ligera, sin sensación pegajosa"], "ingredients": ["Oryza Sativa (Rice) Bran Water", "Panthenol"], "price": null}, {"id": "BOJ-RS-045", "brand": "Beauty of Joseon", "name": "Relief Sun Rice + Probiotics SPF50+", "cat": "Skincare Coreano", "img": "img/productos/45-boj-reliefsun.png", "desc": "Protector solar químico híbrido con extracto de arroz y probióticos, hidrata y refuerza la barrera cutánea.", "benefits": ["Alta protección SPF50+ PA++++", "Acabado natural, sin brillo graso", "No deja residuo blanco"], "ingredients": ["Extracto de arroz", "Probióticos"], "price": null}, {"id": "MAD-CALMCR-046", "brand": "Madeca 21", "name": "Tecassoside Calming Cream", "cat": "Medical Skincare", "img": "img/productos/46-madeca21-calmingcream.png", "desc": "Crema calmante de alta concentración con Tecassoside, para piel sensible e irritada.", "benefits": ["Alivio inmediato", "Hidratación duradera", "Reparación de la piel"], "ingredients": ["Tecassoside", "Pantenol"], "price": null}, {"id": "MAD-CALMPAD-047", "brand": "Madeca 21", "name": "Tecassocide Calming Pad", "cat": "Medical Skincare", "img": "img/productos/47-madeca21-calmingpad.png", "desc": "Pads tónicos pre-impregnados que calman la piel sensible y reducen el enrojecimiento en 3 segundos.", "benefits": ["Efecto calmante en 3 segundos", "Fórmula hipoalergénica", "Apto para piel sensible"], "ingredients": ["Tecassocide", "Centella Asiática"], "price": null}, {"id": "BOJ-MATTE-048", "brand": "Beauty of Joseon", "name": "Matte Sun Stick Mugwort + Camelia", "cat": "Skincare Coreano", "img": "img/productos/48-boj-mattesunstick.png", "desc": "Protector solar en barra con artemisa y camelia, acabado mate ideal para piel mixta y grasa.", "benefits": ["Protección solar SPF 50+ / PA++++", "Calma y reduce la irritación", "Acabado mate y sin sensación pegajosa"], "ingredients": ["Artemisa (Mugwort)", "Camelia"], "price": null}, {"id": "ORD-NMFHA-049", "brand": "The Ordinary", "name": "Natural Moisturizing Factors + HA", "cat": "Skincare Coreano", "img": "img/productos/49-ordinary-nmfha.png", "desc": "Hidratante ligero con factores naturales de hidratación y ácido hialurónico, hidratación inmediata y duradera.", "benefits": ["Aporta hidratación profunda y duradera", "Fortalece la barrera cutánea", "Ideal para el uso diario"], "ingredients": ["Ácido Hialurónico (HA)", "Factores Naturales de Hidratación"], "price": null}, {"id": "BYL-BALM-050", "brand": "un byleasha", "name": "Berry Cool Plumping Lip Balm — No.2 Peach Hush", "cat": "Labios", "img": "img/productos/50-byleasha-lipbalm-peach.png", "desc": "Bálsamo labial con color, efecto plumping y acabado jugoso, tono Peach Hush.", "benefits": ["Labios más suaves y firmes", "Efecto plumping visible", "Brillo duradero"], "ingredients": ["Extracto de durazno", "Ácido hialurónico"], "price": null}, {"id": "BYL-TINT-051", "brand": "un byleasha", "name": "Cloudkiss Velvet Tint — No.4 Blush Pink", "cat": "Labios", "img": "img/productos/51-byleasha-velvettint-blushpink.png", "desc": "Tinte labial líquido acabado velvet, tono Blush Pink, color suave y duradero.", "benefits": ["Color de larga duración", "Acabado velvet suave", "No reseca los labios"], "ingredients": ["Hyaluronic Acid", "Jojoba Oil"], "price": null}, {"id": "BYL-GLAZE-052", "brand": "byunleasha", "name": "Tanghulu Glaze Tint — No.4 Cherry Coke", "cat": "Labios", "img": "img/productos/52-byleasha-tanghulu-cherrycoke.png", "desc": "Tint labial de acabado glossy tipo glass, tono Cherry Coke, brillo que dura horas.", "benefits": ["Color intenso y duradero", "Acabado ultra brillante tipo glass", "Hidratación y confort"], "ingredients": ["Cherry Extract", "Hyaluronic Acid"], "price": null}, {"id": "VAS-ROSY-053", "brand": "Vaseline", "name": "Lip Therapy Rosy Lips", "cat": "Labios", "img": "img/productos/53-vaseline-rosylips.png", "desc": "Bálsamo labial con Petroleum Jelly y un sutil tono rosado.", "benefits": ["Hidratación profunda y duradera", "Suaviza y repara labios secos", "Aporta un suave tono rosado"], "ingredients": ["Petroleum Jelly (Vaselina)"], "price": null}, {"id": "MAD-TECATONER-054", "brand": "Madeca 21", "name": "Teca Toning Toner", "cat": "Skincare Coreano", "img": "img/productos/54-madeca21-tecatoner.png", "desc": "Tónico facial calmante y revitalizante con Centella Asiática, refuerza la barrera cutánea.", "benefits": ["Efecto calmante inmediato", "Refuerza la barrera cutánea", "Aporta hidratación duradera"], "ingredients": ["TECA (Centella Asiática)", "Pantenol", "Alantoína"], "price": null}, {"id": "MED-PDRN-055", "brand": "medicube", "name": "PDRN Pink Collagen Capsule Cream", "cat": "Skincare Coreano", "img": "img/productos/55-medicube-pdrncream.png", "desc": "Crema hidratante y reafirmante con cápsulas de colágeno, PDRN y niacinamida.", "benefits": ["Piel más firme y elástica", "Hidratación intensa", "Luminosidad y tono uniforme"], "ingredients": ["PDRN (Sodium DNA)", "Colágeno", "Niacinamida 5%"], "price": null}, {"id": "MED-ZPP-056", "brand": "medicube", "name": "Zero Pore Pad", "cat": "Skincare Coreano", "img": "img/productos/56-medicube-zeroporepad.png", "desc": "Pads exfoliantes con AHA, BHA, pantenol y alantoína, minimizan la apariencia de poros.", "benefits": ["Exfolia sin irritar", "Minimiza la apariencia de poros", "Controla el exceso de sebo"], "ingredients": ["AHA", "BHA", "Panthenol"], "price": null}, {"id": "CAR-CLASSIC-057", "brand": "Carmex", "name": "Classic Lip Balm Medicated", "cat": "Labios", "img": "img/productos/57-carmex-classic.png", "desc": "Bálsamo labial medicado que alivia labios secos, agrietados o resecos.", "benefits": ["Alivio inmediato", "Hidratación profunda", "Repara labios agrietados"], "ingredients": ["Mentol", "Alcanfor", "Cera de abeja"], "price": null}, {"id": "CAR-STRAW-058", "brand": "Carmex", "name": "Daily Care Lip Balm — Strawberry SPF15", "cat": "Labios", "img": "img/productos/58-carmex-strawberry.png", "desc": "Bálsamo labial hidratante con sabor a fresa y protector solar SPF 15.", "benefits": ["Con protector solar SPF 15", "Hidratación de larga duración", "Suaviza y repara labios secos"], "ingredients": [], "price": null}, {"id": "TOC-CICASERUM-059", "brand": "TOCOBO", "name": "Cica Calming Serum", "cat": "Skincare Coreano", "img": "img/productos/59-tocobo-cicaserum.png", "desc": "Sérum calmante con Cica, ácido hialurónico y tea tree, reduce rojeces y fortalece la barrera.", "benefits": ["Calma y reduce rojeces", "Hidrata en profundidad", "Fortalece la barrera de la piel"], "ingredients": ["Cica Complex", "Multi HA Complex", "Tea Tree"], "price": null}, {"id": "UNL-CKV-FAN-060", "brand": "by unleashia", "name": "Cloud Kiss Velvet Tint — No.2 Fancy", "cat": "Labios", "img": "img/productos/60-unleashia-cloudkiss-fancy.png", "desc": "Tinta labial de acabado velvet (aterciopelado) que aporta color intenso, difuminado y de larga duración.", "benefits": ["Acabado velvet, suave y difuminado", "Color edificable e intenso", "Larga duración"], "ingredients": [], "price": null}, {"id": "ANUA-HL77-061", "brand": "Anua", "name": "Heartleaf 77+ Hyaluron Soothing Toner", "cat": "Skincare Coreano", "img": "img/productos/61-anua-heartleaf77.png", "desc": "Tónico facial hidratante y calmante con 77% de extracto de Heartleaf y ácido hialurónico.", "benefits": ["Calma y alivia la piel sensible", "Hidrata con ácido hialurónico", "Mejora la textura y el tono"], "ingredients": ["Heartleaf 77%", "Ácido Hialurónico"], "price": null}, {"id": "COS-LOWPH-062", "brand": "COSRX", "name": "Low pH Good Morning Gel Cleanser", "cat": "Skincare Coreano", "img": "img/productos/62-cosrx-lowphcleanser.png", "desc": "Gel limpiador facial de pH bajo con té verde y centella asiática, limpia sin resecar.", "benefits": ["Limpieza profunda y suave", "Equilibra el pH de la piel", "No reseca"], "ingredients": ["Extracto de té verde", "Centella Asiática"], "price": null}, {"id": "BOJ-RICEHONEY-063", "brand": "Beauty of Joseon", "name": "Ground Rice and Honey Glow Mask", "cat": "Mascarillas Coreanas", "img": "img/productos/63-boj-ricehoneymask.png", "desc": "Mascarilla wash-off con arroz molido y miel, exfolia suavemente y aporta luminosidad.", "benefits": ["Exfoliación suave", "Piel más luminosa y uniforme", "Hidratante y calmante"], "ingredients": ["Arroz molido", "Miel", "Arcilla de caolín"], "price": null}, {"id": "BOJ-DYNASTY-064", "brand": "Beauty of Joseon", "name": "Dynasty Cream", "cat": "Skincare Coreano", "img": "img/productos/64-boj-dynastycream.png", "desc": "Crema facial hidratante con ginseng y niacinamida, textura ligera y sedosa.", "benefits": ["Hidrata profundamente", "Mejora la elasticidad", "Fortalece la barrera de la piel"], "ingredients": ["Agua de salvado de arroz", "Ginseng", "Niacinamida"], "price": null}, {"id": "UNL-TGZ-ANGELPINK-065", "brand": "by unleashia", "name": "Tanghulu Glaze Tint — No.3 Angel Pink", "cat": "Labios", "img": "img/productos/65-unleashia-tanghulu-angelpink.png", "desc": "Tinta labial con acabado glaze que aporta color y brillo jugoso de larga duración, tono Angel Pink.", "benefits": ["Acabado glaze brillante y jugoso", "Color edificable y duradero", "Hidratante"], "ingredients": [], "price": null}, {"id": "UNL-TGZ-HUSHGRAPE-066", "brand": "by unleashia", "name": "Tanghulu Glaze Tint — No.3 Hush Grape", "cat": "Labios", "img": "img/productos/66-unleashia-tanghulu-hushgrape.png", "desc": "Tinta labial con acabado glaze, tono Hush Grape, apariencia fresca y voluminosa.", "benefits": ["Acabado glaze brillante y jugoso", "Color edificable y duradero", "Hidratante"], "ingredients": [], "price": null}, {"id": "TOC-CALAMINE-067", "brand": "TOCOBO", "name": "Calamine Pore Control Cleansing Oil", "cat": "Skincare Coreano", "img": "img/productos/67-tocobo-calamineoil.png", "desc": "Aceite limpiador facial con calamina que disuelve maquillaje y calma la piel.", "benefits": ["Limpieza profunda de maquillaje e impurezas", "Controla el exceso de sebo y los poros", "Fórmula vegana"], "ingredients": ["Calamina", "Aceite de oliva", "Aceite de coco"], "price": null}, {"id": "UNL-TGZ-AMBEROSE-068", "brand": "by unleashia", "name": "Tanghulu Glaze Tint — No.2 Amberose", "cat": "Labios", "img": "img/productos/68-unleashia-tanghulu-amberose.png", "desc": "Tinta labial de acabado glossy con color duradero, tono Amberose, efecto jugoso.", "benefits": ["Color duradero y efecto glossy", "Textura ligera y confortable", "Hidrata y no reseca"], "ingredients": [], "price": null}, {"id": "TOC-COCOCLAY-069", "brand": "TOCOBO", "name": "Coconut Clay Cleansing Foam", "cat": "Skincare Coreano", "img": "img/productos/69-tocobo-coconutclayfoam.png", "desc": "Limpiador facial en espuma con arcilla de coco, limpia poros sin resecar.", "benefits": ["Limpieza profunda", "Controla el exceso de sebo y minimiza poros", "100% ingredientes veganos"], "ingredients": ["Arcilla de coco", "Extracto de saponaria"], "price": null}];
+
+let currentProduct = null;
+let currentQty = 1;
+let cart = []; // {id, qty}
+
+function fmt(n){ return (n===null||n===undefined) ? "A confirmar" : "$ " + n.toLocaleString("es-AR"); }
+
+// ---------- NAV ----------
+function nav(view, param){
+  document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));
+  document.getElementById("view-"+view).classList.add("active");
+  document.querySelectorAll("#tabbar button").forEach(b=>b.classList.remove("active"));
+  window.scrollTo(0,0);
+  if(view==="home"){ document.querySelector('[data-tab="home"]').classList.add("active"); document.getElementById("tabbar").style.display="flex"; }
+  if(view==="cat"){ renderCategory(param); document.querySelector('[data-tab="cat"]').classList.add("active"); document.getElementById("tabbar").style.display="flex"; }
+  if(view==="product"){ document.getElementById("tabbar").style.display="none"; }
+  if(view==="checkout"){ renderCheckout(); document.getElementById("tabbar").style.display="none"; }
+  if(view==="confirm"){ document.getElementById("tabbar").style.display="none"; }
+}
+
+// ---------- HOME RENDER ----------
+function renderHome(){
+  const catGrid = document.getElementById("catGrid");
+  catGrid.innerHTML = CATEGORIES.map(c=>`
+    <div class="cat-item" onclick="nav('cat','${c.name}')">
+      <div class="cat-circle">${c.icon}</div>
+      <span>${c.name}</span>
+    </div>`).join("");
+
+  document.getElementById("featuredRow").innerHTML = ["COS-SNAIL-014", "ARE-MOC-001", "BIO-COL-008", "MIX-CENT-012", "MED-PDRN-055"].map(id=>PRODUCTS.find(p=>p.id===id)).map(p=>productCard(p)).join("");
+  document.getElementById("newRow").innerHTML = ["BOJ-DYNASTY-064", "ANUA-HL77-061", "TOC-CICASERUM-059", "UNL-TGZ-AMBEROSE-068"].map(id=>PRODUCTS.find(p=>p.id===id)).map(p=>productCard(p)).join("");
+}
+
+function productCard(p, grid){
+  return `<div class="pcard ${grid?'grid-card':''}" onclick="openProduct('${p.id}')">
+    <div class="img"><img src="${p.img}" style="width:100%;height:100%;object-fit:cover;"><span class="fav">♡</span></div>
+    <div class="info">
+      <div class="brand">${p.brand}</div>
+      <div class="name">${p.name}</div>
+      <div class="price">${fmt(p.price)}</div>
+    </div>
+  </div>`;
+}
+
+// ---------- CATEGORY ----------
+function renderCategory(catName){
+  document.getElementById("catTitle").textContent = catName;
+  const list = PRODUCTS.filter(p=>p.cat===catName);
+  const shown = list.length ? list : PRODUCTS;
+  document.getElementById("catList").innerHTML = shown.map(p=>productCard(p, true)).join("");
+}
+
+// ---------- PRODUCT DETAIL ----------
+function openProduct(id){
+  currentProduct = PRODUCTS.find(p=>p.id===id);
+  currentQty = 1;
+  document.getElementById("pdImg").innerHTML = `<div class="dots"><span></span><span></span><span></span></div>` + `<img src="${currentProduct.img}" style="width:100%;height:100%;object-fit:cover;">`;
+  document.getElementById("pdBrand").textContent = currentProduct.brand;
+  document.getElementById("pdName").textContent = currentProduct.name;
+  document.getElementById("pdDesc").textContent = currentProduct.desc;
+  document.getElementById("pdPrice").textContent = fmt(currentProduct.price);
+  document.getElementById("pdQty").textContent = currentQty;
+
+  document.getElementById("pdAccordion").innerHTML = `
+    ${accItem("¿Qué es?", `<p>${currentProduct.desc}</p>`)}
+    ${accItem("Beneficios", `<ul style="padding-left:16px;">${currentProduct.benefits.map(b=>`<li>${b}</li>`).join("")}</ul>`)}
+    ${accItem("Ingredientes clave", `<ul style="padding-left:16px;">${currentProduct.ingredients.map(b=>`<li>${b}</li>`).join("")}</ul>`)}
+    ${accItem("Modo de uso", `<p>Aplicar sobre piel limpia, en el paso correspondiente de la rutina.</p>`)}
+  `;
+  nav("product");
+}
+
+function accItem(title, body){
+  return `<div class="acc-item">
+    <button class="acc-head" onclick="this.parentElement.classList.toggle('open')">${title}<span class="chevron">⌄</span></button>
+    <div class="acc-body"><div>${body}</div></div>
+  </div>`;
+}
+
+function changeQty(d){
+  currentQty = Math.max(1, currentQty + d);
+  document.getElementById("pdQty").textContent = currentQty;
+}
+
+// ---------- CART ----------
+function addToCart(){
+  if(!currentProduct) return;
+  const existing = cart.find(c=>c.id===currentProduct.id);
+  if(existing) existing.qty += currentQty;
+  else cart.push({id:currentProduct.id, qty:currentQty});
+  renderCart();
+}
+
+function removeFromCart(id){
+  cart = cart.filter(c=>c.id!==id);
+  renderCart();
+}
+
+function cartQtyChange(id, d){
+  const item = cart.find(c=>c.id===id);
+  if(!item) return;
+  item.qty = Math.max(1, item.qty + d);
+  renderCart();
+}
+
+function cartLines(){
+  return cart.map(c=>({...c, product: PRODUCTS.find(p=>p.id===c.id)}));
+}
+
+function cartSubtotal(){
+  return cartLines().reduce((s,l)=>s + l.product.price*l.qty, 0);
+}
+
+function renderCart(){
+  const lines = cartLines();
+  document.getElementById("cartBadge").textContent = cart.reduce((s,c)=>s+c.qty,0);
+  document.getElementById("drawerCount").textContent = cart.reduce((s,c)=>s+c.qty,0);
+
+  const itemsEl = document.getElementById("drawerItems");
+  if(lines.length===0){
+    itemsEl.innerHTML = `<div class="empty-cart">Tu carrito está vacío</div>`;
+  } else {
+    itemsEl.innerHTML = lines.map(l=>`
+      <div class="cart-item">
+        <div class="thumb"><img src="${l.product.img}" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="meta">
+          <div class="brand">${l.product.brand}</div>
+          <div class="name">${l.product.name}</div>
+          <div class="row">
+            <div class="qty"><button onclick="cartQtyChange('${l.id}',-1)">−</button><span>${l.qty}</span><button onclick="cartQtyChange('${l.id}',1)">+</button></div>
+            <div class="price">${fmt(l.product.price*l.qty)}</div>
+          </div>
+          <button class="del" onclick="removeFromCart('${l.id}')">Eliminar</button>
+        </div>
+      </div>`).join("");
+  }
+  const sub = cartSubtotal();
+  document.getElementById("dSubtotal").textContent = fmt(sub);
+  document.getElementById("dTotal").textContent = fmt(sub);
+}
+
+function openCart(){
+  renderCart();
+  document.getElementById("overlay").classList.add("show");
+  document.getElementById("drawer").classList.add("show");
+}
+function closeCart(){
+  document.getElementById("overlay").classList.remove("show");
+  document.getElementById("drawer").classList.remove("show");
+}
+function goCheckout(){
+  closeCart();
+  nav("checkout");
+}
+
+// ---------- CHECKOUT ----------
+let selectedShipping = null; // {method,label,cost,etaDays}
+
+// ---------- ENVÍOS (reglas manuales — mismas que lib/shipping.ts) ----------
+const MANUAL_ZONES = [
+  { name:"San Miguel de Tucumán y alrededores", min:4000, max:4199, cost:0, eta:"24 a 48 horas hábiles" },
+  { name:"Resto de Tucumán", min:4200, max:4499, cost:0, eta:"3 a 5 días hábiles" },
+  { name:"Otras provincias", min:1000, max:9999, cost:0, eta:"5 a 8 días hábiles" },
+];
+function findZone(cp){
+  for(const z of MANUAL_ZONES){ if(cp>=z.min && cp<=z.max) return z; }
+  return { name:"Envío a todo el país", cost:0, eta:"5 a 10 días hábiles" };
+}
+function calcShipping(value){
+  const cp = Number(value);
+  const box = document.getElementById("shippingOptions");
+  if(!value || !Number.isFinite(cp)){
+    box.innerHTML = "Ingresá tu código postal para ver las opciones de envío.";
+    selectedShipping = null;
+    renderCheckout();
+    return;
+  }
+  const zone = findZone(cp);
+  const home = { method:"domicilio", label:`Envío a domicilio — ${zone.name}`, cost:zone.cost, eta:zone.eta };
+  const pickup = { method:"retiro_local", label:"Retiro en local — Meyer SkinBeauty", cost:0, eta:"Listo para retirar en 24 horas hábiles" };
+  selectedShipping = home;
+  box.innerHTML = [home, pickup].map(o => `
+    <label style="display:flex; align-items:flex-start; gap:8px; padding:10px 0; border-bottom:1px solid #EEE6D6;">
+      <input type="radio" name="shipopt" ${o.method===selectedShipping.method?'checked':''} onchange='selectShipping(${JSON.stringify(o)})'>
+      <span>
+        <b style="display:block; font-size:12.5px; color:var(--black);">${o.label}</b>
+        <span style="font-size:11px;">${o.cost===0?'Gratis':fmt(o.cost)} · ${o.eta}</span>
+      </span>
+    </label>
+  `).join("");
+  renderCheckout();
+}
+function selectShipping(o){ selectedShipping = o; renderCheckout(); }
+
+function renderCheckout(){
+  const sub = cartSubtotal();
+  const shipCost = selectedShipping ? selectedShipping.cost : 0;
+  document.getElementById("coSubtotal").textContent = fmt(sub);
+  document.getElementById("coShipping").textContent = selectedShipping ? (shipCost===0? "Gratis" : fmt(shipCost)) : "Ingresá tu código postal";
+  document.getElementById("coTotal").textContent = fmt(sub + shipCost);
+}
+function confirmOrder(){
+  document.getElementById("confOrder").textContent = "#MSB" + Math.floor(1000+Math.random()*9000);
+  cart = [];
+  renderCart();
+  nav("confirm");
+}
+
+// pay option toggle
+document.querySelectorAll(".pay-option").forEach(el=>{
+  el.addEventListener("click", ()=>{
+    document.querySelectorAll(".pay-option").forEach(o=>o.classList.remove("selected"));
+    el.classList.add("selected");
+    el.querySelector("input").checked = true;
+  });
+});
+
+
+// ---------- PRICE EDIT MODE ----------
+function openPriceDrawer(){
+  document.getElementById("priceList").innerHTML = PRODUCTS.map(p => `
+    <div class="price-row">
+      <div class="thumb"><img src="${p.img}"></div>
+      <div class="meta">
+        <div class="brand">${p.brand}</div>
+        <div class="name">${p.name}</div>
+      </div>
+      <input class="price-input" type="number" inputmode="numeric" placeholder="$"
+        id="price-${p.id}" value="${p.price ?? ''}">
+    </div>
+  `).join("");
+  document.getElementById("priceOverlay").classList.add("show");
+  document.getElementById("priceDrawer").classList.add("show");
+}
+function closePriceDrawer(){
+  document.getElementById("priceOverlay").classList.remove("show");
+  document.getElementById("priceDrawer").classList.remove("show");
+}
+function applyPrices(){
+  PRODUCTS.forEach(p => {
+    const el = document.getElementById("price-"+p.id);
+    if(!el) return;
+    const v = el.value.trim();
+    p.price = v === "" ? null : Number(v);
+  });
+  closePriceDrawer();
+  // re-render whatever view is currently visible
+  renderHome();
+  if(document.getElementById("view-cat").classList.contains("active")){
+    renderCategory(document.getElementById("catTitle").textContent);
+  }
+  if(document.getElementById("view-product").classList.contains("active") && currentProduct){
+    document.getElementById("pdPrice").textContent = fmt(currentProduct.price);
+  }
+  renderCart();
+  alert("Precios aplicados. No olvides descargar el CSV para guardarlos.");
+}
+function downloadPrices(){
+  let csv = "sku,nombre,precio\n";
+  PRODUCTS.forEach(p => {
+    csv += `${p.id},"${p.name.replace(/"/g,'""')}",${p.price ?? ""}\n`;
+  });
+  const blob = new Blob([csv], {type:"text/csv;charset=utf-8;"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = "meyer_precios.csv";
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+renderHome();
+renderCart();
+</script>
+</body>
+</html>
